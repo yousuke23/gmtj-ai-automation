@@ -1,5 +1,20 @@
 # Shin VPS 向けデプロイ（社内MVP想定）
 
+## 今すぐ（Mac で最速起動）
+
+**手順の全文（コピペ用コマンド付き）:** **[QUICKSTART-サービス開始.md](./QUICKSTART-サービス開始.md)**  
+**起動後〜パイロットまで:** **[SERVICE-LAUNCH.md](./SERVICE-LAUNCH.md)**（管理者・Knowledge・スモーク・招待前ゲート）
+
+1. [Docker Desktop](https://www.docker.com/products/docker-desktop/) をインストールして起動する  
+2. `deploy` に移動し `.env` を用意してから `docker compose up -d`  
+3. ブラウザで **http://127.0.0.1:8080**
+
+Docker を使わない場合はこのセクションはスキップしてよいです（`kb/` や `docs/` の作業は Docker 不要）。
+
+**本番に近い公開**は **[SECURITY.md](./SECURITY.md)**（VPN・認証・人間承認）を必ず通すこと。
+
+---
+
 ## 原則
 
 - 公開前は **Basic 認証 or VPN 内のみ**
@@ -36,3 +51,7 @@ Open WebUI の前に **nginx** を置く例は **`docker-compose.auth-stack.yml`
 ## 環境変数テンプレ
 
 `deploy/.env.example` を `.env` にコピーしてから値を埋める。
+
+## セキュリティ
+
+**[SECURITY.md](./SECURITY.md)**（秘密・認証・ログの原則）。

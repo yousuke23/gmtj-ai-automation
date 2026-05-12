@@ -11,7 +11,7 @@ cd deploy
 docker compose exec open-webui ls -la /kb-ro
 ```
 
-ファイルが見えない場合は `docker compose.yml` の相対パス（`../kb`）と、compose を実行したカレントディレクトリが `deploy/` であることを確認する。
+ファイルが見えない場合は `docker-compose.yml` の相対パス（`../kb`）と、compose を実行したカレントディレクトリが `deploy/` であることを確認する。
 
 ## 2. Knowledge への取り込み方（現実的な2経路）
 
@@ -39,6 +39,7 @@ Open WebUI はバージョンにより「サーバー上のパスをそのまま
 - UI 取り込み方式の場合: 差分ファイルを **再アップロード**し、該当ナレッジの **再インデックス／再処理**（UI にあれば実行）を行う。
 - 回答に **古い前提** が残る場合は、チャット側の「Knowledge を参照する」設定と、モデルキャッシュを含めて切り分ける。
 - 社内で **HTTPS** まで揃えたい場合は `deploy/caddy/README.md`（Caddy 例）を参照。ナレッジ ZIP とは別レイヤー。
+- `eval/golden-questions.md` の**番号付き質問を増減**したら、リポジトリルートで `make verify-golden`（または `MIN_GOLDEN=…`）が通るよう **`scripts/verify-golden-questions.sh` の既定下限**と CI を揃える。
 
 ## 4. セキュリティ・ポリシー
 

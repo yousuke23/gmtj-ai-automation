@@ -15,3 +15,7 @@ entities:
     description: 品質インシデントの記録（個人を特定しない要約）
   - name: AreaProfile
     description: エリア概要メタ（regions / area-atami-izu 等への参照キー）
+  - name: TourPreparationChecklist
+    description: 参加前チェックリストの版・言語（`tour/checklist-packing-*.md` と kb の相互リンク）
+  - name: KnowledgeBundle
+    description: Open WebUI Knowledge 向けの kb スナップショット（ZIP 等。個人情報を含めない）

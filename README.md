@@ -3,17 +3,26 @@
 ## 超初心者の方へ（最初に読む）
 
 **[docs/START_HERE-超初心者.md](docs/START_HERE-超初心者.md)** を開いて、上から順にやってください。  
-チェック用: **[docs/チェックリスト-初日.md](docs/チェックリスト-初日.md)**（末尾に任意の「2日目」もあり）
+
+### 今すぐ（Mac で最速起動）
+
+**手順の全文（コピペ用コマンド付き）:** **[deploy/QUICKSTART-サービス開始.md](deploy/QUICKSTART-サービス開始.md)**  
+**起動後〜パイロット開始（チェックリスト）:** **[deploy/SERVICE-LAUNCH.md](deploy/SERVICE-LAUNCH.md)**  
+**Docker不要ならスキップして問題ありません**（`kb` / `docs` / `make ci` などは Docker なしで進められます）。
+
+チェック用: **[docs/チェックリスト-初日.md](docs/チェックリスト-初日.md)**（末尾に任意の「2日目」もあり）  
+用語: **[docs/glossary.md](docs/glossary.md)** · 運用短版: **[docs/operations-runbook.md](docs/operations-runbook.md)** · **ドキュメント目次: [docs/README.md](docs/README.md)**
 
 ### 主要フォルダ（迷ったらここ）
 
 | フォルダ | 役割の一言 |
 |----------|------------|
 | `kb/` | コンシェルジュAIのルール・テンプレ（日英韓）・地域メモ |
-| `tour/` | 英語ゲスト向けツアー文・スタッフRunbook |
-| `marketing/` | マーケ案・短文例・**キーワード種**（`keywords-seed.md`） |
+| `tour/` | ゲスト向け日英シート・スタッフRunbook・**参加前チェック**（`checklist-packing-izu-san.md`） |
+| `marketing/` | マーケ案・短文例・キーワード種（`keywords-seed.md`）・**コンテンツ柱**（`content-pillars.md`） |
 | `eval/` | ゴールデン質問・**採点ルーブリック**・インシデント記録 |
 | `scripts/` | `kb` テンプレ検証などの小さなスクリプト |
+| `deploy/` | 社内 Open WebUI・nginx・Caddy・ZIP・**[SECURITY.md](deploy/SECURITY.md)** · **起動: [QUICKSTART](deploy/QUICKSTART-サービス開始.md)** · **開始まで: [SERVICE-LAUNCH](deploy/SERVICE-LAUNCH.md)** |
 
 ## リポジトリルート（これが答え）
 
@@ -37,11 +46,11 @@
 
 ```bash
 cd /Users/tarnar/Desktop/GMTJ-AI-Automation
-make verify-templates
+make ci
 claude
 ```
 
-`make verify-templates` で `kb` のテンプレ欠落がないか確認できます（`make help` で他ターゲット表示）。
+`make ci` で **テンプレ整合**と **ゴールデン質問の件数**を確認できます（`make help` で他ターゲット表示）。
 
 ## Git をまだ初期化していない場合
 
