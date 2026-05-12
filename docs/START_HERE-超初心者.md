@@ -204,7 +204,8 @@ docker compose を試す準備ができているか確認してください。
 
 - **`CLAUDE.md`** … Claude Code へのプロジェクト説明（21事業・14コンシェルジュ・フォルダの意味）  
 - **`kb/README.md`** … `kb/` フォルダの入口（どのファイルを先に読むか）  
-- **`docs/kb-review-checklist.md`** … ナレッジ更新時の人間レビュー用チェックリスト  
+- **`docs/README.md`** … `docs/` フォルダの目次  
+- **`docs/operations-runbook.md`** … 社内MVP運用の短い Runbook  
 - **`kb/intents.yaml`** … 質問の「意図」分類（一覧）  
 - **`kb/templates/`** … 意図ごとの返答の型（日本語・英語の `.md`、韓国語は `.ko.md`）  
 - **`kb/tours/`** … ツアー連携FAQなど（コンシェルジュ14へ供給）  
@@ -213,21 +214,35 @@ docker compose を試す準備ができているか確認してください。
 - **`tour/`** … 01ツアー：ゲスト向け英語・**日本語**シート・スタッフRunbook  
 - **`marketing/90day-ideas.md`** … マーケのたたき台＋短文例  
 - **`marketing/keywords-seed.md`** … SEO用キーワード種（検索数は未計測のドラフト）  
-- **`eval/golden-questions.md`** … 品質確認用の質問セット（v0.3 は23問・韓国語含む）  
+- **`eval/golden-questions.md`** … 品質確認用の質問セット（v0.5 は25問・韓国語2問含む）  
 - **`eval/scoring-rubric.md`** … ゴールデン質問の採点ルーブリック  
 - **`eval/incidents.md`** … インシデント記録テンプレ  
-- **`deploy/`** … 社内MVP用 Docker（Open WebUI・nginx 認証・Caddy TLS 例）・`kb` のZIP化  
+- **`deploy/SECURITY.md`** … 認証・秘密・ログの原則  
 - **`docs/business-map.md`** … 21事業の1行マップ  
 
 ---
 
 ## 11. 社内チャット（Open WebUI）を試す（任意・少し進んだ人向け）
 
-Docker が入っているPC向けです。**まだで大丈夫**なら飛ばしてOKです。
+Docker が入っているPC向けです。**Docker を入れない方針でもプロジェクトは進められます。** 飛ばしてOKです。
 
-1. 手順の全体像: **`deploy/README.md`**  
+### 11-A. いちばん短い手順（まずここ）
+
+**[deploy/QUICKSTART-サービス開始.md](../deploy/QUICKSTART-サービス開始.md)**（Docker Desktop 起動 → `deploy` で `cp` / `docker compose` → ブラウザ8080）。
+
+起動できたら、**[deploy/SERVICE-LAUNCH.md](../deploy/SERVICE-LAUNCH.md)** のフェーズに沿って、管理者設定・Knowledge・スモーク・招待前ゲートまで進めてください。
+
+補足: **Cursor のこのチャットからは、あなたの Mac 上の Docker を操作できません**（コンテナの実起動は、あなたのターミナルでの実行が必要です）。
+
+### 11-B. 全体像とナレッジ
+
+1. 手順の全体像・オプション: **`deploy/README.md`**（先頭に QUICKSTART へのリンクあり）  
 2. `kb` をチャットのナレッジに載せる詳細: **`deploy/openwebui-knowledge.md`**  
-3. `kb` をZIPにまとめるだけなら、ターミナルで:
+3. **本番に近い「サービス公開」**は **`deploy/SECURITY.md`**（VPN・認証・人間承認）を前提にすること  
+
+### 11-C. ZIP だけ作る（Docker なしでも可）
+
+`kb` をZIPにまとめるだけなら、ターミナルで:
 
 ```bash
 cd /Users/tarnar/Desktop/GMTJ-AI-Automation
