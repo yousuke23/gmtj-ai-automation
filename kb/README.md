@@ -1,6 +1,6 @@
 # kb — 14 AIコンシェルジュ用ナレッジ（入口）
 
-一次情報と `kb/` の範囲で事実を述べる。推測で料金・法令を断定しない。
+一次情報と `kb/` の範囲で事実を述べる。推測で料金・法令を断定しない。リポジトリ内の **`docs/` 目次**は [docs/README.md](../docs/README.md)。
 
 ## まず読む
 
@@ -18,10 +18,10 @@
 | [tours/](./tours/) | 01ツアー連携 FAQ・スタッフ安全メモ |
 | [brand/](./brand/) | ブランド文案ドラフト（入口: [brand/README.md](./brand/README.md)） |
 | [area-atami-izu/](./area-atami-izu/) | 熱海・伊豆山周辺（入口: [area-atami-izu/README.md](./area-atami-izu/README.md)） |
-| [regions/](./regions/) | 国内エリア骨子（数値は公式出典＋確認日で追記） |
+| [regions/](./regions/) | 国内エリア骨子（数値は公式出典＋確認日で追記）。熱海・伊豆山入口は [regions/atami-izu.md](./regions/atami-izu.md) |
 
 ## 品質・運用
 
 - 評価用質問: `../eval/golden-questions.md`
-- 採点ルーブリック: `../eval/scoring-rubric.md`
-- テンプレファイルの欠落チェック: リポジトリルートで `bash scripts/verify-kb-templates.sh`（または `make verify-templates`）
+- 採点ルーブリック: `../eval/scoring-rubric.md`（ゴールデンセットの版に追従）
+- テンプレファイルの欠落チェック: `make ci`（`verify-templates` + `eval` のゴールデン件数）または個別に `bash scripts/verify-kb-templates.sh` / `bash scripts/verify-golden-questions.sh`

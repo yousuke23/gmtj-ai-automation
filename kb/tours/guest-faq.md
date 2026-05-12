@@ -21,6 +21,14 @@ Concierge answers must follow `kb/policy.md`. Use **official sources** for anyth
 - **Q**: Photography?  
   **A pattern**: Assume restrictions unless signage allows; no drones unless explicitly permitted.
 
+## Accessibility
+
+- **Q (EN)**: Is the whole shrine route wheelchair-friendly? Can you guarantee it?  
+  **A pattern**: Do not guarantee. Point to **official accessibility or facility pages** and on-site signage; offer to escalate to staff. See `kb/templates/accessibility_mobility.*`.
+
+- **Q (JA)**: 伊豆山神社の参道をベビーカーで全部通れますか？絶対に問題ないと保証してほしい。  
+  **A pattern**: 保証しない。公式のバリアフリー案内・現地掲示を優先し、必要ならスタッフへ。`kb/templates/accessibility_mobility.*` に沿う。
+
 ## Health and safety
 
 - **Q**: I feel dizzy on the trail.  

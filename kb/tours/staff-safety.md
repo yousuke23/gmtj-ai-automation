@@ -12,6 +12,7 @@ This file supports **training and AI guardrails**, not live phone trees. Store r
 - **Heat**: schedule shade and water stops; watch for flushed skin, cramps, confusion.
 - **Night / low light**: carry approved lighting; avoid unofficial trails.
 - **Crowds**: use clear hand signals and pre-briefed rally points; count heads after each segment.
+- **Accessibility / mobility**: do not promise full wheelchair or stroller access from memory; confirm with official venue guidance and offer fallback routing where available.
 
 ## Shrine and cultural sites
 

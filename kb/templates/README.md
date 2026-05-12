@@ -10,5 +10,6 @@
 | `escalation_human` | [escalation_human.ja.md](./escalation_human.ja.md) | [escalation_human.en.md](./escalation_human.en.md) | [escalation_human.ko.md](./escalation_human.ko.md) |
 | `official_tourism_info` | [official_tourism_info.ja.md](./official_tourism_info.ja.md) | [official_tourism_info.en.md](./official_tourism_info.en.md) | [official_tourism_info.ko.md](./official_tourism_info.ko.md) |
 | `gmtj_contact_booking` | [gmtj_contact_booking.ja.md](./gmtj_contact_booking.ja.md) | [gmtj_contact_booking.en.md](./gmtj_contact_booking.en.md) | [gmtj_contact_booking.ko.md](./gmtj_contact_booking.ko.md) |
+| `accessibility_mobility` | [accessibility_mobility.ja.md](./accessibility_mobility.ja.md) | [accessibility_mobility.en.md](./accessibility_mobility.en.md) | [accessibility_mobility.ko.md](./accessibility_mobility.ko.md) |
 
 意図を増やすときは `kb/intents.yaml` 冒頭の運用コメントに従う。
