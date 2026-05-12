@@ -1,0 +1,22 @@
+name: KB templates
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'kb/**'
+      - 'scripts/verify-kb-templates.sh'
+      - '.github/workflows/kb-templates.yml'
+  pull_request:
+    paths:
+      - 'kb/**'
+      - 'scripts/verify-kb-templates.sh'
+      - '.github/workflows/kb-templates.yml'
+
+jobs:
+  verify-templates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify intent ↔ template files
+        run: bash scripts/verify-kb-templates.sh

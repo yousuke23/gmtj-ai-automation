@@ -1,0 +1,47 @@
+# Open WebUI + nginx（Basic 認証つき社内スタック）
+#
+# 使い方:
+#   cd deploy
+#   1) nginx/README.md に従い deploy/nginx/.htpasswd を作成
+#   2) cp .env.example .env（未作成なら）し WEBUI_SECRET_KEY 等を設定
+#   3) docker compose -p gmtj-auth -f docker-compose.auth-stack.yml up -d
+#
+# 素の docker-compose.yml とポート8080が衝突するため、同時起動しないこと。
+
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:v0.5.10
+    container_name: gmtj-open-webui-internal
+    restart: unless-stopped
+    expose:
+      - "8080"
+    env_file:
+      - .env
+    environment:
+      - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY:?set in .env}
+    volumes:
+      - open-webui-data-auth:/app/backend/data
+      - ../kb:/kb-ro:ro
+    networks:
+      - gmtj-auth-net
+
+  nginx-auth:
+    image: nginx:1.27-alpine
+    container_name: gmtj-nginx-auth
+    restart: unless-stopped
+    depends_on:
+      - open-webui
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./nginx/auth.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/.htpasswd:/etc/nginx/.htpasswd:ro
+    networks:
+      - gmtj-auth-net
+
+volumes:
+  open-webui-data-auth:
+
+networks:
+  gmtj-auth-net:
+    driver: bridge

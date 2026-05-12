@@ -1,0 +1,35 @@
+# 14 コンシェルジュ — 意図分類（v0.1）
+#
+# 運用整合（意図を増やすとき）:
+# 1. intents に id を1件追加したら、同じ変更単位で
+#    kb/templates/{id}.ja.md と kb/templates/{id}.en.md を追加する。
+# 2. 韓国語チャネルが必要なら kb/templates/{id}.ko.md を追加する（CLAUDE.md の多言語方針）。
+# 3. 可能なら eval/golden-questions.md に、その意図を踏む評価用質問を1問以上足す。
+# 4. デプロイ済み Open WebUI Knowledge へ反映する手順は deploy/openwebui-knowledge.md。
+# 5. 変更後、リポジトリルートで bash scripts/verify-kb-templates.sh（または make verify-templates）を通す。
+
+intents:
+  - id: itinerary_music_tourism
+    label_ja: 音楽ツーリズムの行程・体験
+    label_en: Music tourism itinerary / experiences
+  - id: transport_access
+    label_ja: 交通・アクセス
+    label_en: Transport & access
+  - id: lodging_booking
+    label_ja: 宿泊・予約
+    label_en: Lodging & reservations
+  - id: shrine_etiquette_safety
+    label_ja: 神社参拝・マナー・安全
+    label_en: Shrine visit etiquette & safety
+  - id: events_festivals
+    label_ja: イベント・音楽祭
+    label_en: Events & music festivals
+  - id: escalation_human
+    label_ja: 人間へ引き継ぎ
+    label_en: Handoff to human staff
+  - id: official_tourism_info
+    label_ja: 公式観光情報・一次ソースの探し方
+    label_en: Finding official tourism sources
+  - id: gmtj_contact_booking
+    label_ja: GMTJへの予約・問い合わせ
+    label_en: GMTJ bookings & inquiries

@@ -1,0 +1,17 @@
+# GMTJ OS — 共通エンティティ草案（v0.1）
+
+entities:
+  - name: Lead
+    description: 問い合わせ・興味関心の記録（個人特定情報は持たない）
+  - name: Booking
+    description: 予約・枠・ステータス
+  - name: ContentAsset
+    description: 投稿・記事・動画台本などマーケ資産
+  - name: TourRun
+    description: ツアー実施単位（日付・ルート版）
+  - name: SubsidyCase
+    description: 補助金案件（社内）
+  - name: IncidentLog
+    description: 品質インシデントの記録（個人を特定しない要約）
+  - name: AreaProfile
+    description: エリア概要メタ（regions / area-atami-izu 等への参照キー）

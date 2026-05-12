@@ -1,0 +1,11 @@
+.env
+.env.local
+!.env.example
+!**/.env.example
+.DS_Store
+*.pem
+node_modules/
+__pycache__/
+.venv/
+deploy/gmtj-kb-for-knowledge.zip
+deploy/nginx/.htpasswd

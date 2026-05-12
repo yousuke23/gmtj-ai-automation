@@ -1,0 +1,28 @@
+# Open WebUI —社内チャットMVP（`kb` 参照用ボリューム付き）
+
+# 使い方（概要）
+#   cd deploy
+#   cp .env.example .env   # 値を埋める
+#   docker compose up -d
+# ブラウザ: http://127.0.0.1:8080 （localhost のみバインド）
+#
+# RAG を有効にする場合は Open WebUI 側のドキュメントに従い、
+# ナレッジディレクトリに /kb-ro を指定できるか検証すること。
+
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:v0.5.10
+    container_name: gmtj-open-webui
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8080:8080"
+    env_file:
+      - .env
+    environment:
+      - WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY:?set in .env}
+    volumes:
+      - open-webui-data:/app/backend/data
+      - ../kb:/kb-ro:ro
+
+volumes:
+  open-webui-data:

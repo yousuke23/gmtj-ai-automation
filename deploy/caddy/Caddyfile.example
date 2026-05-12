@@ -1,0 +1,7 @@
+# ホスト上の 127.0.0.1:8080（Open WebUI または nginx+Open WebUI）へ TLS 終端して中継する。
+# ブラウザ: https://127.0.0.1:8443 （docker-compose.caddy-tls.yml のポートマッピングに合わせる）
+
+:443 {
+	tls internal
+	reverse_proxy host.docker.internal:8080
+}
