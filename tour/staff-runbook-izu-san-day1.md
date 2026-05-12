@@ -13,6 +13,7 @@ Internal use. Keep guest PII out of this repository; use operational systems app
 - Weather and wind advisories for coastal and hillside segments.
 - **Step / slope segments**: confirm footwear notes were sent to guests; carry a small first-aid kit per company policy.
 - Shrine or cultural sites: reconfirm **photography rules and any closures** from official notices the same morning when feasible.
+- **Accessibility / mobility**: if a guest may need lower-step access, stroller support, or wheelchair-friendly routing, do **not** promise the full route in advance from memory. Check official facility guidance, station maps, and same-day constraints; prepare a shorter or lower-vertical-gain variant.
 
 ## Safety and incidents
 

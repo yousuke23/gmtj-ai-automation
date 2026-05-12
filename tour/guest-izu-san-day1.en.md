@@ -12,6 +12,7 @@ This document sets **expectations and pacing ideas** for English-speaking guests
 - **Footwear**: sturdy shoes if your confirmed route includes long stone steps or uneven paths. Open-toe shoes may be unsuitable; follow staff advice for your cohort.
 - **Hydration and pacing**: spread effort across the day; take breaks when needed.
 - **Weather**: carry a compact layer; trails and viewpoints can be windier or cooler than the coast.
+- **Packing**: see [`checklist-packing-izu-san.md`](./checklist-packing-izu-san.md) for a general pre-tour checklist (not a substitute for your booking memo).
 
 ## Sample flow (placeholders — confirm on your booking memo)
 
