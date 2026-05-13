@@ -1,5 +1,7 @@
 # 90日マーケアイデア（ドラフト骨子）
 
+**位置づけ:** 優先トラック **第3段（18 Global Digital Marketing）**。柱と禁止事項は [`content-pillars.md`](./content-pillars.md) と [`kb/brand/`](../kb/brand/README.md)。リポ全体の作業順は [`docs/README.md`](../docs/README.md)。
+
 ## 軸
 
 - エリア: 熱海・伊豆山〜伊豆箱根周辺（詳細は `kb/area-atami-izu/placenames.md`）
@@ -51,3 +53,38 @@
 - music tourism Japan / Atami walk / shrine etiquette / Hakone day trip（各ページの主題に合わせて使い分け）
 - 追加のキーワード種（検索ボリュームは未計測）: [`keywords-seed.md`](./keywords-seed.md)
 - コンテンツの柱（方針）: [`content-pillars.md`](./content-pillars.md)
+
+### W9–W13 チャネル別短文（ドラフト）
+
+夏〜初秋テーマ。**気象・混雑・開催情報は投稿に書かず公式へ。** バリアフリー表現は「保証」せず、確認のしかたへ誘導する（[`content-pillars.md`](./content-pillars.md) 柱2・柱3）。
+
+#### W9 — 梅雨明け・夏の伊豆箱根（Short / Reels）
+
+- JA: 夏の伊豆箱根、緑と風のコントラスト。行程は公式の観光案内で最新を確認。#JapanMusicTourism（承認後）
+- EN: Summer layers in Izu-Hakone—green ridges, sea breeze. Build your day from **official visitor pages**, not guesswork. #JapanMusicTourism (if approved)
+
+#### W10 — 海と音楽・熱海海岸（Short / IG）
+
+- JA: 海岸の音が変わる時間帯がある。安全・遊泳可否はその日の掲示と公式へ。
+- EN: Where the coast meets the playlist—Atami by the water. Check **local safety flags and official beach guidance** before you go.
+
+#### W11 — 夏の訪日ピーク対策（Blog リード / LP 用・2〜3文）
+
+- JA: 混雑や酷暑の日は、無理な詰め込みより「公式の運行情報」と休憩設計。宿や温泉の空きは日によって異なるため、ブログ単体を正としない。
+- EN: Peak season rewards pacing: confirm **live transit and venue updates**, plan shade and water stops, and treat blogs as hints—not timetables.
+
+#### W12 — バリアフリー旅のヒント（Blog / 長め Short）
+
+- JA: 段差や経路は施設ごとに違う。**市や施設のバリアフリー案内**と現地掲示で確認し、「必ず通れる」とは書けない前提で計画を。
+- EN: Accessible trips here start with **official accessibility pages** and on-site signage—not chat guarantees. Ask venues directly when you need certainty.
+
+#### W13 — #JapanMusicTourism 総集編・秋予告（Short / IG）
+
+- JA: 夏の投稿を振り返り、秋の音楽と旅の予告は未発表情報を断定しない。#JapanMusicTourism（承認後）
+- EN: Summer recap, autumn teaser—stay tuned without promising dates we haven’t announced. Music and place, officially sourced. #JapanMusicTourism (if approved)
+
+#### W9–W13 · X（短文ポスト案・任意）
+
+- W9 EN: Hot green ridges, cool sea air—Izu-Hakone summer starts with **official trail and weather checks**.
+- W11 JA: ピーク期は「公式の運行・混雑情報」をホーム画面に。体感よりデータ。
+- W13 EN: Closing the summer arc—thank you for walking with us. Next season’s dates: **only when HQ publishes them**.

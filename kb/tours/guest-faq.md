@@ -19,7 +19,7 @@ Concierge answers must follow `kb/policy.md`. Use **official sources** for anyth
   **A pattern**: Do not cite numbers unless they appear in `kb/` with **source URL + confirmation date**. Default: “varies by route and conditions—check official shrine materials and on-site signs.”
 
 - **Q**: Photography?  
-  **A pattern**: Assume restrictions unless signage allows; no drones unless explicitly permitted.
+  **A pattern**: **Posted rules at that shrine that day come first.** Do not answer with vague “generally OK” if signage may prohibit or zone-restrict cameras; no drones unless explicitly permitted. Align with `kb/templates/shrine_etiquette_safety.*`.
 
 ## Accessibility
 
@@ -34,6 +34,16 @@ Concierge answers must follow `kb/policy.md`. Use **official sources** for anyth
 - **Q**: I feel dizzy on the trail.  
   **A pattern**: Stop, seek shade, hydrate, notify staff or companions; use **119** if symptoms are severe or worsening.
 
+## Meals and dietary needs
+
+- **Q**: Can you guarantee a meal will be allergen-free / halal / vegan?  
+  **A pattern**: Do not guarantee; dietary handling varies by venue and day. Tell guests to share restrictions **through staff or approved booking channels** ahead of time and confirm with the venue on the day.
+
+## Legal, visa, and financial (escalation)
+
+- **Q**: Visa rules / investment advice / legal disputes.  
+  **A pattern**: Do not advise; hand off to qualified professionals or GMTJ staff per `kb/policy.md` and `kb/templates/escalation_human.*`.
+
 ## Booking GMTJ tours
 
 - **Q**: What do you need to book?  
@@ -43,3 +53,8 @@ Concierge answers must follow `kb/policy.md`. Use **official sources** for anyth
 
 - **Q**: What is `#JapanMusicTourism`?  
   **A pattern**: Use `kb/brand/japan-music-tourism.md` (draft until marketing signs off).
+
+## Official tourism (city pages)
+
+- **Q (EN)**: Where can I find official tourism info for Mishima and Manazuru? / Every blog says something different—which Mishima pages are official?  
+  **A pattern**: Guide travelers to **city/municipal tourism entry points** and habits for checking **publisher and last-updated date**; do not invent URLs. Use `kb/templates/official_tourism_info.*`. Spellings: `kb/area-atami-izu/placenames.md`.

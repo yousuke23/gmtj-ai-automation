@@ -13,3 +13,10 @@
 | `accessibility_mobility` | [accessibility_mobility.ja.md](./accessibility_mobility.ja.md) | [accessibility_mobility.en.md](./accessibility_mobility.en.md) | [accessibility_mobility.ko.md](./accessibility_mobility.ko.md) |
 
 意図を増やすときは `kb/intents.yaml` 冒頭の運用コメントに従う。
+
+## 品質・優先順
+
+- 応答の前提: [`policy.md`](../policy.md)
+- 評価用質問: [`eval/golden-questions.md`](../../eval/golden-questions.md) · 採点ルーブリック: [`eval/scoring-rubric.md`](../../eval/scoring-rubric.md) · インシデント記録: [`eval/incidents.md`](../../eval/incidents.md)
+- 変更後はリポジトリルートで **`make ci`**（テンプレ整合＋ゴールデン件数）
+- スプリント上の作業順（14→01→18）の一覧は [`docs/README.md`](../../docs/README.md) の「作業の優先順」節

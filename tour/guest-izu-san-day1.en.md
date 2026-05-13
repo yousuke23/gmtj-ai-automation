@@ -34,6 +34,10 @@ Times, admission rules, and photography policies **vary by site and date**. When
 
 - Stop, tell staff, and seek local help. In Japan, **119** is the emergency number for ambulance/fire; **110** is police. Staff will assist with communication where possible.
 
+## Concierge alignment (01 → 14)
+
+FAQ-style answer patterns that mirror this sheet—without replacing booking specifics—live in [`kb/tours/guest-faq.md`](../kb/tours/guest-faq.md).
+
 ## Brand note (draft messaging)
 
 Campaign hashtag and tagline drafts live in `kb/brand/japan-music-tourism.md`. Guest-facing copy may evolve after marketing approval.

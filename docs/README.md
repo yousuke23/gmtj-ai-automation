@@ -11,6 +11,16 @@
 
 リポジトリ全体のルールとフォルダ規約はルートの **`CLAUDE.md`**。
 
+## 作業の優先順（合意済み・14 → 01 → 18）
+
+Open WebUI / Docker は任意。**ナレッジとファイル編集だけでこの順で進められる。**
+
+| 順 | 事業（短名） | 主なフォルダ・検証 |
+|----|----------------|---------------------|
+| 1 | **14** Regional Music Alliance（AIコンシェルジュ） | [`kb/`](../kb/README.md)、[`eval/golden-questions.md`](../eval/golden-questions.md)、ルートで `make ci` |
+| 2 | **01** Global Music Tour（英語インバウンド第一ツアー） | [`tour/`](../tour/README.md)、[`kb/tours/`](../kb/tours/README.md) |
+| 3 | **18** Global Digital Marketing | [`marketing/content-pillars.md`](../marketing/content-pillars.md)、[`kb/brand/`](../kb/brand/README.md)、[`marketing/90day-ideas.md`](../marketing/90day-ideas.md) |
+
 ## 関連（`docs/` 外）
 
 | パス | 内容 |

@@ -2,6 +2,10 @@
 
 一次情報と `kb/` の範囲で事実を述べる。推測で料金・法令を断定しない。リポジトリ内の **`docs/` 目次**は [docs/README.md](../docs/README.md)。
 
+## 合意済みの作業順（スプリント）
+
+**14（当フォルダ中心）→ 01（`tour/`・`kb/tours/`）→ 18（`marketing/`・`kb/brand/`）。** 一覧表は [docs/README.md](../docs/README.md) の「作業の優先順」節を正とする。
+
 ## まず読む
 
 | ファイル | 内容 |

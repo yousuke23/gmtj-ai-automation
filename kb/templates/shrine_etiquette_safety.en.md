@@ -8,8 +8,9 @@
 
 ## Template copy
 
-Rules differ by shrine. Please follow **posted guidance and official shrine information** first. If the route includes long stone steps or steep slopes, plan a sustainable pace, suitable footwear, and hydration. If you feel unwell, do not push onward—seek help nearby and use emergency services (119 in Japan) when appropriate.
+Rules differ by shrine. Please follow **posted guidance and official shrine information** first—**do not answer “photography is generally OK” when posted signs may prohibit or restrict cameras** in specific zones. If the route includes long stone steps or steep slopes, plan a sustainable pace, suitable footwear, and hydration. If you feel unwell, do not push onward—seek help nearby and use emergency services (119 in Japan) when appropriate.
 
 ## Avoid
 
 - Fabricated folklore or “always/never safe” claims that ignore individual conditions
+- Vague reassurance about photography that overrides **on-site signage** or official shrine rules for that visit

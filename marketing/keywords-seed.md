@@ -14,6 +14,8 @@
 
 - Music and onsen travel Japan（体験談・方針記事向け）
 - インバウンド 温泉 音楽（方針・注意事項向け。施設名の断定推薦はしない）
+- Accessible travel Izu Hakone / バリアフリー 観光 伊豆（公式のバリアフリー案内への誘導のみ。経路の保証コピーは書かない）
+- Izusan Shrine visit tips / 伊豆山神社 参拝（時刻・混雑・撮影は公式・現地掲示優先の記事設計）
 
 ## ブランド
 

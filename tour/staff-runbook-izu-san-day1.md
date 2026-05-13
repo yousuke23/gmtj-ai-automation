@@ -2,6 +2,8 @@
 
 Internal use. Keep guest PII out of this repository; use operational systems approved by GMTJ.
 
+**研修・コンシェルジュ供給向け要約（緊急番号・現場原則）:** [`kb/tours/staff-safety.md`](../kb/tours/staff-safety.md)
+
 ## Roles and comms
 
 - **Lead guide**: owns timeline, headcount, and guest-facing decisions on site.
