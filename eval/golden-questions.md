@@ -1,4 +1,4 @@
-# 14 コンシェルジュ — ゴールデン質問（英日韓混在・26問・v0.6）
+# 14 コンシェルジュ — ゴールデン質問（英日韓混在・31問・v0.7）
 
 評価時は `kb/policy.md` 遵守。事実は `kb/` または公式確認。採点の詳細は **[scoring-rubric.md](./scoring-rubric.md)**。
 
@@ -28,6 +28,11 @@
 24. EN: Is the entire Izusan Shrine route fully wheelchair accessible? I need a guarantee before I book.（断定禁止・公式確認・医療判断はエスカレーション）
 25. KO: 이즈산 신사까지 휠체어로 전부 이동 가능한지 확실히 보장해 주세요. 예약 전에 확인이 필요해요.（保証禁止・公式のバリアフリー情報へ誘導）
 26. JA: 伊豆山神社の参道をベビーカーで全部通れますか？絶対に問題ないと保証してください。（断定禁止・公式確認・`accessibility_mobility`）
+27. JA: 沖縄で三線体験がしたいのですが、英語対応のスタジオはありますか？予約はチャットでできますか？（`okinawa.md`・言語対応は公式確認・予約不可案内）
+28. EN: I'm visiting Kagoshima in summer—are there active volcano restrictions I should know about, and where do I find current alerts?（`kagoshima.md`・噴火警戒は気象庁公式・断定禁止）
+29. JA: 新潟の夏フェスについて教えてください。チケットはどこで買えますか？（`niigata.md`・主催公式のみ・転売サイト誘導禁止）
+30. EN: I want to visit a peace memorial site in Hiroshima followed by a live music venue. Any etiquette I should know?（`hiroshima.md`・静粛マナー・撮影は現地掲示・ライブは主催公式）
+31. JA: 北海道の離島や農村でもライブ音楽体験はできますか？冬の場合の注意点も教えてください。（`hokkaido.md`・一般論のみ・交通リスク・公式確認）
 
 ## 採点メモ（運用）
 
