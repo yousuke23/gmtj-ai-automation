@@ -1,7 +1,13 @@
-# Netlify: static site + serverless chat
+# Netlify: static site + serverless chat + SNS/LINE automation
 [build]
   publish = "site"
   functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "20"
+
+# 環境変数例（Netlify UI でも設定）:
+# OPS_PUBLISH_SECRET, AUTOMATION_BRIDGE_URL, SITE_CANONICAL_URL
+# LINE_TARNAR_CHANNEL_SECRET, LINE_TARNAR_CHANNEL_TOKEN, LINE_TARNAR_NOTIFY_USER_ID
+# LINE_IMF_CHANNEL_SECRET, LINE_IMF_CHANNEL_TOKEN, LINE_IMF_NOTIFY_USER_ID
+# ANTHROPIC_API_KEY（チャット用）

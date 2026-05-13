@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SNS・LINE 運用ハブ | Japan Music Tourism</title>
+  <meta name="description" content="ブログ公開からSNS最適化投稿・LINE通知までを一気通貫で扱う運用コンソール（TARNAR / Izu Music Fund 優先）。" />
+  <link rel="stylesheet" href="../tarnar/portal.css" />
+  <style>
+    .auto-wrap { max-width: 960px; margin: 0 auto; padding: 0 1.25rem 3rem; }
+    .auto-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .auto-field label { display: block; font-size: 0.85rem; color: var(--muted, #64748b); margin-bottom: 0.25rem; }
+    .auto-field input, .auto-field textarea, .auto-field select { width: 100%; padding: 0.5rem 0.6rem; border-radius: 8px; border: 1px solid #e2e8f0; font: inherit; }
+    .auto-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; }
+    .auto-card { border: 1px solid #e2e8f0; border-radius: 12px; padding: 1rem; background: #fff; }
+    .auto-pre { white-space: pre-wrap; word-break: break-word; font-size: 0.8rem; max-height: 280px; overflow: auto; background: #0f172a; color: #e2e8f0; padding: 0.75rem; border-radius: 8px; }
+    .auto-row { margin-top: 0.5rem; }
+    .mono { font-family: ui-monospace, monospace; font-size: 0.85rem; }
+    details.hub { border: 1px solid #e2e8f0; border-radius: 12px; padding: 0.75rem 1rem; margin: 1rem 0; background: #f8fafc; }
+    details.hub summary { cursor: pointer; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="nav-brand" href="../index.html">JAPAN MUSIC TOURISM</a>
+    <nav class="nav-links" aria-label="ナビ">
+      <a href="../tarnar/">TARNAR ポータル</a>
+      <a href="../izu-fund/">Izu Music Fund</a>
+      <a href="../gmtj-os/">GMTJ OS</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="padding-top: 2rem">
+    <p class="hero-kicker">Automation · SNS · LINE</p>
+    <h1>SNS自動投稿 &amp; 公式LINE 基盤</h1>
+    <p class="hero-lead">
+      ブログ記事公開を起点に、TikTok / Instagram / YouTube / X / Facebook 向けのキャプション・ハッシュタグ・画像URLを一括生成し、
+      スケジュール投稿キューと外部オーケストレーション（Make / Zapier 等）へ渡せます。TARNAR と Izu Music Fund を最優先ブランドとしてプリセット済みです。
+    </p>
+  </section>
+
+  <main class="auto-wrap">
+    <details class="hub" open>
+      <summary>連動フロー（シンプル運用）</summary>
+      <ol style="margin: 0.75rem 0 0 1.1rem; line-height: 1.6">
+        <li>記事を <code class="mono">site/tarnar/blog/</code> または <code class="mono">site/izu-fund/blog/</code> に公開（既存ビルドスクリプト可）</li>
+        <li>このページで「プレビュー生成」→ 各SNS用テキストをコピー、または「公開パイプライン」でサーバー側一括生成</li>
+        <li>環境変数 <span class="mono">AUTOMATION_BRIDGE_URL</span> に Make/Zapier のWebhookを設定 → Meta Graph / X API v2 / TikTok Content 等へ分岐</li>
+        <li>任意: <span class="mono">LINE_*_NOTIFY_USER_ID</span> 登録済みユーザーへ新着記事プッシュ（社内通知向け）</li>
+        <li>1日複数回: <span class="mono">site/automation/queue.json</span> に予約行を追加しデプロイ → Netlify スケジュール関数 <span class="mono">social-daily-tick</span> が期限到来分を bridge へPOST（UTC 02:08:14:20 付近＋補正）</li>
+      </ol>
+    </details>
+
+    <section class="block" style="padding-top: 0">
+      <h2>生成コンソール</h2>
+      <p class="section-lead">同一オリジン上の Netlify Function <span class="mono">build-social-kit</span> を呼び出します。</p>
+
+      <div class="auto-grid">
+        <div class="auto-field">
+          <label for="brand">ブランド</label>
+          <select id="brand">
+            <option value="tarnar">TARNAR（#08）</option>
+            <option value="izu_music_fund">Izu Music Fund（#21）</option>
+          </select>
+        </div>
+        <div class="auto-field" style="grid-column: 1 / -1">
+          <label for="title">記事タイトル</label>
+          <input id="title" type="text" placeholder="例: 朝の声を整える3分ルーティン" />
+        </div>
+        <div class="auto-field" style="grid-column: 1 / -1">
+          <label for="url">記事URL（公開済みcanonical）</label>
+          <input id="url" type="url" placeholder="https://…/tarnar/blog/ja/voice-guide-01.html" />
+        </div>
+        <div class="auto-field" style="grid-column: 1 / -1">
+          <label for="summary">要約・リード文</label>
+          <textarea id="summary" rows="4" placeholder="SNSにそのまま載せる要約（200〜600字推奨）"></textarea>
+        </div>
+        <div class="auto-field" style="grid-column: 1 / -1">
+          <label for="image">OG画像URL（任意）</label>
+          <input id="image" type="url" placeholder="https://…/ogp.jpg" />
+        </div>
+        <div class="auto-field" style="grid-column: 1 / -1">
+          <label for="ops-secret">OPS_PUBLISH_SECRET（公開パイプライン用・ブラウザに保存されません）</label>
+          <input id="ops-secret" type="password" autocomplete="off" placeholder="Netlify 環境変数と同じ値" />
+        </div>
+      </div>
+
+      <div class="auto-actions">
+        <button type="button" class="btn btn-primary" id="btn-preview">プレビュー生成</button>
+        <button type="button" class="btn btn-ghost" id="btn-publish">公開パイプライン実行</button>
+      </div>
+      <p id="status" class="section-lead" style="margin-top: 0"></p>
+      <div id="preview" class="auto-grid" style="margin-top: 1rem"></div>
+    </section>
+
+    <section class="block">
+      <h2>公式LINE Webhook URL（LINE Developers に登録）</h2>
+      <p class="section-lead">チャネルごとに別URLを設定してください（チャネルシークレット・トークンは Netlify の環境変数）。</p>
+      <ul style="line-height: 1.7">
+        <li><span class="mono">/.netlify/functions/line-tarnar</span> — <code>LINE_TARNAR_CHANNEL_SECRET</code> / <code>LINE_TARNAR_CHANNEL_TOKEN</code></li>
+        <li><span class="mono">/.netlify/functions/line-izu-music-fund</span> — <code>LINE_IMF_CHANNEL_SECRET</code> / <code>LINE_IMF_CHANNEL_TOKEN</code></li>
+      </ul>
+      <p class="section-lead">自動応答キーワード例: クーポン / 予約 / 友だち / こんにちは（Izu側は「ファンド」も）</p>
+    </section>
+
+    <section class="block">
+      <h2>環境変数チェックリスト（Netlify）</h2>
+      <ul style="line-height: 1.7; font-size: 0.95rem">
+        <li><span class="mono">OPS_PUBLISH_SECRET</span> — 公開パイプライン認証</li>
+        <li><span class="mono">AUTOMATION_BRIDGE_URL</span> — SNS/LINE配信を委譲するWebhook（推奨）</li>
+        <li><span class="mono">SITE_CANONICAL_URL</span> — 本番ドメイン（キューJSON取得に使用）</li>
+        <li><span class="mono">LINE_TARNAR_NOTIFY_USER_ID</span> / <span class="mono">LINE_IMF_NOTIFY_USER_ID</span> — 任意の社内通知先LINEユーザーID</li>
+        <li>既存チャット: <span class="mono">ANTHROPIC_API_KEY</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="../index.html">サイトトップ</a> · <a href="../terms.html">利用規約</a> · <a href="../privacy.html">プライバシー</a></p>
+    <p>© Japan Music Tourism</p>
+  </footer>
+
+  <script src="automation.js" defer></script>
+</body>
+</html>
