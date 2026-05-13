@@ -4,6 +4,8 @@
 
 **Anthropic をつないでも「モデル 0」になる場合:** **[openwebui-anthropic-connection.md](./openwebui-anthropic-connection.md)**（空の OpenAI 接続の削除・**Model IDs 手動追加**・Prefix ID）。
 
+**パイロットの全体チェックリスト（ZIP 済み・ブラウザ手動含む）:** **[PILOT-OpenWebUI-やること一覧.md](./PILOT-OpenWebUI-やること一覧.md)**
+
 ## 1. マウントの確認
 
 ホストの `kb/` はコンテナ内 **`/kb-ro`**（読み取り専用）にマウントされている。

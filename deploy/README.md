@@ -1,14 +1,13 @@
 # Shin VPS 向けデプロイ（社内MVP想定）
 
-**読むべき人:** **Open WebUI／Docker を使う場合**だけ。運用方針で **使わない**ときは **[CLAUDE.md](../CLAUDE.md)** に従い、**このフォルダの手順は読まなくてよい**（`kb/`・`make ci` が主作業）。
+## 今すぐ（Mac で最速起動）
 
-## 今すぐ（Mac で最速起動・Docker 利用時）
-
-**最短ワンショット:** ターミナルで `deploy` に移動し **`bash fast-up.sh`**（またはリポジトリルートで **`make open-webui`**）。詳細は **[QUICKSTART-サービス開始.md](./QUICKSTART-サービス開始.md)**  
-**起動後〜パイロットまで:** **[SERVICE-LAUNCH.md](./SERVICE-LAUNCH.md)**（管理者・Knowledge・スモーク・招待前ゲート）
+**手順の全文（コピペ用コマンド付き）:** **[QUICKSTART-サービス開始.md](./QUICKSTART-サービス開始.md)**  
+**起動後〜パイロットまで:** **[SERVICE-LAUNCH.md](./SERVICE-LAUNCH.md)**（管理者・Knowledge・スモーク・招待前ゲート）  
+**ZIP 作成済みのあとにブラウザで何をするか:** **[PILOT-OpenWebUI-やること一覧.md](./PILOT-OpenWebUI-やること一覧.md)**
 
 1. [Docker Desktop](https://www.docker.com/products/docker-desktop/) をインストールして起動する  
-2. **`bash fast-up.sh`**（`.env` の `WEBUI_SECRET_KEY` が初期値なら自動セット → `docker compose up -d`）  
+2. `deploy` に移動し `.env` を用意してから `docker compose up -d`  
 3. ブラウザで **http://127.0.0.1:8080**
 
 Docker を使わない場合はこのセクションはスキップしてよいです（`kb/` や `docs/` の作業は Docker 不要）。

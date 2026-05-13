@@ -4,18 +4,16 @@
 
 **[docs/START_HERE-超初心者.md](docs/START_HERE-超初心者.md)** を開いて、上から順にやってください。  
 
-### メインの進め方（Open WebUI / Docker 不要）
+### メインの進め方（ナレッジと品質）
 
-運用方針は **[CLAUDE.md](CLAUDE.md)**（**Open WebUI / Docker は当面使わず**）。作業の正は **`kb/`**・**`tour/`**・**`marketing/`**・**`eval/`** とルートの **`make ci`**。事業マップ・入口は **[docs/business-map.md](docs/business-map.md)**。
+運用方針は **[CLAUDE.md](CLAUDE.md)**。作業の正は **`kb/`**・**`tour/`**・**`marketing/`**・**`eval/`** とルートの **`make ci`**。事業マップ・入口は **[docs/business-map.md](docs/business-map.md)**。
 
-**「サービス開始」（Docker なし）の最小:** ルートで **`make ci`** が通ること＋必要なら **`make kb-zip`** で `deploy/gmtj-kb-for-knowledge.zip` を更新（別チャネルの RAG 用素材）。
+**「サービス開始」の最小（ナレッジのみ）:** ルートで **`make ci`** が通ること＋必要なら **`make kb-zip`** で `deploy/gmtj-kb-for-knowledge.zip` を更新（RAG／Knowledge 用素材）。
+
+**社内チャットMVP（Open WebUI + Docker）まで進める場合:** **[deploy/README.md](deploy/README.md)** → **[deploy/QUICKSTART-サービス開始.md](deploy/QUICKSTART-サービス開始.md)** または **`make open-webui`**／**`deploy/fast-up.sh`**。起動後のゲートは **[deploy/SERVICE-LAUNCH.md](deploy/SERVICE-LAUNCH.md)**。公開前は **[deploy/SECURITY.md](deploy/SECURITY.md)**。
 
 チェック用: **[docs/チェックリスト-初日.md](docs/チェックリスト-初日.md)**（末尾に任意の「2日目」もあり）  
 用語: **[docs/glossary.md](docs/glossary.md)** · 運用短版: **[docs/operations-runbook.md](docs/operations-runbook.md)** · **ドキュメント目次: [docs/README.md](docs/README.md)**
-
-### 任意: Open WebUI（Docker を使う場合だけ）
-
-社内でチャット UI を試す人向け。**使わないなら読まなくてよい。** 手順は **[deploy/README.md](deploy/README.md)**（`make open-webui` / `fast-up.sh` はここに従う）。
 
 ### 主要フォルダ（迷ったらここ）
 
@@ -26,7 +24,7 @@
 | `marketing/` | マーケ案・短文例・キーワード種（`keywords-seed.md`）・**コンテンツ柱**（`content-pillars.md`） |
 | `eval/` | ゴールデン質問・**採点ルーブリック**・インシデント記録 |
 | `scripts/` | `kb` テンプレ検証などの小さなスクリプト |
-| `deploy/` | **任意**（Docker 利用時）: compose・nginx・Caddy・ZIP・**[SECURITY.md](deploy/SECURITY.md)**。使わない場合は **[CLAUDE.md](CLAUDE.md)** どおりスキップ可 |
+| `deploy/` | **社内チャットMVP**（Open WebUI / Docker）: compose・ZIP・**[SERVICE-LAUNCH.md](deploy/SERVICE-LAUNCH.md)**・**[SECURITY.md](deploy/SECURITY.md)**。ナレッジだけなら **[CLAUDE.md](CLAUDE.md)** どおり `make ci` 中心でよい |
 
 ## リポジトリルート（これが答え）
 
