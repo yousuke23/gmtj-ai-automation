@@ -54,6 +54,50 @@
 - 追加のキーワード種（検索ボリュームは未計測）: [`keywords-seed.md`](./keywords-seed.md)
 - コンテンツの柱（方針）: [`content-pillars.md`](./content-pillars.md)
 
+### W1–W8 チャネル別短文（ドラフト）
+
+春〜初夏テーマ。神社・温泉・ライブ情報は**現地掲示・公式のみ**。周辺都市名は [`kb/area-atami-izu/placenames.md`](../kb/area-atami-izu/placenames.md)。
+
+#### W1 — 伊豆山神社・朝の参拝（Short / Blog）
+
+- JA: 伊豆山の朝は静けさが違う。参拝時間・撮影はその日の掲示と神社公式で。#JapanMusicTourism（承認後）
+- EN: Dawn quiet hits different at Izusan—check **posted rules and official shrine pages** for hours and photography.
+
+#### W2 — 音楽と街（熱海）（Short / IG）
+
+- JA: 熱海の坂と商店街、耳で景色が変わる。騒音や撮影は場所のルールとマナーを優先。
+- EN: Music changes how you read Atami’s slopes—keep **local etiquette** and venue rules ahead of the shot.
+
+#### W3 — 温泉と声・身体（Short）
+
+- JA: 温泉後の声は「無理しない」。宿や浴場のルールは施設公式へ。
+- EN: Post-onsen voice care is gentle pacing. Bath rules live on **each facility’s official page**—not rumors.
+
+#### W4 — インバウンドFAQ（Blog / LP）
+
+- JA: よくある質問は「断定しない」設計で。時刻・料金・空きは公式リンクへ誘導する記事に。
+- EN: FAQ posts win when they route travellers to **official timetables and booking desks**, not invented certainty.
+
+#### W5 — 周辺エリア横断（Blog / Map pin）
+
+- JA: 三島・小田原・真鶴へ広げるときは **各市の公式観光入口**から。ブログの愛称だけで場所を確定しない。
+- EN: Branching to Mishima, Odawara, or Manazuru? Anchor pins on **city tourism portals**, then verify operators.
+
+#### W6 — ライブ・フェス「公式ファースト」（Short / X）
+
+- JA: ライブ情報は主催公式または会場公式へ。転売・非公認サイトへは誘導しない。
+- EN: Live listings age fast—**promoter + venue official channels first**. Skip resale traps.
+
+#### W7 — 温泉・宿FAQ「断定しない」（Blog）
+
+- JA: 「すぐ入れる温泉」は日によって違う。電話・公式予約とセットで読むFAQに。
+- EN: Walk-in onsen availability shifts daily—pair FAQs with **official reservation lines**, not blanket promises.
+
+#### W8 — UGCリポスト（IG / Short）
+
+- JA: リポストは許諾・クレジット・プライバシーを先に。顔・子ども・車ナンバーはマスク検討。
+- EN: Reshare only with **permission + credit**. Mask plates and faces when in doubt—policy before reach.
+
 ### W9–W13 チャネル別短文（ドラフト）
 
 夏〜初秋テーマ。**気象・混雑・開催情報は投稿に書かず公式へ。** バリアフリー表現は「保証」せず、確認のしかたへ誘導する（[`content-pillars.md`](./content-pillars.md) 柱2・柱3）。

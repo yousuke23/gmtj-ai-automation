@@ -4,14 +4,18 @@
 
 **[docs/START_HERE-超初心者.md](docs/START_HERE-超初心者.md)** を開いて、上から順にやってください。  
 
-### 今すぐ（Mac で最速起動）
+### メインの進め方（Open WebUI / Docker 不要）
 
-**手順の全文（コピペ用コマンド付き）:** **[deploy/QUICKSTART-サービス開始.md](deploy/QUICKSTART-サービス開始.md)**  
-**起動後〜パイロット開始（チェックリスト）:** **[deploy/SERVICE-LAUNCH.md](deploy/SERVICE-LAUNCH.md)**  
-**Docker不要ならスキップして問題ありません**（`kb` / `docs` / `make ci` などは Docker なしで進められます）。
+運用方針は **[CLAUDE.md](CLAUDE.md)**（**Open WebUI / Docker は当面使わず**）。作業の正は **`kb/`**・**`tour/`**・**`marketing/`**・**`eval/`** とルートの **`make ci`**。事業マップ・入口は **[docs/business-map.md](docs/business-map.md)**。
+
+**「サービス開始」（Docker なし）の最小:** ルートで **`make ci`** が通ること＋必要なら **`make kb-zip`** で `deploy/gmtj-kb-for-knowledge.zip` を更新（別チャネルの RAG 用素材）。
 
 チェック用: **[docs/チェックリスト-初日.md](docs/チェックリスト-初日.md)**（末尾に任意の「2日目」もあり）  
 用語: **[docs/glossary.md](docs/glossary.md)** · 運用短版: **[docs/operations-runbook.md](docs/operations-runbook.md)** · **ドキュメント目次: [docs/README.md](docs/README.md)**
+
+### 任意: Open WebUI（Docker を使う場合だけ）
+
+社内でチャット UI を試す人向け。**使わないなら読まなくてよい。** 手順は **[deploy/README.md](deploy/README.md)**（`make open-webui` / `fast-up.sh` はここに従う）。
 
 ### 主要フォルダ（迷ったらここ）
 
@@ -22,7 +26,7 @@
 | `marketing/` | マーケ案・短文例・キーワード種（`keywords-seed.md`）・**コンテンツ柱**（`content-pillars.md`） |
 | `eval/` | ゴールデン質問・**採点ルーブリック**・インシデント記録 |
 | `scripts/` | `kb` テンプレ検証などの小さなスクリプト |
-| `deploy/` | 社内 Open WebUI・nginx・Caddy・ZIP・**[SECURITY.md](deploy/SECURITY.md)** · **起動: [QUICKSTART](deploy/QUICKSTART-サービス開始.md)** · **開始まで: [SERVICE-LAUNCH](deploy/SERVICE-LAUNCH.md)** |
+| `deploy/` | **任意**（Docker 利用時）: compose・nginx・Caddy・ZIP・**[SECURITY.md](deploy/SECURITY.md)**。使わない場合は **[CLAUDE.md](CLAUDE.md)** どおりスキップ可 |
 
 ## リポジトリルート（これが答え）
 
@@ -59,6 +63,10 @@ claude
 ```
 
 `make ci` で **テンプレ整合**と **ゴールデン質問の件数**を確認できます（`make help` で他ターゲット表示）。
+
+## 当面スプリント完了の確認（14・01・18）
+
+条件の詳細は **[CLAUDE.md](CLAUDE.md) の「完了の定義」**。一覧・フォルダ入口は **[docs/business-map.md](docs/business-map.md)** と **[docs/README.md](docs/README.md)**（作業の優先順）。
 
 ## Git をまだ初期化していない場合
 

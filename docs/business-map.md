@@ -25,3 +25,13 @@
 | 21 | Izu Music Fund | 投資家条件 | 案件パイプライン | 組入・利回り |
 
 ※ KPI は後で `os/` の定義と揃える。
+
+## このリポとの対応（スプリント優先 14 → 01 → 18）
+
+21事業全体の一覧は上表。当面このリポで厚くするのは次の3つ（作業順は [docs/README.md](./README.md) の「作業の優先順」節）。
+
+| ID | フォルダ入口 |
+|----|----------------|
+| **14** | [`kb/README.md`](../kb/README.md)、[`eval/golden-questions.md`](../eval/golden-questions.md)、ルートで `make ci` |
+| **01** | [`tour/README.md`](../tour/README.md)、[`kb/tours/README.md`](../kb/tours/README.md) |
+| **18** | [`marketing/content-pillars.md`](../marketing/content-pillars.md)、[`kb/brand/README.md`](../kb/brand/README.md)、[`marketing/90day-ideas.md`](../marketing/90day-ideas.md) |

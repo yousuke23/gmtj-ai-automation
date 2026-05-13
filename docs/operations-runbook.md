@@ -1,5 +1,7 @@
 # 運用 Runbook（社内MVP・短版）
 
+**Open WebUI を使わない運用:** 下の「日常」1〜2はスキップし、**`make ci`** と **`kb/`** の更新フローだけ追う（[CLAUDE.md](../CLAUDE.md)）。
+
 Open WebUI / nginx / Caddy を触る担当者向け。**秘密はこのリポに書かない。**
 
 ## 日常

@@ -5,7 +5,7 @@
 #    kb/templates/{id}.ja.md と kb/templates/{id}.en.md を追加する。
 # 2. 韓国語チャネルが必要なら kb/templates/{id}.ko.md を追加する（CLAUDE.md の多言語方針）。
 # 3. 可能なら eval/golden-questions.md に、その意図を踏む評価用質問を1問以上足す。
-# 4. デプロイ済み Open WebUI Knowledge へ反映する手順は deploy/openwebui-knowledge.md。
+# 4. 社内チャットMVPで Knowledge を使う場合（任意）: deploy/openwebui-knowledge.md。
 # 5. 変更後、リポジトリルートで `make ci`（または `verify-kb-templates.sh` と `verify-golden-questions.sh`）を通す。
 
 intents:

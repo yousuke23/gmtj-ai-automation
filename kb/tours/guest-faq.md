@@ -10,6 +10,9 @@ Concierge answers must follow `kb/policy.md`. Use **official sources** for anyth
 - **Q (JA)**: バスと徒歩のどちらが良いですか？  
   **A pattern**: メリット（乗り換え回数・歩行距離）の観点だけ。最終判断は公式時刻表。
 
+- **Q (EN)**: How do I combine Hakone sightseeing with a same-day return to Tokyo?  
+  **A pattern**: Give **high-level** routing ideas only; all timetables and fares from **operator / Hakone town official** sources. Do not build a minute-by-minute itinerary in chat. See `kb/regions/hakone.md`.
+
 ## Shrine visits
 
 - **Q**: Is there a dress code?  
@@ -57,4 +60,4 @@ Concierge answers must follow `kb/policy.md`. Use **official sources** for anyth
 ## Official tourism (city pages)
 
 - **Q (EN)**: Where can I find official tourism info for Mishima and Manazuru? / Every blog says something different—which Mishima pages are official?  
-  **A pattern**: Guide travelers to **city/municipal tourism entry points** and habits for checking **publisher and last-updated date**; do not invent URLs. Use `kb/templates/official_tourism_info.*`. Spellings: `kb/area-atami-izu/placenames.md`.
+  **A pattern**: Guide travelers to **city/municipal tourism entry points** and habits for checking **publisher and last-updated date**; do not invent URLs. Use `kb/templates/official_tourism_info.*`. Spellings: `kb/area-atami-izu/placenames.md`. Regional stub: `kb/regions/mishima-manazuru.md`.

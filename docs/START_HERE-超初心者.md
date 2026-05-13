@@ -171,8 +171,9 @@ Claude Code が動いたら、次のような文章を **日本語で**打って
 
 ```text
 CLAUDE.md と kb/README.md と kb/policy.md を読んでください。
-deploy/README.md を読み、社内PCで Docker が使える場合は
-docker compose を試す準備ができているか確認してください。
+Open WebUI / Docker は使いません。ルートで make ci を通し、
+eval/golden-questions.md のゴールデン1問を選び、kb/templates の返答方針と
+整合しているか確認し、不足があれば kb（regions 含む）の追記案を出してください。
 ```
 
 （すでに `kb/templates/` が揃っているので、「新しい意図を1つ追加してテンプレも作って」など、**次の一歩**を依頼しても大丈夫です。）
@@ -214,7 +215,8 @@ docker compose を試す準備ができているか確認してください。
 - **`tour/`** … 01ツアー：ゲスト向け英語・**日本語**シート・スタッフRunbook  
 - **`marketing/90day-ideas.md`** … マーケのたたき台＋短文例  
 - **`marketing/keywords-seed.md`** … SEO用キーワード種（検索数は未計測のドラフト）  
-- **`eval/golden-questions.md`** … 品質確認用の質問セット（v0.5 は25問・韓国語2問含む）  
+- **`eval/golden-questions.md`** … 品質確認用の質問セット（**v0.6 は26問・韓国語2問含む**）  
+- **`eval/README.md`** … `eval/` フォルダの目次  
 - **`eval/scoring-rubric.md`** … ゴールデン質問の採点ルーブリック  
 - **`eval/incidents.md`** … インシデント記録テンプレ  
 - **`deploy/SECURITY.md`** … 認証・秘密・ログの原則  
@@ -222,7 +224,7 @@ docker compose を試す準備ができているか確認してください。
 
 ---
 
-## 11. 社内チャット（Open WebUI）を試す（任意・少し進んだ人向け）
+## 11. 社内チャット（Open WebUI）を試す（任意・**使わないならセクション11全体をスキップ**）
 
 Docker が入っているPC向けです。**Docker を入れない方針でもプロジェクトは進められます。** 飛ばしてOKです。
 
@@ -249,7 +251,19 @@ cd /Users/tarnar/Desktop/GMTJ-AI-Automation
 bash deploy/package-kb-for-knowledge.sh
 ```
 
-生成物は既定で **`deploy/gmtj-kb-for-knowledge.zip`** です（Open WebUI の Knowledge にアップロード）。
+生成物は既定で **`deploy/gmtj-kb-for-knowledge.zip`** です（将来チャットRAGに載せるときの素材。**Open WebUI を使わない場合も**ナレッジ束として利用可）。
+
+---
+
+## 12. 当面スプリントを「終わった」とみなすには（迷ったらここ）
+
+コードより **ナレッジ・ドキュメント中心**のプロジェクトです。**Docker は不要**でも完了できます。
+
+1. ルートで **`make ci`** が通る  
+2. **[CLAUDE.md](../CLAUDE.md)** の **「完了の定義（スプリント単位）」** のチェックに沿う（14・01・18 + 全体ゲート）  
+3. 余力があれば **[docs/business-map.md](business-map.md)** で 01/14/18 のフォルダ入口を確認  
+
+Open WebUI は **任意**。使う場合だけ **[deploy/SERVICE-LAUNCH.md](../deploy/SERVICE-LAUNCH.md)** を満たす。
 
 ---
 

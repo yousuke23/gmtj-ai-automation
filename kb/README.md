@@ -22,10 +22,11 @@
 | [tours/](./tours/) | 01ツアー連携 FAQ・スタッフ安全メモ |
 | [brand/](./brand/) | ブランド文案ドラフト（入口: [brand/README.md](./brand/README.md)） |
 | [area-atami-izu/](./area-atami-izu/) | 熱海・伊豆山周辺（入口: [area-atami-izu/README.md](./area-atami-izu/README.md)） |
-| [regions/](./regions/) | 国内エリア骨子（数値は公式出典＋確認日で追記）。熱海・伊豆山入口は [regions/atami-izu.md](./regions/atami-izu.md) |
+| [regions/](./regions/) | 国内エリア骨子（[regions/README.md](./regions/README.md) 一覧）。熱海・伊豆山は [regions/atami-izu.md](./regions/atami-izu.md)、箱根・三島・真鶴は同フォルダ内の各ファイル |
 
 ## 品質・運用
 
 - 評価用質問: `../eval/golden-questions.md`
+- 評価フォルダ入口: `../eval/README.md`
 - 採点ルーブリック: `../eval/scoring-rubric.md`（ゴールデンセットの版に追従）
 - テンプレファイルの欠落チェック: `make ci`（`verify-templates` + `eval` のゴールデン件数）または個別に `bash scripts/verify-kb-templates.sh` / `bash scripts/verify-golden-questions.sh`
