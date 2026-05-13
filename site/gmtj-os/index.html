@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GMTJ OS — たーなーOS</title>
+  <meta name="description" content="音楽ツーリズム運用のためのブラウザ上デスクトップ。OS3モジュール、メモ、ターミナル風コマンドをローカルで動作。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login" class="login-screen" aria-hidden="false">
+    <div class="login-card">
+      <p class="login-kicker">Japan Music Tourism</p>
+      <h1>GMTJ OS</h1>
+      <p class="login-sub">たーなーOS — ブラウザ上の運用デスクトップ</p>
+      <form id="login-form" class="login-form">
+        <label>
+          <span>表示名</span>
+          <input type="text" id="login-name" name="name" autocomplete="username" placeholder="ゲスト" maxlength="32" />
+        </label>
+        <label>
+          <span>PIN（任意・デモでは未使用）</span>
+          <input type="password" id="login-pin" name="pin" autocomplete="off" placeholder="空欄で可" maxlength="8" inputmode="numeric" />
+        </label>
+        <p id="login-error" class="login-error" role="alert" hidden></p>
+        <button type="submit" class="btn-primary" id="login-submit">サインイン</button>
+        <button type="button" class="btn-secondary" id="login-skip">
+          ストレージを使わず入室（再読み込みでログアウト）
+        </button>
+      </form>
+      <p class="login-hint">通常は「サインイン」で十分です。保存がブロックされる環境では下のボタンを試してください。</p>
+    </div>
+  </div>
+
+  <div id="desktop" class="desktop" aria-hidden="true" hidden>
+    <header class="menubar" role="banner">
+      <div class="menubar-left">
+        <span class="menubar-brand">GMTJ OS</span>
+        <nav class="menubar-menus" aria-label="メニュー">
+          <div class="menu-root">
+            <button type="button" class="menu-trigger" data-menu="os">たーなーOS</button>
+            <ul class="menu-dropdown" id="menu-os" hidden>
+              <li><button type="button" data-action="about">この OS について</button></li>
+              <li><button type="button" data-action="automation-show">今日の自動実行を表示</button></li>
+              <li><button type="button" data-action="logout">サインアウト</button></li>
+            </ul>
+          </div>
+          <div class="menu-root">
+            <button type="button" class="menu-trigger" data-menu="view">表示</button>
+            <ul class="menu-dropdown" id="menu-view" hidden>
+              <li><button type="button" data-action="tile">ウィンドウを並べる</button></li>
+              <li><button type="button" data-action="close-all">すべて閉じる</button></li>
+            </ul>
+          </div>
+          <div class="menu-root">
+            <button type="button" class="menu-trigger" data-menu="help">ヘルプ</button>
+            <ul class="menu-dropdown" id="menu-help" hidden>
+              <li><button type="button" data-action="help-shortcuts">ショートカット</button></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="menubar-right">
+        <span id="clock" class="clock" aria-live="polite"></span>
+      </div>
+    </header>
+
+    <aside id="automation-strip" class="automation-strip" hidden aria-label="今日の自動実行サマリー">
+      <div class="automation-strip-head">
+        <strong>今日の自動実行（Phase 1）</strong>
+        <span id="automation-today" class="automation-today"></span>
+        <span class="automation-strip-actions">
+          <button type="button" class="automation-refresh" id="automation-refresh" title="サマリーを再読込">↻</button>
+          <button type="button" class="automation-collapse" id="automation-collapse" title="折りたたみ">−</button>
+        </span>
+      </div>
+      <div id="automation-strip-body" class="automation-strip-body"></div>
+    </aside>
+
+    <div id="wallpaper" class="wallpaper" aria-hidden="true"></div>
+
+    <main id="stage" class="stage" aria-label="デスクトップ">
+      <div id="windows" class="windows"></div>
+    </main>
+
+    <nav class="dock" aria-label="アプリドック">
+      <button type="button" class="dock-item" data-open="hub" title="ハブ">
+        <span class="dock-icon" aria-hidden="true">◎</span>
+        <span class="dock-label">ハブ</span>
+      </button>
+      <button type="button" class="dock-item" data-open="modules" title="OS3 モジュール">
+        <span class="dock-icon" aria-hidden="true">▣</span>
+        <span class="dock-label">OS3</span>
+      </button>
+      <button type="button" class="dock-item" data-open="memo" title="メモ">
+        <span class="dock-icon" aria-hidden="true">✎</span>
+        <span class="dock-label">メモ</span>
+      </button>
+      <button type="button" class="dock-item" data-open="terminal" title="ターミナル">
+        <span class="dock-icon" aria-hidden="true">⌘</span>
+        <span class="dock-label">端末</span>
+      </button>
+      <button type="button" class="dock-item" data-open="settings" title="設定">
+        <span class="dock-icon" aria-hidden="true">⚙</span>
+        <span class="dock-label">設定</span>
+      </button>
+      <a class="dock-item dock-link" href="../index.html" title="サービスLPへ">
+        <span class="dock-icon" aria-hidden="true">←</span>
+        <span class="dock-label">LP</span>
+      </a>
+    </nav>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
