@@ -42,7 +42,15 @@
 
 ## Claude Code（CLI）
 
-統合ターミナルで:
+### Cursor から起動（「ここで出す」）
+
+1. このリポを **フォルダーとして開いている**ことを確認する（左に `GMTJ-AI-Automation` のルート）  
+2. **`Cmd + Shift + P`** → **「Tasks: Run Task」**（**タスクの実行**）  
+3. **「Claude Code: 起動 (このフォルダで)」** を選ぶ  
+
+統合ターミナルが開き、**`${workspaceFolder}`**（＝いま開いているこのフォルダ）で **`claude`** が起動します。
+
+手で打つ場合（統合ターミナル）:
 
 ```bash
 cd /Users/tarnar/Desktop/GMTJ-AI-Automation

@@ -56,22 +56,9 @@ docker compose down
 
 | 症状 | 試すこと |
 |------|----------|
-| **まだアカウント登録していないのにパスワード**を求められる | 下の「パスワードが出る典型例」を読む（ブラウザの種類・URL で切り分け） |
 | `command not found: docker` | **Docker Desktop を起動**し、ターミナルを開き直す |
+| 初回の `docker compose up -d` が長い | **`ghcr.io/open-webui/open-webui` のイメージ取得**で数分〜かかることがある。終われば次回からは短くなりやすい |
 | `docker compose up` が失敗する | `deploy` にいるか、`WEBUI_SECRET_KEY` が `.env` に入っているか確認 |
 | 8080 が開かない | `docker compose ps` で `open-webui` が Up か。別アプリが 8080 を占有していないか |
 
 起動後の **管理者・Knowledge・検証・公開前チェック** は **[SERVICE-LAUNCH.md](./SERVICE-LAUNCH.md)** のフェーズに進んでください。
-
-### パスワードが出る典型例（初期登録の前かどうか）
-
-1. **macOS のダイアログで「パスワードを入力」**（鍵マーク・システム風）  
-   → **Docker Desktop のインストール／推奨設定**などが、管理者権限の変更をしようとしているだけです。**Open WebUI の登録とは別**です。
-
-2. **ブラウザが出す「ユーザー名とパスワードを入力」**（グレーの小さなダイアログ・サイトの外観ではない）  
-   → **nginx の Basic 認証**の可能性が高いです。`docker-compose.auth-stack.yml` を使っている場合や、**別のポート／プロキシ**の前段で認証がかかっていることがあります。  
-   → まずは **単体の Open WebUI** 用 compose で起動しているか確認し、URL は **`http://127.0.0.1:8080`**（このリポの `docker-compose.yml` の前提）に合わせる。Basic 認証の ID/パスは [nginx/README.md](./nginx/README.md) で設定した値。
-
-3. **Open WebUI の「ログイン」画面**（メール／パスワードの入力フォーム）で、**新規登録に進めない**  
-   → **以前に同じ PC で起動したデータ**が Docker のボリュームに残っていると、**初回の「管理者作成」ではなくログイン**になることがあります。  
-   → 本当に捨ててよいデータだけなら、`deploy` で `docker compose down` のあと **ボリューム削除**（例: `docker volume rm` で `open-webui-data` に相当する名前）を検討。運用データがある場合は削除せず、既存アカウントでログインするか別途バックアップのうえ相談。

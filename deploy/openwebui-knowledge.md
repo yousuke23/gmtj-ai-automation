@@ -2,6 +2,8 @@
 
 対象: `deploy/docker-compose.yml` で起動する Open WebUI。UI はバージョンで文言が変わるため、**画面は公式ドキュメントと併読**すること。
 
+**Anthropic をつないでも「モデル 0」になる場合:** **[openwebui-anthropic-connection.md](./openwebui-anthropic-connection.md)**（空の OpenAI 接続の削除・**Model IDs 手動追加**・Prefix ID）。
+
 ## 1. マウントの確認
 
 ホストの `kb/` はコンテナ内 **`/kb-ro`**（読み取り専用）にマウントされている。
