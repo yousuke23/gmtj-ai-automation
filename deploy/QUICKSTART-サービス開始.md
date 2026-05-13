@@ -1,10 +1,26 @@
 # 最速でサービスを始める（社内 Open WebUI）
 
+**使わない場合:** 運用方針で **Open WebUI／Docker を使わない**ときは **このファイルを読む必要はありません**（`kb/`・`eval/`・`make ci` を正とする）。
+
 **注意:** AI チャット（Cursor 上の会話など）からは、**あなたの Mac の Docker を直接操作してコンテナを起動することはできません。** 起動は **ご自身のターミナル**で次のコマンドを実行してください。
 
 **前提**: Mac に [Docker Desktop](https://www.docker.com/products/docker-desktop/) を入れ、**起動しておく**（メニューバーにクジラのアイコン）。
 
-## 1. 秘密の設定（初回だけ）
+## いちばん速い（この3行）
+
+```bash
+cd /Users/tarnar/Desktop/GMTJ-AI-Automation/deploy
+bash fast-up.sh
+```
+
+ブラウザで **http://127.0.0.1:8080** を開く。初回は **管理者アカウント作成**の案内が出ます（既にデータがある PC ではログイン画面）。
+
+- `WEBUI_SECRET_KEY` が初期値のときだけ、`fast-up.sh` がランダム値を自動セットします。
+- 起動後のチェックリスト: **[SERVICE-LAUNCH.md](./SERVICE-LAUNCH.md)**
+
+手動で `.env` を編集したい場合やエラー時は、下の **手順 1〜3** を使ってください。
+
+## 1. 秘密の設定（初回だけ・手動）
 
 ```bash
 cd /Users/tarnar/Desktop/GMTJ-AI-Automation/deploy
