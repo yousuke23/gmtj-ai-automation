@@ -2,7 +2,7 @@
  * 1日複数回: 公開キューを読み、予定時刻を過ぎた項目を AUTOMATION_BRIDGE_URL へ送る
  * キューは静的 JSON（デプロイで更新）。送信済みフラグは外部（Make等）で管理する想定。
  */
-import { buildSocialPack } from "./lib/social-templates.mjs";
+import { buildSocialPack, BRANDS } from "./lib/social-templates.mjs";
 export const config = {
   schedule: "5 2,8,14,20 * * *",
 };
@@ -46,6 +46,7 @@ export const handler = async () => {
       const article = item.article || {};
       const socialPack =
         article.title && article.url ? buildSocialPack(brand, article) : null;
+      const brandLabel = (BRANDS[brand] && BRANDS[brand].displayName) || (brand === "izu_music_fund" ? "Izu Music Fund" : "AI TARNAR Voice School");
       const res = await fetch(bridge, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -55,7 +56,7 @@ export const handler = async () => {
           article,
           socialPack,
           lineBroadcast: article.title
-            ? { text: `【${brand === "izu_music_fund" ? "IMF" : "TARNAR"}予定投稿】${article.title}` }
+            ? { text: `【${brandLabel} · 予定投稿】${article.title}` }
             : null,
           queueId: item.id || null,
           scheduledAt: item.scheduledAt || null,

@@ -1,5 +1,10 @@
 import crypto from "crypto";
 
+function siteBaseUrl() {
+  const u = (process.env.SITE_CANONICAL_URL || "").trim().replace(/\/$/, "");
+  return u || "https://gmtj-japan-music-tourism.netlify.app";
+}
+
 function json(status, body, extraHeaders = {}) {
   return {
     statusCode: status,
@@ -22,7 +27,7 @@ export function textMessage(text) {
 }
 
 /**
- * Keyword / intent routing for official LINE (TARNAR + Izu Music Fund).
+ * Keyword / intent routing for official LINE (AI TARNAR Voice School + Izu Music Fund).
  */
 export function pickReplyMessages(brand, textRaw) {
   const t = (textRaw || "").trim().toLowerCase();
@@ -32,12 +37,21 @@ export function pickReplyMessages(brand, textRaw) {
   const friendKeywords = ["友だち", "友達", "line", "라인", "加好友"];
   const fundKeywords = ["ファンド", "fund", "投資", "パイプライン"];
   const izuCross = ["伊豆", "izu", "イズ", "ファンド"];
-  const tarnarCross = ["ターナー", "tarnar", "ボイトレ", "声の学校", "voice school"];
+  const tarnarCross = [
+    "ターナー",
+    "tarnar",
+    "aitarnar",
+    "ai tarnar",
+    "ボイトレ",
+    "声の学校",
+    "voice school",
+  ];
+  const base = siteBaseUrl();
 
   if (brand === "tarnar" && izuCross.some((k) => t.includes(k))) {
     return [
       textMessage(
-        "【クロス案内】地域と音楽のファンド情報は Izu Music Fund ポータルで公開しています。\nhttps://gmtj-japan-music-tourism.netlify.app/izu-fund/"
+        `【クロス案内】地域と音楽のファンド情報は Izu Music Fund ポータルで公開しています。\n${base}/izu-fund/`
       ),
     ];
   }
@@ -45,7 +59,7 @@ export function pickReplyMessages(brand, textRaw) {
   if (brand === "izu_music_fund" && tarnarCross.some((k) => t.includes(k))) {
     return [
       textMessage(
-        "【クロス案内】発声・録音・ライブの学びは AI TARNAR Voice School で。\nhttps://gmtj-japan-music-tourism.netlify.app/tarnar/"
+        `【クロス案内】発声・録音・ライブの学びは AI TARNAR Voice School で。\n${base}/tarnar/`
       ),
     ];
   }
@@ -55,7 +69,7 @@ export function pickReplyMessages(brand, textRaw) {
       textMessage(
         brand === "izu_music_fund"
           ? "【Izu Music Fund】投資家条件を満たす方向けに、別途窓口からクーポンコードをお送りします。まずは「投資家」と送信してください。"
-          : "【TARNAR】レッスン関連クーポンはキャンペーン期間中に配信します。コード入力欄に「TARNAR2026」（例）をお試しの場合は案内メールをご確認ください。"
+          : "【AI TARNAR Voice School】レッスン関連クーポンはキャンペーン期間中に配信します。コード入力欄に「TARNAR2026」（例）をお試しの場合は案内メールをご確認ください。"
       ),
     ];
   }
@@ -65,7 +79,7 @@ export function pickReplyMessages(brand, textRaw) {
       textMessage(
         brand === "izu_music_fund"
           ? "【Izu Music Fund】面談・資料請求は公式メールまたは担当ルートからご連絡ください。本LINEは一次案内のみです。"
-          : "【TARNAR】レッスン・体験の予約は、メールまたはフォームから承ります。123@atono.jp へ「レッスン希望」とお送りください。"
+          : "【AI TARNAR Voice School】レッスン・体験の予約は、メールまたはフォームから承ります。123@atono.jp へ「レッスン希望」とお送りください。"
       ),
     ];
   }

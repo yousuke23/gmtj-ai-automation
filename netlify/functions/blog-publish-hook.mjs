@@ -2,7 +2,7 @@
  * ブログ公開 → SNS用ペイロード生成 → 外部オーケストレーション（Make/Zapier等）→ 任意でLINE通知
  * Authorization: Bearer OPS_PUBLISH_SECRET
  */
-import { buildSocialPack } from "./lib/social-templates.mjs";
+import { buildSocialPack, BRANDS } from "./lib/social-templates.mjs";
 import { pushLineMessage, textMessage as lineText } from "./lib/line-handlers.mjs";
 
 const cors = {
@@ -60,6 +60,7 @@ export const handler = async (event) => {
   }
 
   const socialPack = buildSocialPack(brand, article);
+  const brandLabel = (BRANDS[brand] && BRANDS[brand].displayName) || (brand === "izu_music_fund" ? "Izu Music Fund" : "AI TARNAR Voice School");
 
   const bridgeUrl = (process.env.AUTOMATION_BRIDGE_URL || "").trim();
   let bridgeResult = null;
@@ -69,7 +70,7 @@ export const handler = async (event) => {
       brand,
       article,
       socialPack,
-      lineBroadcast: { text: `【${brand === "izu_music_fund" ? "IMF" : "TARNAR"}】${article.title}\n${article.url}` },
+      lineBroadcast: { text: `【${brandLabel}】${article.title}\n${article.url}` },
       source: "gmtj-netlify",
     });
   }
@@ -85,9 +86,8 @@ export const handler = async (event) => {
       : (process.env.LINE_TARNAR_NOTIFY_USER_ID || "").trim();
 
   if (lineToken && lineUser) {
-    const label = brand === "izu_music_fund" ? "Izu Music Fund" : "TARNAR";
     const ok = await pushLineMessage(lineToken, lineUser, [
-      lineText(`【${label}】新着記事\n${article.title}\n${article.url}`),
+      lineText(`【${brandLabel}】新着記事\n${article.title}\n${article.url}`),
     ]);
     lineNotify = { sent: ok };
   }
