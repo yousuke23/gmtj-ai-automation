@@ -69,6 +69,7 @@ export const handler = async (event) => {
       brand,
       article,
       socialPack,
+      lineBroadcast: { text: `【${brand === "izu_music_fund" ? "IMF" : "TARNAR"}】${article.title}\n${article.url}` },
       source: "gmtj-netlify",
     });
   }

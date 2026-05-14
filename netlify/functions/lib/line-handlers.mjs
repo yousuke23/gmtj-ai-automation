@@ -31,6 +31,24 @@ export function pickReplyMessages(brand, textRaw) {
   const bookKeywords = ["予約", "booking", "예약", "预约", "相談", "コンサル"];
   const friendKeywords = ["友だち", "友達", "line", "라인", "加好友"];
   const fundKeywords = ["ファンド", "fund", "投資", "パイプライン"];
+  const izuCross = ["伊豆", "izu", "イズ", "ファンド"];
+  const tarnarCross = ["ターナー", "tarnar", "ボイトレ", "声の学校", "voice school"];
+
+  if (brand === "tarnar" && izuCross.some((k) => t.includes(k))) {
+    return [
+      textMessage(
+        "【クロス案内】地域と音楽のファンド情報は Izu Music Fund ポータルで公開しています。\nhttps://gmtj-japan-music-tourism.netlify.app/izu-fund/"
+      ),
+    ];
+  }
+
+  if (brand === "izu_music_fund" && tarnarCross.some((k) => t.includes(k))) {
+    return [
+      textMessage(
+        "【クロス案内】発声・録音・ライブの学びは AI TARNAR Voice School で。\nhttps://gmtj-japan-music-tourism.netlify.app/tarnar/"
+      ),
+    ];
+  }
 
   if (couponKeywords.some((k) => t.includes(k))) {
     return [
@@ -153,7 +171,14 @@ export async function handleLineWebhook(event, { secret, token, brand }) {
 
   const events = body.events || [];
   for (const ev of events) {
-    if (ev.type === "message" && ev.message?.type === "text" && ev.replyToken) {
+    if (ev.type === "postback" && ev.replyToken) {
+      const data = (ev.postback && ev.postback.data) || "";
+      if (data.includes("coupon")) {
+        await replyToLine(ev.replyToken, token, pickReplyMessages(brand, "クーポン"));
+      } else if (data.includes("book")) {
+        await replyToLine(ev.replyToken, token, pickReplyMessages(brand, "予約"));
+      }
+    } else if (ev.type === "message" && ev.message?.type === "text" && ev.replyToken) {
       const msgs = pickReplyMessages(brand, ev.message.text);
       await replyToLine(ev.replyToken, token, msgs);
     } else if (ev.type === "follow" && ev.replyToken) {

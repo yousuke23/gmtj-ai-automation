@@ -1,0 +1,10 @@
+{
+  "lineAddFriendUrl": "",
+  "contactEmail": "123@atono.jp",
+  "relatedSites": [
+    { "label": "Izu Music Fund", "url": "../izu-fund/" },
+    { "label": "Japan Music Tourism", "url": "../index.html" },
+    { "label": "atono co., ltd.", "url": "https://atono.co.jp/" },
+    { "label": "karaoke.ac", "url": "https://karaoke.ac/" }
+  ]
+}

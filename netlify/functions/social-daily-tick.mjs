@@ -54,6 +54,9 @@ export const handler = async () => {
           brand,
           article,
           socialPack,
+          lineBroadcast: article.title
+            ? { text: `【${brand === "izu_music_fund" ? "IMF" : "TARNAR"}予定投稿】${article.title}` }
+            : null,
           queueId: item.id || null,
           scheduledAt: item.scheduledAt || null,
           source: "gmtj-netlify-cron",

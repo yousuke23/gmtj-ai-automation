@@ -1,0 +1,9 @@
+{
+  "lineAddFriendUrl": "",
+  "contactEmail": "123@atono.jp",
+  "relatedSites": [
+    { "label": "AI TARNAR Voice School", "url": "../tarnar/" },
+    { "label": "Japan Music Tourism", "url": "../index.html" },
+    { "label": "atono co., ltd.", "url": "https://atono.co.jp/" }
+  ]
+}

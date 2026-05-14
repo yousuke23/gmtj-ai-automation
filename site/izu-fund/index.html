@@ -4,14 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Izu Music Fund | ポータル</title>
-  <meta name="description" content="地域と音楽をつなぐファンド活動。Japan Music Tourism #21 の公式ポータル。" />
-  <link rel="stylesheet" href="../tarnar/portal.css" />
+  <meta name="description" content="伊豆の音楽と地域をつなぐファンド。Japan Music Tourism #21 の公式ポータル。ブログ・LINE・SNS連携。" />
+  <link rel="stylesheet" href="portal.css" />
 </head>
 <body>
   <header class="nav">
-    <a class="nav-brand" href="index.html">IZU MUSIC FUND</a>
+    <a class="nav-brand" href="index.html">Izu Music Fund</a>
     <nav class="nav-links" aria-label="ナビ">
-      <a href="blog/ja/">ブログ（JA）</a>
+      <a href="#services">プログラム</a>
+      <a href="#blog">ブログ</a>
+      <a href="#line">LINE</a>
+      <a href="#cross">連動</a>
       <a href="../automation/">SNS・LINE運用</a>
       <a href="../index.html">Japan Music Tourism</a>
       <a href="../gmtj-os/">GMTJ OS</a>
@@ -19,30 +22,93 @@
   </header>
 
   <section class="hero" id="top">
-    <p class="hero-kicker">GMTJ #21 · Region × Music</p>
-    <h1>Izu Music Fund</h1>
-    <p class="hero-lead">
-      地域共創と音楽プロジェクトのパイプラインを整理します。公式LINE・SNS連携は運用ハブから設定してください。
-    </p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="../automation/">運用ハブを開く</a>
-      <a class="btn btn-line" href="#line">公式LINE</a>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="brand-pill">Izu Music Fund</span>
+        <p class="hero-kicker">GMTJ #21 · Region × Music</p>
+        <h1>伊豆の音楽と地域を、<br />ひとつの物語に。</h1>
+        <p class="hero-lead">
+          Izu Music Fund は、地域の音楽資源と観光・投資・共創プログラムを横断して設計する Japan Music Tourism グループの公式ハブです。
+          レポート、パートナー募集、イベント設計のたたき台をブログで公開し、LINE と SNS オートメーションと接続できます。
+        </p>
+        <div class="hero-cta" style="justify-content: center">
+          <a class="btn btn-primary" href="#line">公式LINEはこちら</a>
+          <a class="btn btn-ghost" href="#blog">ブログ一覧</a>
+          <a class="btn btn-ghost" href="../automation/">SNS・LINE運用</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true"></div>
     </div>
   </section>
 
   <main class="wrap">
+    <section class="block" id="services">
+      <h2>プログラムと支援領域</h2>
+      <p class="section-lead">
+        地域アーティスト、観光導線、投資家コミュニケーションを同じ設計図に載せ、再現可能な運用に落とし込みます。
+      </p>
+      <div class="grid-3">
+        <article class="card">
+          <span class="pill">Pipeline</span>
+          <h3>案件パイプライン</h3>
+          <p>地域イベント、滞在プログラム、レポート公開までの流れをテンプレ化し、関係者で共有します。</p>
+        </article>
+        <article class="card">
+          <span class="pill">Community</span>
+          <h3>共創と透明性</h3>
+          <p>スポンサー表記、クラファン連携、投資家向けレターのトーンを最初に定義し、更新履歴を残します。</p>
+        </article>
+        <article class="card">
+          <span class="pill">Tourism</span>
+          <h3>音楽ツーリズム</h3>
+          <p>安全・マナー・多言語案内をセットにし、公式観光情報との整合を優先します。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="blog">
+      <h2>ブログ記事一覧</h2>
+      <p class="section-lead">
+        地域連携、投資家コミュニケーション、イベント設計など、現場で使えるメモを日英韓中で掲載しています。
+      </p>
+      <ul class="blog-list" id="blog-list"></ul>
+    </section>
+
     <section class="block" id="line">
       <h2>公式LINE</h2>
       <p class="section-lead">
-        Webhook: <span class="mono" style="word-break: break-all">/.netlify/functions/line-izu-music-fund</span>
+        月次レポート案内、投資家向け一次窓口、地域イベントの先行案内をお届けします（条件により配信内容が異なります）。
       </p>
-      <p class="section-lead">友だち追加後の自動応答（クーポン・予約・ファンド）をハブページに記載しています。</p>
+      <div class="hero-cta" style="justify-content: flex-start">
+        <a class="btn btn-line" id="line-cta" href="#">LINEで受け取る</a>
+      </div>
+    </section>
+
+    <section class="block" id="cross">
+      <h2>連動プログラム</h2>
+      <p class="section-lead">Japan Music Tourism の事業群と自然につながる導線です。</p>
+      <div class="cross-grid">
+        <article class="cross-card">
+          <h3>AI TARNAR Voice School</h3>
+          <p>声の学校で基礎を固め、伊豆滞在やイベント参加と組み合わせた学び旅を設計します。</p>
+          <a class="btn btn-ghost" href="../tarnar/">TARNAR ポータルを開く</a>
+        </article>
+        <article class="cross-card">
+          <h3>Japan Music Tourism 本体</h3>
+          <p>事業ドメイン全体の俯瞰と、コンシェルジュ型サイトの最新情報はこちらから。</p>
+          <a class="btn btn-ghost" href="../index.html">サイトトップへ</a>
+        </article>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p><a href="../index.html">サイトトップ</a></p>
+    <div class="links" id="footer-related">
+      <a href="https://atono.co.jp/" rel="noopener noreferrer" target="_blank">atono co., ltd.</a>
+    </div>
     <p>© Japan Music Tourism · Izu Music Fund</p>
   </footer>
+
+  <script src="portal.js" defer></script>
 </body>
 </html>

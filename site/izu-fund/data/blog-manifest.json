@@ -1,0 +1,388 @@
+{
+  "articles": [
+    {
+      "slug": "izu-01",
+      "status": "published",
+      "titles": {
+        "ja": "伊豆の音楽と旅をつなぐ考え方",
+        "en": "Connecting music and travel in Izu",
+        "ko": "이즈의 음악과 여행을 잇는 사고방식",
+        "zh": "伊豆连接音乐与旅行的思路"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-01.html",
+        "en": "blog/en/izu-01.html",
+        "ko": "blog/ko/izu-01.html",
+        "zh": "blog/zh/izu-01.html"
+      }
+    },
+    {
+      "slug": "izu-02",
+      "status": "published",
+      "titles": {
+        "ja": "アーティスト支援と地域プログラムの両立",
+        "en": "Artist support and local programs",
+        "ko": "아티스트 지원과 지역 프로그램의 양립",
+        "zh": "艺人支援与地域项目并行"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-02.html",
+        "en": "blog/en/izu-02.html",
+        "ko": "blog/ko/izu-02.html",
+        "zh": "blog/zh/izu-02.html"
+      }
+    },
+    {
+      "slug": "izu-03",
+      "status": "published",
+      "titles": {
+        "ja": "音楽ツーリズムの安全とマナー",
+        "en": "Safety and etiquette for music tourism",
+        "ko": "뮤직 투어리즘의 안전과 매너",
+        "zh": "音乐旅游的安全与礼仪"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-03.html",
+        "en": "blog/en/izu-03.html",
+        "ko": "blog/ko/izu-03.html",
+        "zh": "blog/zh/izu-03.html"
+      }
+    },
+    {
+      "slug": "izu-04",
+      "status": "published",
+      "titles": {
+        "ja": "滞在型プログラムの設計メモ",
+        "en": "Designing stay-based programs",
+        "ko": "체류형 프로그램 설계 메모",
+        "zh": "停留型项目设计备忘"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-04.html",
+        "en": "blog/en/izu-04.html",
+        "ko": "blog/ko/izu-04.html",
+        "zh": "blog/zh/izu-04.html"
+      }
+    },
+    {
+      "slug": "izu-05",
+      "status": "published",
+      "titles": {
+        "ja": "パートナー募集で伝えるべき3点",
+        "en": "Three points for partner outreach",
+        "ko": "파트너 모집에서 전할 세 가지",
+        "zh": "伙伴招募应说明的三点"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-05.html",
+        "en": "blog/en/izu-05.html",
+        "ko": "blog/ko/izu-05.html",
+        "zh": "blog/zh/izu-05.html"
+      }
+    },
+    {
+      "slug": "izu-06",
+      "status": "published",
+      "titles": {
+        "ja": "レポートに載せる指標の選び方",
+        "en": "Choosing metrics for public reports",
+        "ko": "보고서에 실을 지표 고르기",
+        "zh": "公开报告指标的选择"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-06.html",
+        "en": "blog/en/izu-06.html",
+        "ko": "blog/ko/izu-06.html",
+        "zh": "blog/zh/izu-06.html"
+      }
+    },
+    {
+      "slug": "izu-07",
+      "status": "published",
+      "titles": {
+        "ja": "多言語ゲストへの案内の型",
+        "en": "Templates for multilingual guests",
+        "ko": "다국어 게스트 안내 템플릿",
+        "zh": "多语言客人指引模板"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-07.html",
+        "en": "blog/en/izu-07.html",
+        "ko": "blog/ko/izu-07.html",
+        "zh": "blog/zh/izu-07.html"
+      }
+    },
+    {
+      "slug": "izu-08",
+      "status": "published",
+      "titles": {
+        "ja": "クラウドファンディング連携の設計ポイント",
+        "en": "Crowdfunding collaboration design",
+        "ko": "크라우드펀딩 연계 설계 포인트",
+        "zh": "众筹联动设计要点"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-08.html",
+        "en": "blog/en/izu-08.html",
+        "ko": "blog/ko/izu-08.html",
+        "zh": "blog/zh/izu-08.html"
+      }
+    },
+    {
+      "slug": "izu-09",
+      "status": "published",
+      "titles": {
+        "ja": "地域の音楽施設との連携チェック",
+        "en": "Checklist for venue partnerships",
+        "ko": "지역 음악 시설과의 협업 체크",
+        "zh": "与地域音乐设施协作清单"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-09.html",
+        "en": "blog/en/izu-09.html",
+        "ko": "blog/ko/izu-09.html",
+        "zh": "blog/zh/izu-09.html"
+      }
+    },
+    {
+      "slug": "izu-10",
+      "status": "published",
+      "titles": {
+        "ja": "イベント後のフォローアップ",
+        "en": "Post-event follow-up",
+        "ko": "이벤트 후속 조치",
+        "zh": "活动后跟进"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-10.html",
+        "en": "blog/en/izu-10.html",
+        "ko": "blog/ko/izu-10.html",
+        "zh": "blog/zh/izu-10.html"
+      }
+    },
+    {
+      "slug": "izu-11",
+      "status": "published",
+      "titles": {
+        "ja": "伊豆エリアの移動ハブ整理",
+        "en": "Mobility hubs around Izu",
+        "ko": "이즈 지역 이동 허브 정리",
+        "zh": "伊豆区域交通节点整理"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-11.html",
+        "en": "blog/en/izu-11.html",
+        "ko": "blog/ko/izu-11.html",
+        "zh": "blog/zh/izu-11.html"
+      }
+    },
+    {
+      "slug": "izu-12",
+      "status": "published",
+      "titles": {
+        "ja": "音楽と地域ブランドのメッセージ統一",
+        "en": "Unifying regional brand messages",
+        "ko": "음악과 지역 브랜드 메시지 통일",
+        "zh": "音乐与地域品牌信息统一"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-12.html",
+        "en": "blog/en/izu-12.html",
+        "ko": "blog/ko/izu-12.html",
+        "zh": "blog/zh/izu-12.html"
+      }
+    },
+    {
+      "slug": "izu-13",
+      "status": "published",
+      "titles": {
+        "ja": "地域スポンサー表記のガイドライン",
+        "en": "Guidelines for local sponsor credits",
+        "ko": "지역 스폰서 표기 가이드라인",
+        "zh": "地域赞助露出规范"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-13.html",
+        "en": "blog/en/izu-13.html",
+        "ko": "blog/ko/izu-13.html",
+        "zh": "blog/zh/izu-13.html"
+      }
+    },
+    {
+      "slug": "izu-14",
+      "status": "published",
+      "titles": {
+        "ja": "音楽体験と宿泊パッケージの組み方",
+        "en": "Bundling music experiences with stays",
+        "ko": "음악 체험과 숙박 패키지 구성",
+        "zh": "音乐体验与住宿打包"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-14.html",
+        "en": "blog/en/izu-14.html",
+        "ko": "blog/ko/izu-14.html",
+        "zh": "blog/zh/izu-14.html"
+      }
+    },
+    {
+      "slug": "izu-15",
+      "status": "published",
+      "titles": {
+        "ja": "投資家向けレターのトーンと禁則",
+        "en": "Tone and guardrails for investor letters",
+        "ko": "투자자용 레터 톤과 금지 표현",
+        "zh": "致投资人信函的语气与禁区"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-15.html",
+        "en": "blog/en/izu-15.html",
+        "ko": "blog/ko/izu-15.html",
+        "zh": "blog/zh/izu-15.html"
+      }
+    },
+    {
+      "slug": "izu-16",
+      "status": "published",
+      "titles": {
+        "ja": "アーティストデイと地域学校の連携",
+        "en": "Artist days and school partnerships",
+        "ko": "아티스트 데이와 지역 학교 연계",
+        "zh": "艺人日与学校合作"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-16.html",
+        "en": "blog/en/izu-16.html",
+        "ko": "blog/ko/izu-16.html",
+        "zh": "blog/zh/izu-16.html"
+      }
+    },
+    {
+      "slug": "izu-17",
+      "status": "published",
+      "titles": {
+        "ja": "防災・避難計画とイベント運営",
+        "en": "Disaster planning for outdoor events",
+        "ko": "방재·대피 계획과 이벤트 운영",
+        "zh": "防灾疏散与活动运营"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-17.html",
+        "en": "blog/en/izu-17.html",
+        "ko": "blog/ko/izu-17.html",
+        "zh": "blog/zh/izu-17.html"
+      }
+    },
+    {
+      "slug": "izu-18",
+      "status": "published",
+      "titles": {
+        "ja": "著作権とセットリストの取り扱い",
+        "en": "Setlists and copyright handling",
+        "ko": "저작권과 셋리스트 취급",
+        "zh": "版权与歌单处理"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-18.html",
+        "en": "blog/en/izu-18.html",
+        "ko": "blog/ko/izu-18.html",
+        "zh": "blog/zh/izu-18.html"
+      }
+    },
+    {
+      "slug": "izu-19",
+      "status": "published",
+      "titles": {
+        "ja": "地域交通とラストトレイン案内",
+        "en": "Last-train guidance and mobility",
+        "ko": "지역 교통과 막차 안내",
+        "zh": "末班车与交通指引"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-19.html",
+        "en": "blog/en/izu-19.html",
+        "ko": "blog/ko/izu-19.html",
+        "zh": "blog/zh/izu-19.html"
+      }
+    },
+    {
+      "slug": "izu-20",
+      "status": "published",
+      "titles": {
+        "ja": "ボランティア募集と保険の確認",
+        "en": "Volunteers and insurance checks",
+        "ko": "자원봉사 모집과 보험 확인",
+        "zh": "志愿者招募与保险核对"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-20.html",
+        "en": "blog/en/izu-20.html",
+        "ko": "blog/ko/izu-20.html",
+        "zh": "blog/zh/izu-20.html"
+      }
+    },
+    {
+      "slug": "izu-21",
+      "status": "published",
+      "titles": {
+        "ja": "地域飲食店とのコラボ条件",
+        "en": "Collaboration terms with local restaurants",
+        "ko": "지역 음식점과의 콜라보 조건",
+        "zh": "与本地餐饮合作条件"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-21.html",
+        "en": "blog/en/izu-21.html",
+        "ko": "blog/ko/izu-21.html",
+        "zh": "blog/zh/izu-21.html"
+      }
+    },
+    {
+      "slug": "izu-22",
+      "status": "published",
+      "titles": {
+        "ja": "観光協会・DMOとの情報整合",
+        "en": "Aligning with tourism associations / DMOs",
+        "ko": "관광협회·DMO와의 정보 정합",
+        "zh": "与观光协会/DMO信息对齐"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-22.html",
+        "en": "blog/en/izu-22.html",
+        "ko": "blog/ko/izu-22.html",
+        "zh": "blog/zh/izu-22.html"
+      }
+    },
+    {
+      "slug": "izu-23",
+      "status": "published",
+      "titles": {
+        "ja": "サステナビリティ観点の音楽イベント",
+        "en": "Sustainability notes for music events",
+        "ko": "서스테이너빌리티 관점의 음악 이벤트",
+        "zh": "音乐活动的可持续要点"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-23.html",
+        "en": "blog/en/izu-23.html",
+        "ko": "blog/ko/izu-23.html",
+        "zh": "blog/zh/izu-23.html"
+      }
+    },
+    {
+      "slug": "izu-24",
+      "status": "published",
+      "titles": {
+        "ja": "次年度に向けたナレッジの棚卸し",
+        "en": "Year-end knowledge cleanup for the next season",
+        "ko": "차기 연도를 위한 지식 정리",
+        "zh": "面向下一年度的知识盘点"
+      },
+      "urls": {
+        "ja": "blog/ja/izu-24.html",
+        "en": "blog/en/izu-24.html",
+        "ko": "blog/ko/izu-24.html",
+        "zh": "blog/zh/izu-24.html"
+      }
+    }
+  ]
+}

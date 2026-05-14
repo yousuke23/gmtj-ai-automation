@@ -1,0 +1,1284 @@
+{
+  "articles": [
+    {
+      "slug": "voice-guide-01",
+      "status": "published",
+      "titles": {
+        "ja": "朝の声を整える3分ルーティン",
+        "en": "A 3-minute morning routine for your voice",
+        "ko": "아침 3분 보이스 루틴",
+        "zh": "晨间3分钟开嗓流程"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-01.html",
+        "en": "blog/en/voice-guide-01.html",
+        "ko": "blog/ko/voice-guide-01.html",
+        "zh": "blog/zh/voice-guide-01.html"
+      }
+    },
+    {
+      "slug": "voice-guide-02",
+      "status": "published",
+      "titles": {
+        "ja": "録音前にやるべきチェック5項目",
+        "en": "Five checks before you hit record",
+        "ko": "녹음 전 체크 5가지",
+        "zh": "录音前的五项检查"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-02.html",
+        "en": "blog/en/voice-guide-02.html",
+        "ko": "blog/ko/voice-guide-02.html",
+        "zh": "blog/zh/voice-guide-02.html"
+      }
+    },
+    {
+      "slug": "voice-guide-03",
+      "status": "published",
+      "titles": {
+        "ja": "腹式呼吸を日常に取り込むコツ",
+        "en": "How to practice diaphragmatic breath in daily life",
+        "ko": "일상에 배압 호흡 넣기",
+        "zh": "把腹式呼吸带进日常"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-03.html",
+        "en": "blog/en/voice-guide-03.html",
+        "ko": "blog/ko/voice-guide-03.html",
+        "zh": "blog/zh/voice-guide-03.html"
+      }
+    },
+    {
+      "slug": "voice-guide-04",
+      "status": "published",
+      "titles": {
+        "ja": "高音が苦手な人の段階練習",
+        "en": "Stepwise exercises if high notes feel tight",
+        "ko": "높은 음이 힘들 때 단계 연습",
+        "zh": "高音吃力的分步练习"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-04.html",
+        "en": "blog/en/voice-guide-04.html",
+        "ko": "blog/ko/voice-guide-04.html",
+        "zh": "blog/zh/voice-guide-04.html"
+      }
+    },
+    {
+      "slug": "voice-guide-05",
+      "status": "published",
+      "titles": {
+        "ja": "低音域のブレを抑えるリズム練習",
+        "en": "Rhythm drills to steady your low register",
+        "ko": "저음 안정을 위한 리듬 연습",
+        "zh": "稳住低音的节奏训练"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-05.html",
+        "en": "blog/en/voice-guide-05.html",
+        "ko": "blog/ko/voice-guide-05.html",
+        "zh": "blog/zh/voice-guide-05.html"
+      }
+    },
+    {
+      "slug": "voice-guide-06",
+      "status": "published",
+      "titles": {
+        "ja": "ライブ前日の声の休ませ方",
+        "en": "How to rest your voice the day before a show",
+        "ko": "공연 전날 목 쉬게 하기",
+        "zh": "演出前一日如何护嗓"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-06.html",
+        "en": "blog/en/voice-guide-06.html",
+        "ko": "blog/ko/voice-guide-06.html",
+        "zh": "blog/zh/voice-guide-06.html"
+      }
+    },
+    {
+      "slug": "voice-guide-07",
+      "status": "published",
+      "titles": {
+        "ja": "カラオケ後のクールダウン手順",
+        "en": "Cool-down after a long karaoke session",
+        "ko": "노래방 후 쿨다운",
+        "zh": "唱K后的放松步骤"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-07.html",
+        "en": "blog/en/voice-guide-07.html",
+        "ko": "blog/ko/voice-guide-07.html",
+        "zh": "blog/zh/voice-guide-07.html"
+      }
+    },
+    {
+      "slug": "voice-guide-08",
+      "status": "published",
+      "titles": {
+        "ja": "マイクとの距離感を覚える練習",
+        "en": "Training mic distance with simple recordings",
+        "ko": "마이크 거리 익히기",
+        "zh": "练出稳定的麦克风距离"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-08.html",
+        "en": "blog/en/voice-guide-08.html",
+        "ko": "blog/ko/voice-guide-08.html",
+        "zh": "blog/zh/voice-guide-08.html"
+      }
+    },
+    {
+      "slug": "voice-guide-09",
+      "status": "published",
+      "titles": {
+        "ja": "声帯を痛めない話し方の切り替え",
+        "en": "Switching between speaking and singing safely",
+        "ko": "말하기와 노래 전환",
+        "zh": "说话与歌唱的安全切换"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-09.html",
+        "en": "blog/en/voice-guide-09.html",
+        "ko": "blog/ko/voice-guide-09.html",
+        "zh": "blog/zh/voice-guide-09.html"
+      }
+    },
+    {
+      "slug": "voice-guide-10",
+      "status": "published",
+      "titles": {
+        "ja": "鼻声と抜け声のバランスを整える",
+        "en": "Balancing nasality and openness",
+        "ko": "비음과 개방감 밸런스",
+        "zh": "鼻音与开放的平衡"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-10.html",
+        "en": "blog/en/voice-guide-10.html",
+        "ko": "blog/ko/voice-guide-10.html",
+        "zh": "blog/zh/voice-guide-10.html"
+      }
+    },
+    {
+      "slug": "voice-guide-11",
+      "status": "published",
+      "titles": {
+        "ja": "英語歌詞を歌うときの発音と母音",
+        "en": "Singing English lyrics: vowels and consonants",
+        "ko": "영어 가사 발성",
+        "zh": "唱英文歌词的母音与辅音"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-11.html",
+        "en": "blog/en/voice-guide-11.html",
+        "ko": "blog/ko/voice-guide-11.html",
+        "zh": "blog/zh/voice-guide-11.html"
+      }
+    },
+    {
+      "slug": "voice-guide-12",
+      "status": "published",
+      "titles": {
+        "ja": "韓国語歌詞のリズムに合わせるコツ",
+        "en": "Korean lyrics: pacing consonant clusters",
+        "ko": "한국어 가사 리듬",
+        "zh": "韩文歌词的节奏处理"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-12.html",
+        "en": "blog/en/voice-guide-12.html",
+        "ko": "blog/ko/voice-guide-12.html",
+        "zh": "blog/zh/voice-guide-12.html"
+      }
+    },
+    {
+      "slug": "voice-guide-13",
+      "status": "published",
+      "titles": {
+        "ja": "中国語の声調をメロディに乗せる練習",
+        "en": "Mandarin tones and melody: practical tips",
+        "ko": "중국어 성조와 멜로디",
+        "zh": "中文声调与旋律的配合"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-13.html",
+        "en": "blog/en/voice-guide-13.html",
+        "ko": "blog/ko/voice-guide-13.html",
+        "zh": "blog/zh/voice-guide-13.html"
+      }
+    },
+    {
+      "slug": "voice-guide-14",
+      "status": "published",
+      "titles": {
+        "ja": "アンサンブルで音量を合わせる耳",
+        "en": "Matching volume in small ensembles",
+        "ko": "소규모 합창 볼륨 맞추기",
+        "zh": "小组合唱的音量对齐"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-14.html",
+        "en": "blog/en/voice-guide-14.html",
+        "ko": "blog/ko/voice-guide-14.html",
+        "zh": "blog/zh/voice-guide-14.html"
+      }
+    },
+    {
+      "slug": "voice-guide-15",
+      "status": "published",
+      "titles": {
+        "ja": "自宅練習の音量と近所への配慮",
+        "en": "Considerate home practice volume",
+        "ko": "가정 연습 배려",
+        "zh": "居家练习的音量与邻里"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-15.html",
+        "en": "blog/en/voice-guide-15.html",
+        "ko": "blog/ko/voice-guide-15.html",
+        "zh": "blog/zh/voice-guide-15.html"
+      }
+    },
+    {
+      "slug": "voice-guide-16",
+      "status": "published",
+      "titles": {
+        "ja": "声の疲れをセルフチェックする目安",
+        "en": "Self-check signs of vocal fatigue",
+        "ko": "피로 신호 체크",
+        "zh": "嗓音疲劳的自测要点"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-16.html",
+        "en": "blog/en/voice-guide-16.html",
+        "ko": "blog/ko/voice-guide-16.html",
+        "zh": "blog/zh/voice-guide-16.html"
+      }
+    },
+    {
+      "slug": "voice-guide-17",
+      "status": "published",
+      "titles": {
+        "ja": "発声前の首肩ストレッチ",
+        "en": "Neck and shoulder stretches before phonation",
+        "ko": "목 어깨 스트레칭",
+        "zh": "发声前的颈肩拉伸"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-17.html",
+        "en": "blog/en/voice-guide-17.html",
+        "ko": "blog/ko/voice-guide-17.html",
+        "zh": "blog/zh/voice-guide-17.html"
+      }
+    },
+    {
+      "slug": "voice-guide-18",
+      "status": "published",
+      "titles": {
+        "ja": "舌の力みをほぐす母音練習",
+        "en": "Vowel drills to relax tongue tension",
+        "ko": "모음으로 혀 긴장 풀기",
+        "zh": "用母音放松舌头紧张"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-18.html",
+        "en": "blog/en/voice-guide-18.html",
+        "ko": "blog/ko/voice-guide-18.html",
+        "zh": "blog/zh/voice-guide-18.html"
+      }
+    },
+    {
+      "slug": "voice-guide-19",
+      "status": "published",
+      "titles": {
+        "ja": "ステージ上の立ち位置と声の届き方",
+        "en": "Stage position and projection basics",
+        "ko": "무대 위치와 전달",
+        "zh": "站位与声音投射"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-19.html",
+        "en": "blog/en/voice-guide-19.html",
+        "ko": "blog/ko/voice-guide-19.html",
+        "zh": "blog/zh/voice-guide-19.html"
+      }
+    },
+    {
+      "slug": "voice-guide-20",
+      "status": "published",
+      "titles": {
+        "ja": "緊張をほぐす呼吸パターン4-7-8",
+        "en": "A simple breathing pattern to ease nerves",
+        "ko": "긴장 완화 호흡",
+        "zh": "缓解紧张的呼吸节奏"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-20.html",
+        "en": "blog/en/voice-guide-20.html",
+        "ko": "blog/ko/voice-guide-20.html",
+        "zh": "blog/zh/voice-guide-20.html"
+      }
+    },
+    {
+      "slug": "voice-guide-21",
+      "status": "published",
+      "titles": {
+        "ja": "イヤモニターの音量バランス",
+        "en": "In-ear mix: clicks vs. your voice",
+        "ko": "인이어 믹스",
+        "zh": "耳返里节拍与自己的比例"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-21.html",
+        "en": "blog/en/voice-guide-21.html",
+        "ko": "blog/ko/voice-guide-21.html",
+        "zh": "blog/zh/voice-guide-21.html"
+      }
+    },
+    {
+      "slug": "voice-guide-22",
+      "status": "published",
+      "titles": {
+        "ja": "リップトリルができないときの代替",
+        "en": "Alternatives if lip trills are difficult",
+        "ko": "립트릴 대안",
+        "zh": "唇颤困难时的替代练习"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-22.html",
+        "en": "blog/en/voice-guide-22.html",
+        "ko": "blog/ko/voice-guide-22.html",
+        "zh": "blog/zh/voice-guide-22.html"
+      }
+    },
+    {
+      "slug": "voice-guide-23",
+      "status": "published",
+      "titles": {
+        "ja": "歌詞暗記と音取りの順番",
+        "en": "Learn melody first, then lyrics",
+        "ko": "멜로디 후 가사",
+        "zh": "先旋律后歌词的顺序"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-23.html",
+        "en": "blog/en/voice-guide-23.html",
+        "ko": "blog/ko/voice-guide-23.html",
+        "zh": "blog/zh/voice-guide-23.html"
+      }
+    },
+    {
+      "slug": "voice-guide-24",
+      "status": "published",
+      "titles": {
+        "ja": "録音データのファイル命名規則",
+        "en": "Naming recorded takes for easy search",
+        "ko": "파일 이름 규칙",
+        "zh": "录音文件命名习惯"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-24.html",
+        "en": "blog/en/voice-guide-24.html",
+        "ko": "blog/ko/voice-guide-24.html",
+        "zh": "blog/zh/voice-guide-24.html"
+      }
+    },
+    {
+      "slug": "voice-guide-25",
+      "status": "published",
+      "titles": {
+        "ja": "ボイトレで目標を言語化するワーク",
+        "en": "Writing a one-line monthly vocal goal",
+        "ko": "월간 목표 한 줄",
+        "zh": "把月度目标写成一句话"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-25.html",
+        "en": "blog/en/voice-guide-25.html",
+        "ko": "blog/ko/voice-guide-25.html",
+        "zh": "blog/zh/voice-guide-25.html"
+      }
+    },
+    {
+      "slug": "voice-guide-26",
+      "status": "published",
+      "titles": {
+        "ja": "声域拡張のための半音ステップ練習",
+        "en": "Half-step routines for range work",
+        "ko": "반음 스텝 연습",
+        "zh": "半音阶的安全拓展"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-26.html",
+        "en": "blog/en/voice-guide-26.html",
+        "ko": "blog/ko/voice-guide-26.html",
+        "zh": "blog/zh/voice-guide-26.html"
+      }
+    },
+    {
+      "slug": "voice-guide-27",
+      "status": "published",
+      "titles": {
+        "ja": "ビブラートのかけすぎを直す",
+        "en": "Keeping vibrato tasteful, not constant",
+        "ko": "비브라토 절제",
+        "zh": "让颤音更克制自然"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-27.html",
+        "en": "blog/en/voice-guide-27.html",
+        "ko": "blog/ko/voice-guide-27.html",
+        "zh": "blog/zh/voice-guide-27.html"
+      }
+    },
+    {
+      "slug": "voice-guide-28",
+      "status": "published",
+      "titles": {
+        "ja": "合唱でパート音を取りやすくする聴き方",
+        "en": "Hearing harmony parts faster in choir",
+        "ko": "합창 파트 듣기",
+        "zh": "合唱里更快找准声部"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-28.html",
+        "en": "blog/en/voice-guide-28.html",
+        "ko": "blog/ko/voice-guide-28.html",
+        "zh": "blog/zh/voice-guide-28.html"
+      }
+    },
+    {
+      "slug": "voice-guide-29",
+      "status": "published",
+      "titles": {
+        "ja": "配信ライブの音圧と話し声の切替",
+        "en": "Switching tone between talk and song on stream",
+        "ko": "방송 토크와 노래",
+        "zh": "直播里说话与演唱的切换"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-29.html",
+        "en": "blog/en/voice-guide-29.html",
+        "ko": "blog/ko/voice-guide-29.html",
+        "zh": "blog/zh/voice-guide-29.html"
+      }
+    },
+    {
+      "slug": "voice-guide-30",
+      "status": "published",
+      "titles": {
+        "ja": "年間の声のメンテナンスカレンダー",
+        "en": "A yearly maintenance calendar for vocal health",
+        "ko": "연간 보이스 캘린더",
+        "zh": "年度嗓音维护日历"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-30.html",
+        "en": "blog/en/voice-guide-30.html",
+        "ko": "blog/ko/voice-guide-30.html",
+        "zh": "blog/zh/voice-guide-30.html"
+      }
+    },
+    {
+      "slug": "voice-guide-31",
+      "status": "published",
+      "titles": {
+        "ja": "滑舌と歯列の余白を意識した短文練習",
+        "en": "Short drills for articulation and mouth space",
+        "ko": "발음과 치열 여백을 활용한 짧은 연습",
+        "zh": "口齿与齿列空间的短文练习"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-31.html",
+        "en": "blog/en/voice-guide-31.html",
+        "ko": "blog/ko/voice-guide-31.html",
+        "zh": "blog/zh/voice-guide-31.html"
+      }
+    },
+    {
+      "slug": "voice-guide-32",
+      "status": "published",
+      "titles": {
+        "ja": "会議で声が刺さらない話し方の音量設計",
+        "en": "Meeting voice levels that do not feel sharp",
+        "ko": "회의에서 날카롭지 않게 들리는 음량 설계",
+        "zh": "会议发言不刺耳的音量设计"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-32.html",
+        "en": "blog/en/voice-guide-32.html",
+        "ko": "blog/ko/voice-guide-32.html",
+        "zh": "blog/zh/voice-guide-32.html"
+      }
+    },
+    {
+      "slug": "voice-guide-33",
+      "status": "published",
+      "titles": {
+        "ja": "鼻呼吸と口呼吸を切り替えるタイミング",
+        "en": "When to switch nose vs mouth breathing",
+        "ko": "코·입 호흡 전환 타이밍",
+        "zh": "鼻口呼吸切换的时机"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-33.html",
+        "en": "blog/en/voice-guide-33.html",
+        "ko": "blog/ko/voice-guide-33.html",
+        "zh": "blog/zh/voice-guide-33.html"
+      }
+    },
+    {
+      "slug": "voice-guide-34",
+      "status": "published",
+      "titles": {
+        "ja": "声帯ポリープ疑いのときにやってはいけないこと",
+        "en": "What to avoid if polyps are suspected",
+        "ko": "성대 폴립 의심 시 피해야 할 것",
+        "zh": "怀疑声带息肉时应避免的做法"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-34.html",
+        "en": "blog/en/voice-guide-34.html",
+        "ko": "blog/ko/voice-guide-34.html",
+        "zh": "blog/zh/voice-guide-34.html"
+      }
+    },
+    {
+      "slug": "voice-guide-35",
+      "status": "published",
+      "titles": {
+        "ja": "リハーサルでの声出しの最小セット",
+        "en": "Minimal warm-up set for rehearsals",
+        "ko": "리허설 최소 보컬 워밍업",
+        "zh": "排练最小热身组合"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-35.html",
+        "en": "blog/en/voice-guide-35.html",
+        "ko": "blog/ko/voice-guide-35.html",
+        "zh": "blog/zh/voice-guide-35.html"
+      }
+    },
+    {
+      "slug": "voice-guide-36",
+      "status": "published",
+      "titles": {
+        "ja": "アカペラでの音程ドリル短時間版",
+        "en": "Short intonation drills for a cappella",
+        "ko": "아카펠라 짧은 음정 드릴",
+        "zh": "阿卡贝拉短音准练习"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-36.html",
+        "en": "blog/en/voice-guide-36.html",
+        "ko": "blog/ko/voice-guide-36.html",
+        "zh": "blog/zh/voice-guide-36.html"
+      }
+    },
+    {
+      "slug": "voice-guide-37",
+      "status": "published",
+      "titles": {
+        "ja": "ヘッドボイスとファルセットの聞き分け練習",
+        "en": "Hearing head voice vs falsetto",
+        "ko": "헤드보이스와 팔세토 구분 듣기",
+        "zh": "头声与假声的听辨"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-37.html",
+        "en": "blog/en/voice-guide-37.html",
+        "ko": "blog/ko/voice-guide-37.html",
+        "zh": "blog/zh/voice-guide-37.html"
+      }
+    },
+    {
+      "slug": "voice-guide-38",
+      "status": "published",
+      "titles": {
+        "ja": "マイクゲインと声量のバランス表を作る",
+        "en": "A simple table for mic gain vs vocal level",
+        "ko": "마이크 게인과 성량 밸런스 표",
+        "zh": "麦克风增益与音量对照表"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-38.html",
+        "en": "blog/en/voice-guide-38.html",
+        "ko": "blog/ko/voice-guide-38.html",
+        "zh": "blog/zh/voice-guide-38.html"
+      }
+    },
+    {
+      "slug": "voice-guide-39",
+      "status": "published",
+      "titles": {
+        "ja": "録音室での立ち位置と反響の関係",
+        "en": "Standing position and room reflections",
+        "ko": "녹음실 서 있는 위치와 잔향",
+        "zh": "录音室站位与反射"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-39.html",
+        "en": "blog/en/voice-guide-39.html",
+        "ko": "blog/ko/voice-guide-39.html",
+        "zh": "blog/zh/voice-guide-39.html"
+      }
+    },
+    {
+      "slug": "voice-guide-40",
+      "status": "published",
+      "titles": {
+        "ja": "ポッドキャスト向けの話し声トーン調整",
+        "en": "Podcast speaking tone basics",
+        "ko": "팟캐스트 말투 톤 조정",
+        "zh": "播客说话的语气调整"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-40.html",
+        "en": "blog/en/voice-guide-40.html",
+        "ko": "blog/ko/voice-guide-40.html",
+        "zh": "blog/zh/voice-guide-40.html"
+      }
+    },
+    {
+      "slug": "voice-guide-41",
+      "status": "published",
+      "titles": {
+        "ja": "オンライン会議のマイク設定チェックリスト",
+        "en": "Mic checklist for video calls",
+        "ko": "화상 회의 마이크 점검",
+        "zh": "视频会议麦克风检查"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-41.html",
+        "en": "blog/en/voice-guide-41.html",
+        "ko": "blog/ko/voice-guide-41.html",
+        "zh": "blog/zh/voice-guide-41.html"
+      }
+    },
+    {
+      "slug": "voice-guide-42",
+      "status": "published",
+      "titles": {
+        "ja": "歌唱時の舌根の沈め方イメージ",
+        "en": "Imagery to relax the tongue root",
+        "ko": "혀 뿌리 내리는 이미지",
+        "zh": "舌根下沉的想象练习"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-42.html",
+        "en": "blog/en/voice-guide-42.html",
+        "ko": "blog/ko/voice-guide-42.html",
+        "zh": "blog/zh/voice-guide-42.html"
+      }
+    },
+    {
+      "slug": "voice-guide-43",
+      "status": "published",
+      "titles": {
+        "ja": "子音の破裂を抑えたソフトな語り",
+        "en": "Softer consonants for narration",
+        "ko": "부드러운 자음 처리",
+        "zh": "更柔和的辅音叙述"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-43.html",
+        "en": "blog/en/voice-guide-43.html",
+        "ko": "blog/ko/voice-guide-43.html",
+        "zh": "blog/zh/voice-guide-43.html"
+      }
+    },
+    {
+      "slug": "voice-guide-44",
+      "status": "published",
+      "titles": {
+        "ja": "語尾を落とさず明瞭に聞こせるコツ",
+        "en": "Clear endings without dropping pitch",
+        "ko": "어미를 떨어뜨리지 않고 명료하게",
+        "zh": "字尾清晰不塌的处理"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-44.html",
+        "en": "blog/en/voice-guide-44.html",
+        "ko": "blog/ko/voice-guide-44.html",
+        "zh": "blog/zh/voice-guide-44.html"
+      }
+    },
+    {
+      "slug": "voice-guide-45",
+      "status": "published",
+      "titles": {
+        "ja": "早口言葉を声に負担なくこなす段階",
+        "en": "Tongue twisters in gentle stages",
+        "ko": "빠른 혀 놀림을 단계적으로",
+        "zh": "绕口令的分段练习"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-45.html",
+        "en": "blog/en/voice-guide-45.html",
+        "ko": "blog/ko/voice-guide-45.html",
+        "zh": "blog/zh/voice-guide-45.html"
+      }
+    },
+    {
+      "slug": "voice-guide-46",
+      "status": "published",
+      "titles": {
+        "ja": "声域移行点付近の母音統一",
+        "en": "Unifying vowels near passaggio",
+        "ko": "패시지 근처 모음 통일",
+        "zh": "换声点附近的母音统一"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-46.html",
+        "en": "blog/en/voice-guide-46.html",
+        "ko": "blog/ko/voice-guide-46.html",
+        "zh": "blog/zh/voice-guide-46.html"
+      }
+    },
+    {
+      "slug": "voice-guide-47",
+      "status": "published",
+      "titles": {
+        "ja": "ブレスノイズを減らすマイク角度",
+        "en": "Mic angle to reduce breath noise",
+        "ko": "호흡 잡음 줄이는 마이크 각도",
+        "zh": "减少喷麦的麦克风角度"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-47.html",
+        "en": "blog/en/voice-guide-47.html",
+        "ko": "blog/ko/voice-guide-47.html",
+        "zh": "blog/zh/voice-guide-47.html"
+      }
+    },
+    {
+      "slug": "voice-guide-48",
+      "status": "published",
+      "titles": {
+        "ja": "リバーブ量と歌声の馴染ませ方",
+        "en": "Reverb amount that fits vocals",
+        "ko": "리버브와 보컬의 어울림",
+        "zh": "混响与人声的融合"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-48.html",
+        "en": "blog/en/voice-guide-48.html",
+        "ko": "blog/ko/voice-guide-48.html",
+        "zh": "blog/zh/voice-guide-48.html"
+      }
+    },
+    {
+      "slug": "voice-guide-49",
+      "status": "published",
+      "titles": {
+        "ja": "デュエットで相手の声を邪魔しない音量",
+        "en": "Volume etiquette in duets",
+        "ko": "듀엣에서 상대를 가리지 않는 볼륨",
+        "zh": "二重唱不压对方的音量"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-49.html",
+        "en": "blog/en/voice-guide-49.html",
+        "ko": "blog/ko/voice-guide-49.html",
+        "zh": "blog/zh/voice-guide-49.html"
+      }
+    },
+    {
+      "slug": "voice-guide-50",
+      "status": "published",
+      "titles": {
+        "ja": "トリオ以上でのハーモニー取りの順番",
+        "en": "Harmony order in trios and larger",
+        "ko": "3인 이상 화음 잡는 순서",
+        "zh": "三人以上合唱的和声顺序"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-50.html",
+        "en": "blog/en/voice-guide-50.html",
+        "ko": "blog/ko/voice-guide-50.html",
+        "zh": "blog/zh/voice-guide-50.html"
+      }
+    },
+    {
+      "slug": "voice-guide-51",
+      "status": "published",
+      "titles": {
+        "ja": "バンドリハでのモニター依頼の伝え方",
+        "en": "How to ask for monitor changes in band rehearsal",
+        "ko": "밴드 리허설 모니터 요청법",
+        "zh": "乐队排练如何沟通监听"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-51.html",
+        "en": "blog/en/voice-guide-51.html",
+        "ko": "blog/ko/voice-guide-51.html",
+        "zh": "blog/zh/voice-guide-51.html"
+      }
+    },
+    {
+      "slug": "voice-guide-52",
+      "status": "published",
+      "titles": {
+        "ja": "ライブハウスでの客席との距離感",
+        "en": "Distance to the audience in live houses",
+        "ko": "라이브 하우스 관객 거리감",
+        "zh": "Livehouse与观众距离感"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-52.html",
+        "en": "blog/en/voice-guide-52.html",
+        "ko": "blog/ko/voice-guide-52.html",
+        "zh": "blog/zh/voice-guide-52.html"
+      }
+    },
+    {
+      "slug": "voice-guide-53",
+      "status": "published",
+      "titles": {
+        "ja": "アコースティックセットでのダイナミクス",
+        "en": "Dynamics in acoustic sets",
+        "ko": "어쿠스틱 세트 다이내믹스",
+        "zh": "原声套装的动态控制"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-53.html",
+        "en": "blog/en/voice-guide-53.html",
+        "ko": "blog/ko/voice-guide-53.html",
+        "zh": "blog/zh/voice-guide-53.html"
+      }
+    },
+    {
+      "slug": "voice-guide-54",
+      "status": "published",
+      "titles": {
+        "ja": "電子楽器との音量バランスの耳コピ",
+        "en": "Balancing with electronic instruments",
+        "ko": "전자 악기와의 밸런스",
+        "zh": "与电子乐器的音量平衡"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-54.html",
+        "en": "blog/en/voice-guide-54.html",
+        "ko": "blog/ko/voice-guide-54.html",
+        "zh": "blog/zh/voice-guide-54.html"
+      }
+    },
+    {
+      "slug": "voice-guide-55",
+      "status": "published",
+      "titles": {
+        "ja": "ストリートライブでの風向きと声の飛び",
+        "en": "Wind and projection for busking",
+        "ko": "버스킹 바람과 전달",
+        "zh": "街演风向与声音投射"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-55.html",
+        "en": "blog/en/voice-guide-55.html",
+        "ko": "blog/ko/voice-guide-55.html",
+        "zh": "blog/zh/voice-guide-55.html"
+      }
+    },
+    {
+      "slug": "voice-guide-56",
+      "status": "published",
+      "titles": {
+        "ja": "屋外フェスでの水分と塩分補給",
+        "en": "Hydration and electrolytes at summer festivals",
+        "ko": "야외 페스 수분·전해질",
+        "zh": "户外音乐节补水与电解质"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-56.html",
+        "en": "blog/en/voice-guide-56.html",
+        "ko": "blog/ko/voice-guide-56.html",
+        "zh": "blog/zh/voice-guide-56.html"
+      }
+    },
+    {
+      "slug": "voice-guide-57",
+      "status": "published",
+      "titles": {
+        "ja": "夏場の発声で気をつける喉の乾燥",
+        "en": "Dry throat risks in hot seasons",
+        "ko": "여름철 목 건조 주의",
+        "zh": "夏季发声的咽喉干燥"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-57.html",
+        "en": "blog/en/voice-guide-57.html",
+        "ko": "blog/ko/voice-guide-57.html",
+        "zh": "blog/zh/voice-guide-57.html"
+      }
+    },
+    {
+      "slug": "voice-guide-58",
+      "status": "published",
+      "titles": {
+        "ja": "冬場の冷えによる声の硬さ対策",
+        "en": "Cold weather stiffness strategies",
+        "ko": "겨울철 성대 뻣뻣함 대응",
+        "zh": "冬季声音发紧的对策"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-58.html",
+        "en": "blog/en/voice-guide-58.html",
+        "ko": "blog/ko/voice-guide-58.html",
+        "zh": "blog/zh/voice-guide-58.html"
+      }
+    },
+    {
+      "slug": "voice-guide-59",
+      "status": "published",
+      "titles": {
+        "ja": "花粉症シーズンの声のケア",
+        "en": "Voice care during pollen season",
+        "ko": "꽃가루 시즌 보이스 케어",
+        "zh": "花粉季嗓音护理"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-59.html",
+        "en": "blog/en/voice-guide-59.html",
+        "ko": "blog/ko/voice-guide-59.html",
+        "zh": "blog/zh/voice-guide-59.html"
+      }
+    },
+    {
+      "slug": "voice-guide-60",
+      "status": "published",
+      "titles": {
+        "ja": "寝不足時に避けたい練習メニュー",
+        "en": "Practice items to skip when sleep-deprived",
+        "ko": "수면 부족일 피할 연습",
+        "zh": "睡眠不足时避免的练习"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-60.html",
+        "en": "blog/en/voice-guide-60.html",
+        "ko": "blog/ko/voice-guide-60.html",
+        "zh": "blog/zh/voice-guide-60.html"
+      }
+    },
+    {
+      "slug": "voice-guide-61",
+      "status": "published",
+      "titles": {
+        "ja": "ジョギング後の発声はなぜ難しいか",
+        "en": "Why phonation feels hard after jogging",
+        "ko": "조깅 후 발성이 어려운 이유",
+        "zh": "慢跑后发声为何变难"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-61.html",
+        "en": "blog/en/voice-guide-61.html",
+        "ko": "blog/ko/voice-guide-61.html",
+        "zh": "blog/zh/voice-guide-61.html"
+      }
+    },
+    {
+      "slug": "voice-guide-62",
+      "status": "published",
+      "titles": {
+        "ja": "筋トレ直後の体幹と呼吸の関係",
+        "en": "Core and breath after strength training",
+        "ko": "근력 운동 직후 코어와 호흡",
+        "zh": "力量训练后的核心与呼吸"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-62.html",
+        "en": "blog/en/voice-guide-62.html",
+        "ko": "blog/ko/voice-guide-62.html",
+        "zh": "blog/zh/voice-guide-62.html"
+      }
+    },
+    {
+      "slug": "voice-guide-63",
+      "status": "published",
+      "titles": {
+        "ja": "ヨガの腹圧と歌唱の腹圧の違い",
+        "en": "Yoga core pressure vs singing support",
+        "ko": "요가 복압과 노래 지지",
+        "zh": "瑜伽腹压与歌唱支撑差异"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-63.html",
+        "en": "blog/en/voice-guide-63.html",
+        "ko": "blog/ko/voice-guide-63.html",
+        "zh": "blog/zh/voice-guide-63.html"
+      }
+    },
+    {
+      "slug": "voice-guide-64",
+      "status": "published",
+      "titles": {
+        "ja": "姿勢が崩れた椅子での補正ストレッチ",
+        "en": "Chair posture fixes for long sessions",
+        "ko": "의자 자세 교정 스트레칭",
+        "zh": "久坐椅姿的拉伸修正"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-64.html",
+        "en": "blog/en/voice-guide-64.html",
+        "ko": "blog/ko/voice-guide-64.html",
+        "zh": "blog/zh/voice-guide-64.html"
+      }
+    },
+    {
+      "slug": "voice-guide-65",
+      "status": "published",
+      "titles": {
+        "ja": "長時間運転後の首のリカバリー",
+        "en": "Neck recovery after long drives",
+        "ko": "장거리 운전 후 목 회복",
+        "zh": "长途驾驶后的颈部恢复"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-65.html",
+        "en": "blog/en/voice-guide-65.html",
+        "ko": "blog/ko/voice-guide-65.html",
+        "zh": "blog/zh/voice-guide-65.html"
+      }
+    },
+    {
+      "slug": "voice-guide-66",
+      "status": "published",
+      "titles": {
+        "ja": "飛行機移動後の耳抜きと声の関係",
+        "en": "Ear clearing after flights and singing",
+        "ko": "비행 후 귀압과 목소리",
+        "zh": "飞行后耳压与嗓音"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-66.html",
+        "en": "blog/en/voice-guide-66.html",
+        "ko": "blog/ko/voice-guide-66.html",
+        "zh": "blog/zh/voice-guide-66.html"
+      }
+    },
+    {
+      "slug": "voice-guide-67",
+      "status": "published",
+      "titles": {
+        "ja": "高海拔エリアでの歌唱の注意",
+        "en": "Singing cautions at higher altitude",
+        "ko": "고해발 고지에서의 노래 주의",
+        "zh": "高海拔歌唱注意"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-67.html",
+        "en": "blog/en/voice-guide-67.html",
+        "ko": "blog/ko/voice-guide-67.html",
+        "zh": "blog/zh/voice-guide-67.html"
+      }
+    },
+    {
+      "slug": "voice-guide-68",
+      "status": "published",
+      "titles": {
+        "ja": "温泉地滞在と声帯粘膜の保湿",
+        "en": "Humidity and vocal folds in hot spring trips",
+        "ko": "온천지 체류와 점막 보습",
+        "zh": "温泉地停留与黏膜保湿"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-68.html",
+        "en": "blog/en/voice-guide-68.html",
+        "ko": "blog/ko/voice-guide-68.html",
+        "zh": "blog/zh/voice-guide-68.html"
+      }
+    },
+    {
+      "slug": "voice-guide-69",
+      "status": "published",
+      "titles": {
+        "ja": "カフェイン摂取量と声の震え",
+        "en": "Caffeine and subtle tremor",
+        "ko": "카페인과 미세 떨림",
+        "zh": "咖啡因与细微颤抖"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-69.html",
+        "en": "blog/en/voice-guide-69.html",
+        "ko": "blog/ko/voice-guide-69.html",
+        "zh": "blog/zh/voice-guide-69.html"
+      }
+    },
+    {
+      "slug": "voice-guide-70",
+      "status": "published",
+      "titles": {
+        "ja": "糖分補給と高音域の感覚",
+        "en": "Sugar and high-note perception",
+        "ko": "당분과 고음 감각",
+        "zh": "糖分与高音感知"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-70.html",
+        "en": "blog/en/voice-guide-70.html",
+        "ko": "blog/ko/voice-guide-70.html",
+        "zh": "blog/zh/voice-guide-70.html"
+      }
+    },
+    {
+      "slug": "voice-guide-71",
+      "status": "published",
+      "titles": {
+        "ja": "アルコール後24時間の発声リスク",
+        "en": "Vocal risk window within 24h after alcohol",
+        "ko": "음주 후 24시간 내 리스크",
+        "zh": "饮酒后24小时内的风险"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-71.html",
+        "en": "blog/en/voice-guide-71.html",
+        "ko": "blog/ko/voice-guide-71.html",
+        "zh": "blog/zh/voice-guide-71.html"
+      }
+    },
+    {
+      "slug": "voice-guide-72",
+      "status": "published",
+      "titles": {
+        "ja": "アレルギー薬と口渇の対策",
+        "en": "Dry mouth with allergy meds",
+        "ko": "알레르기 약과 입마름",
+        "zh": "抗过敏药与口干"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-72.html",
+        "en": "blog/en/voice-guide-72.html",
+        "ko": "blog/ko/voice-guide-72.html",
+        "zh": "blog/zh/voice-guide-72.html"
+      }
+    },
+    {
+      "slug": "voice-guide-73",
+      "status": "published",
+      "titles": {
+        "ja": "鼻うがいと鼻腔共鳴のクリア感",
+        "en": "Nasal rinse and resonance clarity",
+        "ko": "코 세척과 공명감",
+        "zh": "洗鼻与共鸣通透"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-73.html",
+        "en": "blog/en/voice-guide-73.html",
+        "ko": "blog/ko/voice-guide-73.html",
+        "zh": "blog/zh/voice-guide-73.html"
+      }
+    },
+    {
+      "slug": "voice-guide-74",
+      "status": "published",
+      "titles": {
+        "ja": "イヤホンリスニングの音量上限目安",
+        "en": "Safe headphone listening levels",
+        "ko": "이어폰 청취 상한 가이드",
+        "zh": "耳机聆听的安全音量"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-74.html",
+        "en": "blog/en/voice-guide-74.html",
+        "ko": "blog/ko/voice-guide-74.html",
+        "zh": "blog/zh/voice-guide-74.html"
+      }
+    },
+    {
+      "slug": "voice-guide-75",
+      "status": "published",
+      "titles": {
+        "ja": "耳鳴りを感じた日の練習中止基準",
+        "en": "When to stop practice if ears ring",
+        "ko": "이명 느낄 때 연습 중단 기준",
+        "zh": "耳鸣日的练习中止标准"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-75.html",
+        "en": "blog/en/voice-guide-75.html",
+        "ko": "blog/ko/voice-guide-75.html",
+        "zh": "blog/zh/voice-guide-75.html"
+      }
+    },
+    {
+      "slug": "voice-guide-76",
+      "status": "published",
+      "titles": {
+        "ja": "インプロビゼーションでの声の遊び方",
+        "en": "Playful voice colors in improvisation",
+        "ko": "즉흥에서 목소리 놀이",
+        "zh": "即兴里的声音玩法"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-76.html",
+        "en": "blog/en/voice-guide-76.html",
+        "ko": "blog/ko/voice-guide-76.html",
+        "zh": "blog/zh/voice-guide-76.html"
+      }
+    },
+    {
+      "slug": "voice-guide-77",
+      "status": "published",
+      "titles": {
+        "ja": "ジャズスキャットの入り方練習",
+        "en": "Entry drills for jazz scat",
+        "ko": "재즈 스캣 진입 연습",
+        "zh": "爵士拟声入门练习"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-77.html",
+        "en": "blog/en/voice-guide-77.html",
+        "ko": "blog/ko/voice-guide-77.html",
+        "zh": "blog/zh/voice-guide-77.html"
+      }
+    },
+    {
+      "slug": "voice-guide-78",
+      "status": "published",
+      "titles": {
+        "ja": "ソウル系フィルに負けない母音",
+        "en": "Vowels that survive soul fills",
+        "ko": "소울 필에 지지 않는 모음",
+        "zh": "灵魂乐填充下的母音稳定"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-78.html",
+        "en": "blog/en/voice-guide-78.html",
+        "ko": "blog/ko/voice-guide-78.html",
+        "zh": "blog/zh/voice-guide-78.html"
+      }
+    },
+    {
+      "slug": "voice-guide-79",
+      "status": "published",
+      "titles": {
+        "ja": "ロックシャウトの翌日ケア",
+        "en": "Next-day care after rock shouting",
+        "ko": "록 샤우팅 다음날 케어",
+        "zh": "摇滚嘶吼次日护理"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-79.html",
+        "en": "blog/en/voice-guide-79.html",
+        "ko": "blog/ko/voice-guide-79.html",
+        "zh": "blog/zh/voice-guide-79.html"
+      }
+    },
+    {
+      "slug": "voice-guide-80",
+      "status": "published",
+      "titles": {
+        "ja": "メタル系歪み声の休息設計",
+        "en": "Rest design for harsh vocal styles",
+        "ko": "헤시 보컬 휴식 설계",
+        "zh": "极端嗓的休息设计"
+      },
+      "urls": {
+        "ja": "blog/ja/voice-guide-80.html",
+        "en": "blog/en/voice-guide-80.html",
+        "ko": "blog/ko/voice-guide-80.html",
+        "zh": "blog/zh/voice-guide-80.html"
+      }
+    }
+  ]
+}
