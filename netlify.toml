@@ -1,6 +1,8 @@
 # Netlify: static site + serverless chat + SNS/LINE automation
 [build]
   publish = "site"
+  # ポータルHTMLはリポジトリに含めるか、このコマンドで毎回生成する
+  command = "python3 scripts/generate_business_portals.py && python3 scripts/build_tarnar_izu_blog_pages.py"
   functions = "netlify/functions"
 
 [build.environment]
@@ -11,3 +13,240 @@
 # LINE_TARNAR_CHANNEL_SECRET, LINE_TARNAR_CHANNEL_TOKEN, LINE_TARNAR_NOTIFY_USER_ID
 # LINE_IMF_CHANNEL_SECRET, LINE_IMF_CHANNEL_TOKEN, LINE_IMF_NOTIFY_USER_ID
 # ANTHROPIC_API_KEY（チャット用）
+
+# ---------------------------------------------------------------------------
+# 末尾スラッシュなし → あり（301）
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/gmtj-os"
+  to = "/gmtj-os/"
+  status = 301
+
+[[redirects]]
+  from = "/tarnar"
+  to = "/tarnar/"
+  status = 301
+
+[[redirects]]
+  from = "/izu-fund"
+  to = "/izu-fund/"
+  status = 301
+
+[[redirects]]
+  from = "/automation"
+  to = "/automation/"
+  status = 301
+
+[[redirects]]
+  from = "/01-global-music-tour"
+  to = "/01-global-music-tour/"
+  status = 301
+
+[[redirects]]
+  from = "/02-real-estate-revitalization"
+  to = "/02-real-estate-revitalization/"
+  status = 301
+
+[[redirects]]
+  from = "/03-123-music-resorts"
+  to = "/03-123-music-resorts/"
+  status = 301
+
+[[redirects]]
+  from = "/04-music-cafe-bar"
+  to = "/04-music-cafe-bar/"
+  status = 301
+
+[[redirects]]
+  from = "/05-global-music-festival"
+  to = "/05-global-music-festival/"
+  status = 301
+
+[[redirects]]
+  from = "/06-music-production-first"
+  to = "/06-music-production-first/"
+  status = 301
+
+[[redirects]]
+  from = "/07-music-community-japan"
+  to = "/07-music-community-japan/"
+  status = 301
+
+[[redirects]]
+  from = "/09-voice-music-studio"
+  to = "/09-voice-music-studio/"
+  status = 301
+
+[[redirects]]
+  from = "/10-b2b-voice-communication"
+  to = "/10-b2b-voice-communication/"
+  status = 301
+
+[[redirects]]
+  from = "/11-tana-method-certification"
+  to = "/11-tana-method-certification/"
+  status = 301
+
+[[redirects]]
+  from = "/12-crowdfunding-ai-producer"
+  to = "/12-crowdfunding-ai-producer/"
+  status = 301
+
+[[redirects]]
+  from = "/13-global-music-partnership"
+  to = "/13-global-music-partnership/"
+  status = 301
+
+[[redirects]]
+  from = "/14-regional-music-alliance"
+  to = "/14-regional-music-alliance/"
+  status = 301
+
+[[redirects]]
+  from = "/15-subsidy-intelligence"
+  to = "/15-subsidy-intelligence/"
+  status = 301
+
+[[redirects]]
+  from = "/16-ma-music-business"
+  to = "/16-ma-music-business/"
+  status = 301
+
+[[redirects]]
+  from = "/17-ai-gmtj-os"
+  to = "/17-ai-gmtj-os/"
+  status = 301
+
+[[redirects]]
+  from = "/18-global-digital-marketing"
+  to = "/18-global-digital-marketing/"
+  status = 301
+
+[[redirects]]
+  from = "/19-japan-inbound-music-tourism"
+  to = "/19-japan-inbound-music-tourism/"
+  status = 301
+
+[[redirects]]
+  from = "/20-global-music-education-hub"
+  to = "/20-global-music-education-hub/"
+  status = 301
+
+# ---------------------------------------------------------------------------
+# ディレクトリURL → index.html（200）。静的ファイルは Netlify が先に解決するため
+# portal.js 等は上書きされない。
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/gmtj-os/"
+  to = "/gmtj-os/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/tarnar/"
+  to = "/tarnar/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/izu-fund/"
+  to = "/izu-fund/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/automation/"
+  to = "/automation/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/01-global-music-tour/"
+  to = "/01-global-music-tour/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/02-real-estate-revitalization/"
+  to = "/02-real-estate-revitalization/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/03-123-music-resorts/"
+  to = "/03-123-music-resorts/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/04-music-cafe-bar/"
+  to = "/04-music-cafe-bar/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/05-global-music-festival/"
+  to = "/05-global-music-festival/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/06-music-production-first/"
+  to = "/06-music-production-first/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/07-music-community-japan/"
+  to = "/07-music-community-japan/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/09-voice-music-studio/"
+  to = "/09-voice-music-studio/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/10-b2b-voice-communication/"
+  to = "/10-b2b-voice-communication/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/11-tana-method-certification/"
+  to = "/11-tana-method-certification/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/12-crowdfunding-ai-producer/"
+  to = "/12-crowdfunding-ai-producer/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/13-global-music-partnership/"
+  to = "/13-global-music-partnership/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/14-regional-music-alliance/"
+  to = "/14-regional-music-alliance/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/15-subsidy-intelligence/"
+  to = "/15-subsidy-intelligence/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/16-ma-music-business/"
+  to = "/16-ma-music-business/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/17-ai-gmtj-os/"
+  to = "/17-ai-gmtj-os/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/18-global-digital-marketing/"
+  to = "/18-global-digital-marketing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/19-japan-inbound-music-tourism/"
+  to = "/19-japan-inbound-music-tourism/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/20-global-music-education-hub/"
+  to = "/20-global-music-education-hub/index.html"
+  status = 200

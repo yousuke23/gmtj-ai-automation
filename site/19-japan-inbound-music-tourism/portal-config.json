@@ -1,0 +1,27 @@
+{
+  "lineAddFriendUrl": "",
+  "contactEmail": "123@atono.jp",
+  "mailtoSubject": "GMTJ #19 Japan Inbound Music Tourism ポータル（公式LINE）",
+  "relatedSites": [
+    {
+      "label": "Japan Music Tourism",
+      "url": "../index.html"
+    },
+    {
+      "label": "AI TARNAR Voice School",
+      "url": "../tarnar/"
+    },
+    {
+      "label": "Izu Music Fund",
+      "url": "../izu-fund/"
+    },
+    {
+      "label": "atono co., ltd.",
+      "url": "https://atono.co.jp/"
+    },
+    {
+      "label": "karaoke.ac",
+      "url": "https://karaoke.ac/"
+    }
+  ]
+}
