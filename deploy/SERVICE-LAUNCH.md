@@ -63,7 +63,7 @@
 ## フェーズ4 — 「他者を呼ぶ」前のゲート（必須）
 
 - [ ] **[SECURITY.md](./SECURITY.md)** を読み、**VPN / Basic 認証 / IP 制限**のいずれかで入口を囲む計画がある（`docker-compose.auth-stack.yml` 等）
-- [ ] **インターネット全体に URL を晒す**前に、**人間承認**を得る
+- [ ] **インターネット全体に URL を晒す**場合は **[WORLDWIDE-STAGING.md](./WORLDWIDE-STAGING.md)**（VPS・DNS・TLS）に沿い、**人間承認**を得てから行う
 - [ ] ログに **パスポート・カード・住所**が残らない運用であることを確認
 
 ---

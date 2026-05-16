@@ -1,0 +1,13 @@
+# 全世界向けステージング／本番想定（Let's Encrypt 自動 TLS）
+# 使う compose: deploy/docker-compose.worldwide-staging.yml
+# 必須環境変数: GMTJ_PUBLIC_DOMAIN（例 chat.example.com）, ACME_EMAIL（Let's Encrypt 通知用）
+#
+# バックエンド: 同一 Docker ネットワーク上の nginx-auth:8080（Basic 認証 → Open WebUI）
+
+{
+	email {$ACME_EMAIL}
+}
+
+{$GMTJ_PUBLIC_DOMAIN} {
+	reverse_proxy nginx-auth:8080
+}

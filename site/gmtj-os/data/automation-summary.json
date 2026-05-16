@@ -1,12 +1,9 @@
 {
   "schemaVersion": 1,
-  "note": "静的サイト用スナップショット。実ジョブは別システム＋Netlify Functions 等で接続。Grok司令塔レビューは手動または将来API。",
   "lastUpdated": "2026-05-13",
-  "todayJstHint": "ブラウザ表示時に Asia/Tokyo の日付を併記します。",
-  "grokReview": "最終確認: Grok に本JSONまたは差分を貼り、運用ルール違反がないか確認（自動APIは未接続）。",
   "phase1": {
-    "08_tana_voice_school": {
-      "title": "#08 AI Tana Voice School",
+    "08_tarnar_voice_school": {
+      "title": "#08 AI TARNAR Voice School",
       "automations": [
         {
           "id": "new_lead",
@@ -62,294 +59,294 @@
       "businessId": "01",
       "businessName": "Global Music Tour",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 2,
       "businessId": "01",
       "businessName": "Global Music Tour",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 3,
       "businessId": "02",
       "businessName": "Real Estate & Revitalization",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 4,
       "businessId": "02",
       "businessName": "Real Estate & Revitalization",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 5,
       "businessId": "03",
       "businessName": "123 MUSIC & RESORTS",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 6,
       "businessId": "03",
       "businessName": "123 MUSIC & RESORTS",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 7,
       "businessId": "04",
       "businessName": "Music Cafe & Bar",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 8,
       "businessId": "04",
       "businessName": "Music Cafe & Bar",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 9,
       "businessId": "05",
       "businessName": "Global Music Festival",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 10,
       "businessId": "05",
       "businessName": "Global Music Festival",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 11,
       "businessId": "06",
       "businessName": "Music Production First",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 12,
       "businessId": "06",
       "businessName": "Music Production First",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 13,
       "businessId": "07",
       "businessName": "Music × Community Japan",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 14,
       "businessId": "07",
       "businessName": "Music × Community Japan",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 15,
       "businessId": "08",
-      "businessName": "AI Tana Voice School",
+      "businessName": "AI TARNAR Voice School",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 16,
       "businessId": "08",
-      "businessName": "AI Tana Voice School",
+      "businessName": "AI TARNAR Voice School",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 17,
       "businessId": "09",
       "businessName": "Voice & Music Studio",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 18,
       "businessId": "09",
       "businessName": "Voice & Music Studio",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 19,
       "businessId": "10",
       "businessName": "B2B Voice & Communication",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 20,
       "businessId": "10",
       "businessName": "B2B Voice & Communication",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 21,
       "businessId": "11",
       "businessName": "Tana Method Certification",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 22,
       "businessId": "11",
       "businessName": "Tana Method Certification",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 23,
       "businessId": "12",
       "businessName": "Crowdfunding AI Producer",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 24,
       "businessId": "12",
       "businessName": "Crowdfunding AI Producer",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 25,
       "businessId": "13",
       "businessName": "Global Music Partnership",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 26,
       "businessId": "13",
       "businessName": "Global Music Partnership",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 27,
       "businessId": "14",
       "businessName": "Regional Music Alliance",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 28,
       "businessId": "14",
       "businessName": "Regional Music Alliance",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 29,
       "businessId": "15",
       "businessName": "Subsidy Intelligence",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 30,
       "businessId": "15",
       "businessName": "Subsidy Intelligence",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 31,
       "businessId": "16",
       "businessName": "M&A Music Business",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 32,
       "businessId": "16",
       "businessName": "M&A Music Business",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 33,
       "businessId": "17",
       "businessName": "AI GMTJ OS",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 34,
       "businessId": "17",
       "businessName": "AI GMTJ OS",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 35,
       "businessId": "18",
       "businessName": "Global Digital Marketing",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 36,
       "businessId": "18",
       "businessName": "Global Digital Marketing",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 37,
       "businessId": "19",
       "businessName": "Japan Inbound Music Tourism",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 38,
       "businessId": "19",
       "businessName": "Japan Inbound Music Tourism",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 39,
       "businessId": "20",
       "businessName": "Global Music Education Hub",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 40,
       "businessId": "20",
       "businessName": "Global Music Education Hub",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 41,
       "businessId": "21",
       "businessName": "Izu Music Fund",
       "lane": "daily",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     },
     {
       "n": 42,
       "businessId": "21",
       "businessName": "Izu Music Fund",
       "lane": "review",
-      "lastResult": "静的プレースホルダー（バックエンド未接続）"
+      "lastResult": "未実行"
     }
   ]
 }

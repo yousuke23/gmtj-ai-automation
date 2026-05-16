@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
   <title>Japan Music Tourism — 音乐与旅行体验，与地域同行。</title>
-  <meta name="description" content="音乐旅游、地域联动、数字体验。指引模板、礼宾设计、营销支持。含可选 AI 聊天（本地试用）的静态草稿站。" />
+  <meta name="description" content="音乐旅游、地域联动与宾客指引。事业门户与 AI 礼宾，为您解答关于日本音乐与旅行的常见问题。" />
   <link rel="alternate" hreflang="ja" href="index.html" />
   <link rel="alternate" hreflang="en" href="index-en.html" />
   <link rel="alternate" hreflang="ko" href="index-ko.html" />
@@ -22,8 +23,6 @@
       <a href="#chat">AI 礼宾</a>
       <a href="tarnar/">AI TARNAR Voice School</a>
       <a href="izu-fund/">Izu Music Fund</a>
-      <a href="automation/">SNS·LINE 运营</a>
-      <a href="gmtj-os/">GMTJ OS（Tana OS）</a>
       <a href="#flow">合作流程</a>
       <a href="#contact">联系</a>
     </nav>
@@ -46,7 +45,7 @@
         </p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#contact">联系</a>
-          <a class="btn btn-ghost" href="#chat">向 AI 提问（试用）</a>
+          <a class="btn btn-ghost" href="#chat">AI 礼宾</a>
           <a class="btn btn-ghost" href="#services">查看服务</a>
         </div>
       </div>
@@ -146,11 +145,11 @@
     <section id="faq">
       <div class="wrap">
         <h2>常见问题</h2>
-        <p class="section-sub">上线前务必与法务、运营核对文案。</p>
+        <p class="section-sub">费用、日程与参加条件请以各项目及官方窗口为准。</p>
         <div class="faq">
           <details>
             <summary>能否让 AI 处理预订或支付？</summary>
-            <p>不能。本站试用聊天与运营设计中，<strong>预订、支付与取消</strong>默认引导至人工窗口（如邮件）。若需自动化，须另行系统对接与法务评估。</p>
+            <p>不能。在本站的 AI 礼宾与运营设计中，<strong>预订、支付与取消</strong>默认引导至人工窗口（如邮件）。若需自动化，须另行系统对接与法务评估。</p>
           </details>
           <details>
             <summary>可以发送护照等个人信息吗？</summary>
@@ -162,7 +161,7 @@
           </details>
           <details>
             <summary>能否在网站使用他人标识或音乐？</summary>
-            <p>权利与署名须逐案确认。先制定发布政策与模板，并与公关、法务共享。</p>
+            <p>权利与署名须逐案确认。先制定发布政策与模板，并与相关责任方共享。</p>
           </details>
           <details>
             <summary>上线需要多久？</summary>
@@ -174,21 +173,36 @@
 
     <section class="alt" id="chat">
       <div class="wrap">
-        <h2>AI 对话（试用）</h2>
+        <h2>AI 礼宾</h2>
         <p class="section-sub">
           回答关于 Japan Music Tourism 的<strong>一般性问题</strong>（生成内容可能有误）。具体预订请发邮件至 <a href="mailto:123@atono.jp">123@atono.jp</a>。
         </p>
-        <p class="chat-public-notice" role="status">
-          <strong>目前仅限 localhost。</strong>仅当在您本机运行 <code class="mono">chat-proxy.py</code> 且 <code class="mono">config.js</code> 中 <code class="mono">chatProxyUrl</code> 指向 <code class="mono">127.0.0.1</code> 时才能发送。<strong>面向公网的正式版聊天尚在准备中</strong>（本公开 URL 无法连接您的本地代理）。
-        </p>
         <div class="chat-shell" id="chat-panel">
-          <p class="chat-proxy-hint" id="chat-proxy-hint" aria-live="polite"></p>
           <div class="chat-log" id="chat-log" aria-live="polite"></div>
           <p class="chat-status" id="chat-status"></p>
           <div class="chat-inputrow">
             <textarea id="chat-input" rows="2" placeholder="例：音乐旅行在着装或礼仪上要注意什么？" maxlength="2000"></textarea>
             <button type="button" class="btn btn-primary" id="chat-send">发送</button>
           </div>
+          <form
+            id="chat-lead-form"
+            name="chat-lead"
+            class="chat-lead-box"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            hidden
+          >
+            <input type="hidden" name="form-name" value="chat-lead" />
+            <p class="bot-field" style="position: absolute; left: -9999px">
+              <label>Bot: <input name="bot-field" /></label>
+            </p>
+            <label>
+              邮箱
+              <input id="chat-lead-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+            </label>
+            <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem">提交</button>
+          </form>
         </div>
       </div>
     </section>
@@ -204,7 +218,7 @@
           </li>
           <li>
             <strong>设计与草稿</strong>
-            <span>产出指引模板、知识结构及发布日历草稿。</span>
+            <span>产出指引模板、知识结构及发布日历的初版。</span>
           </li>
           <li>
             <strong>试点</strong>
@@ -241,24 +255,12 @@
         <span aria-hidden="true"> | </span>
         <a href="privacy-en.html" hreflang="en">Privacy Policy</a>
       </span>
-      <small style="color: var(--muted); display: block; margin-top: 0.4rem">公開前に必ず社内法務で最終確認してください（ドラフト）。</small>
     </p>
     <p>替代布局（Tailwind CDN）：<a href="landing-tailwind.html">日本語</a> · <a href="landing-tailwind-en.html">English</a></p>
-    <p>本页为<strong>静态草稿</strong>。电子商务表记等追加法务页面请按需完善。</p>
-    <p>
-      <strong>AI 对话（Anthropic，计费）：</strong>
-      <span class="mono">ANTHROPIC_API_KEY=... python3 site/chat-proxy.py</span>
-      <br />
-      <strong>AI 对话（Ollama，本地、无 API 费用）：</strong>先运行 <span class="mono">ollama serve</span> 与 <span class="mono">ollama pull llama3.2</span>，再执行
-      <span class="mono">USE_OLLAMA=1 python3 site/chat-proxy.py</span>
-      <br />
-      另开终端在仓库根目录：<span class="mono">python3 -m http.server 8888</span> →
-      <span class="mono">http://127.0.0.1:8888/site/</span>（端口可换）。将 <span class="mono">config.js</span> 中 <span class="mono">chatProxyUrl</span> 与代理端口对齐。
-      代理仅监听 <strong>127.0.0.1</strong>，勿暴露到公网。
-    </p>
   </footer>
 
   <script src="config.js"></script>
+  <script src="js/gmtj-chrome.js" defer></script>
   <script src="app.js" defer></script>
 </body>
 </html>

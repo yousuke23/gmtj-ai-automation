@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>SNS 投稿テンプレ（内部）— GMTJ</title>
+    <style>
+      :root {
+        --bg: #0f1419;
+        --card: #1a222d;
+        --line: #2a3544;
+        --text: #e8eef5;
+        --muted: #8b98a8;
+        --accent: #1d9e75;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1.25rem 1rem 3rem;
+      }
+      h1 {
+        font-size: 1.35rem;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      details {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        margin-bottom: 0.5rem;
+        background: var(--card);
+      }
+      summary {
+        cursor: pointer;
+        padding: 0.65rem 0.85rem;
+        font-weight: 600;
+      }
+      details[open] summary {
+        border-bottom: 1px solid var(--line);
+      }
+      .acc-body {
+        padding: 0.75rem 0.85rem 1rem;
+        font-size: 0.88rem;
+      }
+      .tpl-block {
+        margin-bottom: 1rem;
+      }
+      .tpl-block h4 {
+        margin: 0 0 0.35rem;
+        font-size: 0.82rem;
+        color: var(--accent);
+      }
+      pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+        background: #0b0f14;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 0.55rem 0.65rem;
+        margin: 0 0 0.4rem;
+        font-size: 0.78rem;
+      }
+      button.copy {
+        font: inherit;
+        font-size: 0.78rem;
+        padding: 0.35rem 0.65rem;
+        border-radius: 6px;
+        border: 1px solid var(--line);
+        background: #243040;
+        color: var(--text);
+        cursor: pointer;
+      }
+      button.copy:hover {
+        border-color: var(--accent);
+      }
+      table.cal {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.85rem;
+        margin-top: 1rem;
+      }
+      table.cal th,
+      table.cal td {
+        border: 1px solid var(--line);
+        padding: 0.4rem 0.5rem;
+        vertical-align: top;
+      }
+      table.cal th {
+        background: var(--card);
+      }
+    </style>
+  </head>
+  <body data-gmtj-chrome="off">
+    <div class="wrap">
+      <h1>SNS 週次テンプレ（21 事業 × 4 プラットフォーム）</h1>
+      <p class="lead">
+        コピーして投稿に利用。URL は本番ドメイン前提。英語版は Instagram 向けに短めにしています。
+      </p>
+      <div id="root"></div>
+      <h2 style="margin-top: 2rem; font-size: 1.1rem">推奨週間スケジュール（例）</h2>
+      <table class="cal">
+        <thead>
+          <tr>
+            <th>曜日</th>
+            <th>推奨投稿</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>月曜</td>
+            <td>#01 グローバル音楽ツアー / #08 AI TARNAR Voice School</td>
+          </tr>
+          <tr>
+            <td>水曜</td>
+            <td>#03 123 MUSIC & RESORTS / #05 フェスティバル</td>
+          </tr>
+          <tr>
+            <td>金曜</td>
+            <td>#07 音楽コミュニティ / #21 伊豆ミュージックファンド</td>
+          </tr>
+          <tr>
+            <td>土曜</td>
+            <td>インバウンド英語投稿（#19 / #13）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      (function () {
+        var base = "https://gmtj-japan-music-tourism.netlify.app";
+        var items = [
+          { id: "01", slug: "/01-global-music-tour/", ja: "グローバル音楽ツアー", en: "Global Music Tour" },
+          { id: "02", slug: "/02-real-estate-revitalization/", ja: "不動産・街再生", en: "Real Estate Revitalization" },
+          { id: "03", slug: "/03-123-music-resorts/", ja: "123 MUSIC & RESORTS", en: "123 Music & Resorts" },
+          { id: "04", slug: "/04-music-cafe-bar/", ja: "ミュージックカフェ＆バー", en: "Music Cafe & Bar" },
+          { id: "05", slug: "/05-global-music-festival/", ja: "グローバルミュージックフェス", en: "Global Music Festival" },
+          { id: "06", slug: "/06-music-production-first/", ja: "音楽プロダクション", en: "Music Production" },
+          { id: "07", slug: "/07-music-community-japan/", ja: "音楽コミュニティ", en: "Music Community Japan" },
+          { id: "08", slug: "/tarnar/", ja: "AI TARNAR ボイススクール", en: "AI TARNAR Voice School" },
+          { id: "09", slug: "/09-voice-music-studio/", ja: "ボイス＆ミュージックスタジオ", en: "Voice & Music Studio" },
+          { id: "10", slug: "/10-b2b-voice-communication/", ja: "B2B ボイスコミュニケーション", en: "B2B Voice Communication" },
+          { id: "11", slug: "/11-tana-method-certification/", ja: "TANA メソッド認定", en: "TANA Method Certification" },
+          { id: "12", slug: "/12-crowdfunding-ai-producer/", ja: "クラファン AI", en: "Crowdfunding AI Producer" },
+          { id: "13", slug: "/13-global-music-partnership/", ja: "グローバル音楽パートナー", en: "Global Music Partnership" },
+          { id: "14", slug: "/14-regional-music-alliance/", ja: "地域音楽アライアンス", en: "Regional Music Alliance" },
+          { id: "15", slug: "/15-subsidy-intelligence/", ja: "補助金インテリジェンス", en: "Subsidy Intelligence" },
+          { id: "16", slug: "/16-ma-music-business/", ja: "M&A 音楽事業", en: "M&A Music Business" },
+          { id: "17", slug: "/17-ai-gmtj-os/", ja: "AI GMTJ OS", en: "AI GMTJ OS" },
+          { id: "18", slug: "/18-global-digital-marketing/", ja: "グローバルデジタルマーケ", en: "Global Digital Marketing" },
+          { id: "19", slug: "/19-japan-inbound-music-tourism/", ja: "インバウンド音楽ツーリズム", en: "Japan Inbound Music Tourism" },
+          { id: "20", slug: "/20-global-music-education-hub/", ja: "グローバル音楽教育ハブ", en: "Global Music Education Hub" },
+          { id: "21", slug: "/izu-fund/", ja: "伊豆ミュージックファンド", en: "Izu Music Fund" },
+        ];
+
+        function url(slug) {
+          return base + slug.replace(/^\//, "");
+        }
+
+        function tplX(it) {
+          return (
+            "【#" +
+            it.id +
+            " " +
+            it.ja +
+            "】\n" +
+            "音楽×温泉×神社参道の GMTJ プログラム。\n" +
+            "熱海・伊豆山から、インバウンドにも届く体験を。\n" +
+            "🎵⛩️♨️\n" +
+            "#熱海 #伊豆山 #JapanMusicTourism #Atami\n" +
+            "→ " +
+            url(it.slug)
+          );
+        }
+
+        function tplIgEn(it) {
+          return (
+            "🎵 Music meets shrines & hot springs — #" +
+            it.id +
+            " " +
+            it.en +
+            " (Izusan, Atami).\n" +
+            "✅ JP / EN / KO info on site\n" +
+            "📧 123@atono.jp\n" +
+            "#JapanTravel #MusicTourism #Atami #OnsenJapan\n" +
+            url(it.slug)
+          );
+        }
+
+        function tplFbJa(it) {
+          return (
+            "【#" +
+            it.id +
+            "】 " +
+            it.ja +
+            " — Global Music Tourism Japan。詳細とお問い合わせはこちら: " +
+            url(it.slug)
+          );
+        }
+
+        function tplLine(it) {
+          return it.ja + " | GMTJ #" + it.id + " " + url(it.slug) + " （お問い合わせ 123@atono.jp）";
+        }
+
+        function copyBtn(text) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "copy";
+          b.textContent = "コピー";
+          b.addEventListener("click", function () {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).catch(function () {
+                window.prompt("コピー", text);
+              });
+            } else {
+              window.prompt("コピー", text);
+            }
+          });
+          return b;
+        }
+
+        function block(title, text) {
+          var d = document.createElement("div");
+          d.className = "tpl-block";
+          var h = document.createElement("h4");
+          h.textContent = title;
+          var pre = document.createElement("pre");
+          pre.textContent = text;
+          d.appendChild(h);
+          d.appendChild(pre);
+          d.appendChild(copyBtn(text));
+          return d;
+        }
+
+        var root = document.getElementById("root");
+        items.forEach(function (it) {
+          var det = document.createElement("details");
+          var sum = document.createElement("summary");
+          sum.textContent = "#" + it.id + " " + it.ja;
+          var body = document.createElement("div");
+          body.className = "acc-body";
+          body.appendChild(block("X（日本語）", tplX(it)));
+          body.appendChild(block("Instagram（英語）", tplIgEn(it)));
+          body.appendChild(block("Facebook（日本語）", tplFbJa(it)));
+          body.appendChild(block("LINE（短文）", tplLine(it)));
+          det.appendChild(sum);
+          det.appendChild(body);
+          root.appendChild(det);
+        });
+      })();
+    </script>
+  </body>
+</html>

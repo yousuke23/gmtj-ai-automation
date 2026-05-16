@@ -30,6 +30,11 @@ const BRANDS = {
   },
 };
 
+function siteCanon() {
+  const u = (process.env.SITE_CANONICAL_URL || "").trim().replace(/\/$/, "");
+  return u || "https://gmtj-japan-music-tourism.netlify.app";
+}
+
 function clip(s, n) {
   const t = (s || "").replace(/\s+/g, " ").trim();
   if (t.length <= n) return t;
@@ -119,7 +124,17 @@ export function buildSocialPack(brandKey, article) {
     brand: brandKey,
     article: { title, url, summary, imageUrl, slug: article.slug || "" },
     generatedAt: new Date().toISOString(),
+    snsPlatformOrder: ["tiktok", "instagram", "youtube", "x", "facebook"],
     platforms: { tiktok, instagram, youtube, x, facebook },
+    partnerLinks: [
+      { label: "Japan Music Tourism", url: `${siteCanon()}/` },
+      { label: "atono.co.jp", url: "https://atono.co.jp/" },
+      { label: "atono.jp", url: "https://atono.jp/" },
+      { label: "123-music.com", url: "https://123-music.com/" },
+      { label: "atamikaraoke.com", url: "https://atamikaraoke.com/" },
+      { label: "karaoke.ac", url: "https://karaoke.ac/" },
+    ],
+    blogPublishHook: "POST /.netlify/functions/blog-publish-hook (Bearer OPS_PUBLISH_SECRET)",
   };
 }
 

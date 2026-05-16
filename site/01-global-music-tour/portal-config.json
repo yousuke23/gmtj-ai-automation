@@ -1,7 +1,7 @@
 {
   "lineAddFriendUrl": "",
   "contactEmail": "123@atono.jp",
-  "mailtoSubject": "GMTJ #01 Global Music Tour ポータル（公式LINE）",
+  "mailtoSubject": "伊豆山開運ツアー2026 · Global Music Tour · LINE登録・アンケートのご希望",
   "relatedSites": [
     {
       "label": "Japan Music Tourism",
@@ -16,12 +16,28 @@
       "url": "../izu-fund/"
     },
     {
-      "label": "atono co., ltd.",
-      "url": "https://atono.co.jp/"
+      "label": "atono.jp",
+      "url": "https://atono.jp/"
+    },
+    {
+      "label": "123-music.com",
+      "url": "https://123-music.com/"
+    },
+    {
+      "label": "atamikaraoke.com",
+      "url": "https://atamikaraoke.com/"
     },
     {
       "label": "karaoke.ac",
       "url": "https://karaoke.ac/"
+    },
+    {
+      "label": "atono co., ltd.",
+      "url": "https://atono.co.jp/"
+    },
+    {
+      "label": "グループ・パートナー一覧",
+      "url": "../index.html#partner-network"
     }
   ]
 }

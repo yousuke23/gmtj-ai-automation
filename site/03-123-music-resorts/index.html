@@ -99,6 +99,61 @@
       </div>
     </section>
 
+    <section class="block" id="booking">
+      <div class="lang-switch tarnar-lang-switch" role="group" aria-label="言語">
+        <button type="button" class="lang-switch__btn lang-switch__btn--active" data-stay-lang="ja">日本語</button>
+        <button type="button" class="lang-switch__btn" data-stay-lang="en">English</button>
+      </div>
+      <h2 data-stay-i18n="stayTitle">宿泊予約</h2>
+      <p class="section-lead" data-stay-i18n="stayLead">Booking.com のプレースホルダー物件へ日付付きで遷移します。直接予約は下のフォームから。</p>
+      <div class="stay-booking-panel">
+        <div class="stay-date-row">
+          <label><span data-stay-i18n="ci">チェックイン</span><input type="date" id="stay-ci" /></label>
+          <label><span data-stay-i18n="co">チェックアウト</span><input type="date" id="stay-co" /></label>
+        </div>
+        <button type="button" class="btn btn-cta-primary" id="stay-booking-search" data-stay-i18n="checkBtn">空室を確認する</button>
+        <p class="pricing-note" data-stay-i18n="note">※ PROPERTY_ID は運用で差し替えてください。</p>
+      </div>
+      <div class="pricing-grid pricing-grid--three" style="margin-top: 1.5rem">
+        <article class="card">
+          <span class="pill">Standard</span>
+          <h3 data-stay-i18n="p1t">スタンダードルーム</h3>
+          <p class="pricing-amount" data-stay-i18n="p1p">¥15,000〜/泊</p>
+          <p data-stay-i18n="p1d">朝食付き</p>
+        </article>
+        <article class="card">
+          <span class="pill">Music</span>
+          <h3 data-stay-i18n="p2t">音楽体験パッケージ</h3>
+          <p class="pricing-amount" data-stay-i18n="p2p">¥25,000〜/泊</p>
+          <p data-stay-i18n="p2d">声楽レッスン + 温泉込み</p>
+        </article>
+        <article class="card">
+          <span class="pill">Premium</span>
+          <h3 data-stay-i18n="p3t">プレミアムリトリート</h3>
+          <p class="pricing-amount" data-stay-i18n="p3p">¥45,000〜/泊</p>
+          <p data-stay-i18n="p3d">3泊〜・プライベートレッスン付き</p>
+        </article>
+      </div>
+      <p style="margin-top: 1rem">
+        <a class="btn btn-cta-secondary" href="https://www.airbnb.com/rooms/ROOM_ID_PLACEHOLDER" target="_blank" rel="noopener noreferrer" data-stay-i18n="airbnb">Airbnb で見る</a>
+      </p>
+      <div class="stay-direct" style="margin-top: 1.5rem">
+        <h3 data-stay-i18n="formTitle">直接予約（手数料なし）</h3>
+        <form name="stay-direct" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="stay-direct-form">
+          <input type="hidden" name="form-name" value="stay-direct" />
+          <p class="bot-field" style="position:absolute;left:-9999px"><label>Bot <input name="bot-field" /></label></p>
+          <label data-stay-i18n="fn">お名前<input name="name" required /></label>
+          <label data-stay-i18n="fe">メール<input type="email" name="email" required /></label>
+          <label data-stay-i18n="fci">チェックイン<input type="date" name="checkin" required /></label>
+          <label data-stay-i18n="fco">チェックアウト<input type="date" name="checkout" required /></label>
+          <label data-stay-i18n="fg">人数<input name="guests" type="number" min="1" value="2" /></label>
+          <label data-stay-i18n="fr">ご要望<textarea name="message" rows="3"></textarea></label>
+          <button type="submit" class="btn btn-cta-primary" data-stay-i18n="fsend">送信</button>
+        </form>
+        <p id="stay-direct-done" class="pricing-note" hidden data-stay-i18n="fdone">48時間以内にご確認のメールをお送りします。</p>
+      </div>
+    </section>
+
     <section class="block" id="blog">
       <h2>ブログ記事一覧</h2>
             <p class="section-lead">
@@ -164,5 +219,7 @@
   </footer>
 
   <script src="portal.js" defer></script>
+  <script src="../js/booking-stay.js" defer></script>
+  <script src="../js/gmtj-chrome.js" defer></script>
 </body>
 </html>

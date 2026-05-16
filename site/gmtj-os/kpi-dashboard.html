@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>GMTJ KPI ダッシュボード（内部）</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <style>
+      .kpi-wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.25rem 3rem;
+      }
+      .muted {
+        color: #555;
+        font-size: 0.9rem;
+      }
+      .kpi-grid {
+        display: grid;
+        gap: 0.75rem;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      }
+      .kpi-card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 0.75rem 0.9rem;
+        background: #fff;
+      }
+      .kpi-card h3 {
+        margin: 0 0 0.5rem;
+        font-size: 0.95rem;
+      }
+      .kpi-card label {
+        display: block;
+        font-size: 0.78rem;
+        color: #555;
+        margin-top: 0.35rem;
+      }
+      .kpi-card input,
+      .kpi-card select {
+        width: 100%;
+        margin-top: 0.15rem;
+        padding: 0.35rem 0.4rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font: inherit;
+      }
+      .kpi-chart-wrap {
+        margin-top: 1.5rem;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        background: #fafafa;
+      }
+      .kpi-month-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 0.75rem;
+        font-size: 0.85rem;
+      }
+      .kpi-month-table th,
+      .kpi-month-table td {
+        border: 1px solid #ddd;
+        padding: 0.25rem 0.35rem;
+      }
+      .kpi-month-table input {
+        width: 100%;
+        border: none;
+        background: transparent;
+        font: inherit;
+      }
+    </style>
+  </head>
+  <body data-gmtj-chrome="off">
+    <div class="kpi-wrap">
+      <h1>GMTJ 事業 KPI（プレースホルダー）</h1>
+      <p class="muted">問い合わせ数は手入力（Netlify Forms 集計の代替）。売上・ステータスは localStorage に保存されます。</p>
+      <div class="kpi-chart-wrap">
+        <h2>2026年 月別売上（全事業合計）</h2>
+        <canvas id="sales-chart" height="120"></canvas>
+        <table class="kpi-month-table" id="month-table"></table>
+        <p><button type="button" class="btn" id="save-months">月別データを保存</button></p>
+      </div>
+      <h2 style="margin-top: 2rem">21 事業カード</h2>
+      <div class="kpi-grid" id="kpi-grid"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script>
+      (function () {
+        if (localStorage.getItem("gmtj_auth") !== "GMTJ2026") {
+          var pw = window.prompt("パスワードを入力してください:");
+          if (pw !== "GMTJ2026") {
+            location.href = "/";
+            return;
+          }
+          localStorage.setItem("gmtj_auth", "GMTJ2026");
+        }
+
+        var LS_KPI = "gmtj_kpi_cards_v1";
+        var LS_MONTH = "gmtj_sales_monthly_2026_v1";
+
+        var businesses = [
+          { n: "01", name: "グローバル音楽ツアー", id: "b01" },
+          { n: "02", name: "不動産・街再生", id: "b02" },
+          { n: "03", name: "123 MUSIC & RESORTS", id: "b03" },
+          { n: "04", name: "ミュージックカフェ＆バー", id: "b04" },
+          { n: "05", name: "グローバルミュージックフェス", id: "b05" },
+          { n: "06", name: "音楽プロダクション", id: "b06" },
+          { n: "07", name: "音楽コミュニティ・まちづくり", id: "b07" },
+          { n: "08", name: "AI TARNAR ボイススクール", id: "b08" },
+          { n: "09", name: "ボイス＆ミュージックスタジオ", id: "b09" },
+          { n: "10", name: "B2B ボイスコミュニケーション", id: "b10" },
+          { n: "11", name: "TANA メソッド認定", id: "b11" },
+          { n: "12", name: "クラファン AI プロデューサー", id: "b12" },
+          { n: "13", name: "グローバル音楽パートナーシップ", id: "b13" },
+          { n: "14", name: "地域音楽アライアンス", id: "b14" },
+          { n: "15", name: "補助金インテリジェンス", id: "b15" },
+          { n: "16", name: "M&A 音楽事業", id: "b16" },
+          { n: "17", name: "AI GMTJ OS", id: "b17" },
+          { n: "18", name: "グローバルデジタルマーケ", id: "b18" },
+          { n: "19", name: "インバウンド音楽ツーリズム", id: "b19" },
+          { n: "20", name: "グローバル音楽教育ハブ", id: "b20" },
+          { n: "21", name: "伊豆ミュージックファンド", id: "b21" },
+        ];
+
+        function loadCards() {
+          try {
+            return JSON.parse(localStorage.getItem(LS_KPI) || "{}");
+          } catch (e) {
+            return {};
+          }
+        }
+        function saveCards(obj) {
+          localStorage.setItem(LS_KPI, JSON.stringify(obj));
+        }
+
+        function loadMonths() {
+          try {
+            var a = JSON.parse(localStorage.getItem(LS_MONTH) || "null");
+            if (Array.isArray(a) && a.length === 12) return a.map(Number);
+          } catch (e) {}
+          return new Array(12).fill(0);
+        }
+        function saveMonths(arr) {
+          localStorage.setItem(LS_MONTH, JSON.stringify(arr));
+        }
+
+        var cardState = loadCards();
+        var months = loadMonths();
+
+        var grid = document.getElementById("kpi-grid");
+        businesses.forEach(function (b) {
+          var s = cardState[b.id] || { inquiries: 0, revenue: 0, status: "green" };
+          var el = document.createElement("article");
+          el.className = "kpi-card";
+          el.innerHTML =
+            "<h3>#" +
+            b.n +
+            " " +
+            b.name +
+            "</h3>" +
+            '<label>今月の問い合わせ（件）<input type="number" min="0" data-kpi="' +
+            b.id +
+            '" data-field="inquiries" value="' +
+            (s.inquiries || 0) +
+            '" /></label>' +
+            '<label>今月の売上（手動・円）<input type="number" min="0" data-kpi="' +
+            b.id +
+            '" data-field="revenue" value="' +
+            (s.revenue || 0) +
+            '" /></label>' +
+            '<label>ステータス<select data-kpi="' +
+            b.id +
+            '" data-field="status">' +
+            '<option value="green">🟢 稼働中</option>' +
+            '<option value="yellow">🟡 準備中</option>' +
+            '<option value="red">🔴 未着手</option>' +
+            "</select></label>";
+          grid.appendChild(el);
+          el.querySelector('select[data-field="status"]').value = s.status || "green";
+        });
+
+        grid.addEventListener("input", persistCards);
+        grid.addEventListener("change", persistCards);
+        function persistCards() {
+          var next = {};
+          grid.querySelectorAll("[data-kpi]").forEach(function (inp) {
+            var id = inp.getAttribute("data-kpi");
+            var field = inp.getAttribute("data-field");
+            if (!next[id]) next[id] = { inquiries: 0, revenue: 0, status: "green" };
+            if (field === "status") next[id].status = inp.value;
+            else if (field === "inquiries") next[id].inquiries = Number(inp.value) || 0;
+            else if (field === "revenue") next[id].revenue = Number(inp.value) || 0;
+          });
+          saveCards(next);
+        }
+
+        var table = document.getElementById("month-table");
+        var monthLabels = [];
+        for (var m = 1; m <= 12; m++) monthLabels.push("2026-" + String(m).padStart(2, "0"));
+        function renderTable() {
+          table.innerHTML =
+            "<tr><th>月</th><th>売上（円）</th></tr>" +
+            monthLabels
+              .map(function (lab, i) {
+                return (
+                  "<tr><td>" +
+                  lab +
+                  '</td><td><input type="number" min="0" data-month="' +
+                  i +
+                  '" value="' +
+                  months[i] +
+                  '" /></td></tr>'
+                );
+              })
+              .join("");
+        }
+        renderTable();
+
+        table.addEventListener("input", function (e) {
+          var t = e.target;
+          if (t && t.getAttribute("data-month") !== null) {
+            var i = Number(t.getAttribute("data-month"));
+            months[i] = Number(t.value) || 0;
+          }
+        });
+
+        document.getElementById("save-months").addEventListener("click", function () {
+          table.querySelectorAll("input[data-month]").forEach(function (inp) {
+            var i = Number(inp.getAttribute("data-month"));
+            months[i] = Number(inp.value) || 0;
+          });
+          saveMonths(months);
+          if (window.__gmtjChart) window.__gmtjChart.update();
+        });
+
+        function bootChart() {
+          if (typeof Chart === "undefined") return;
+          var ctx = document.getElementById("sales-chart");
+          window.__gmtjChart = new Chart(ctx, {
+            type: "bar",
+            data: {
+              labels: monthLabels,
+              datasets: [
+                {
+                  label: "合計売上（円）",
+                  data: months,
+                  backgroundColor: "#1D9E75",
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              scales: { y: { beginAtZero: true } },
+            },
+          });
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", bootChart);
+        } else {
+          bootChart();
+        }
+      })();
+    </script>
+  </body>
+</html>

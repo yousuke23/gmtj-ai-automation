@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
   <title>SNS・LINE 運用ハブ | Japan Music Tourism</title>
   <meta name="description" content="ブログ公開からSNS最適化投稿・LINE通知までを一気通貫で扱う運用コンソール（AI TARNAR Voice School / Izu Music Fund 優先）。" />
   <link rel="stylesheet" href="../tarnar/portal.css" />
@@ -27,8 +28,14 @@
       <a href="../tarnar/">AI TARNAR Voice School</a>
       <a href="../izu-fund/">Izu Music Fund</a>
       <a href="../gmtj-os/">GMTJ OS</a>
+      <a href="../tarnar/#blog">TARNARブログ</a>
+      <a href="../index.html#partner-network">パートナー</a>
     </nav>
   </header>
+
+  <aside role="alert" style="margin:0;background:#fef3c7;border-bottom:1px solid #f59e0b;color:#78350f;padding:0.65rem 1.25rem;text-align:center;font-size:0.9rem;line-height:1.5">
+    <strong>スタッフ専用・一般公開禁止</strong>：本ページは社内運用です。検索・SNSへの掲載やURLの共有をしないでください。お客様向けは <a href="../index.html">Japan Music Tourism トップ</a> をご案内ください。
+  </aside>
 
   <section class="hero" style="padding-top: 2rem">
     <p class="hero-kicker">Automation · SNS · LINE</p>
@@ -89,9 +96,39 @@
         <button type="button" class="btn btn-primary" id="btn-preview">プレビュー生成</button>
         <button type="button" class="btn btn-ghost" id="btn-publish">公開パイプライン実行</button>
       </div>
+      <p class="section-lead" style="margin-top: 0.75rem; font-size: 0.92rem">本番テスト用サンプル（<span class="mono">voice-guide-1501</span>。URL はデプロイ後の本番ドメインに合わせてください）</p>
+      <div class="auto-actions">
+        <button type="button" class="btn btn-ghost" id="btn-fill-tarnar-sample">TARNAR（1501）でフォーム投入</button>
+        <button type="button" class="btn btn-ghost" id="btn-fill-izu-sample">Izu Fund記事でフォーム投入</button>
+        <button type="button" class="btn btn-ghost" id="btn-clear-form">フォームをクリア</button>
+      </div>
       <p id="status" class="section-lead" style="margin-top: 0"></p>
+      <p class="section-lead" style="margin-top: 0.25rem; font-size: 0.9rem; color: var(--muted, #64748b)">
+        「公開パイプライン実行」後、ステータス直下に <span class="mono">snsPlatformOrder</span> / <span class="mono">bridge</span> / <span class="mono">lineNotify</span> のJSONが表示されます（ローカル静的プレビューでは Functions は未接続のためエラーになります）。
+      </p>
       <div id="preview" class="auto-grid" style="margin-top: 1rem"></div>
     </section>
+
+    <details class="hub">
+      <summary>cURL でパイプラインを叩く（CLIテスト）</summary>
+      <p class="section-lead" style="margin-top: 0.5rem"><span class="mono">OPS_PUBLISH_SECRET</span> と本番オリジンに差し替えて実行します。</p>
+      <pre class="auto-pre" style="max-height: 14rem">curl -sS -X POST "https://gmtj-japan-music-tourism.netlify.app/.netlify/functions/blog-publish-hook" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_OPS_PUBLISH_SECRET" \
+  -d '{"brand":"tarnar","article":{"title":"初深海熱水噴出孔採音の16分音符だけの舌位置トラッキング","url":"https://gmtj-japan-music-tourism.netlify.app/tarnar/blog/ja/voice-guide-1501.html","summary":"AI TARNAR Voice School の実践メモ（batch18）。ブログ公開からSNSパッケージ・bridge・LINE通知まで一括テスト用。"}}'</pre>
+    </details>
+
+    <details class="hub">
+      <summary>本番テスト手順（チェックリスト）</summary>
+      <ol style="margin: 0.75rem 0 0 1.1rem; line-height: 1.65; font-size: 0.92rem">
+        <li>「TARNAR（1501）でフォーム投入」または Izu サンプルで、公開済み記事URL・要約をセット（例: <span class="mono">voice-guide-1501</span>）</li>
+        <li>Netlify に <span class="mono">OPS_PUBLISH_SECRET</span> を設定し、ローカルと同じ値をこのページに入力</li>
+        <li>任意: <span class="mono">AUTOMATION_BRIDGE_URL</span>（Make/Zapier）を設定 → パイプライン実行後 <span class="mono">bridge</span> に <span class="mono">ok</span> が付くか確認</li>
+        <li>任意: <span class="mono">LINE_*_CHANNEL_TOKEN</span> と <span class="mono">LINE_*_NOTIFY_USER_ID</span> → <span class="mono">lineNotify.sent</span> を確認</li>
+        <li>「プレビュー生成」で <span class="mono">build-social-kit</span> のみ検証 → 問題なければ「公開パイプライン実行」</li>
+        <li>下のプレビュー欄で各SNSキャプションをコピーし、手動投稿または bridge 先で配信</li>
+      </ol>
+    </details>
 
     <section class="block">
       <h2>公式LINE Webhook URL（LINE Developers に登録）</h2>
@@ -100,7 +137,17 @@
         <li><span class="mono">/.netlify/functions/line-tarnar</span> — <code>LINE_TARNAR_CHANNEL_SECRET</code> / <code>LINE_TARNAR_CHANNEL_TOKEN</code></li>
         <li><span class="mono">/.netlify/functions/line-izu-music-fund</span> — <code>LINE_IMF_CHANNEL_SECRET</code> / <code>LINE_IMF_CHANNEL_TOKEN</code></li>
       </ul>
-      <p class="section-lead">自動応答キーワード例: クーポン / 予約 / 友だち / こんにちは（Izu側は「ファンド」も）</p>
+      <p class="section-lead">自動応答キーワード例: ブログ / クーポン / 予約 / メニュー / 友だち / こんにちは（Izu側は「ファンド」「ターナー」も）</p>
+    </section>
+
+    <section class="block">
+      <h2>ブログ公開 → SNS 一括（サーバー側）</h2>
+      <p class="section-lead">
+        <span class="mono">POST /.netlify/functions/blog-publish-hook</span> に <span class="mono">Authorization: Bearer OPS_PUBLISH_SECRET</span> と JSON
+        <code class="mono">{"brand":"tarnar","article":{"title":"…","url":"https://…/tarnar/blog/ja/….html","summary":"…"}}</code>
+        を送ると、TikTok / Instagram / YouTube / X / Facebook 向けキャプションを <span class="mono">socialPack</span> として返します。
+        <span class="mono">AUTOMATION_BRIDGE_URL</span> が設定されていれば同内容を Webhook へ転送し、任意で LINE 社内通知も送れます。
+      </p>
     </section>
 
     <section class="block">

@@ -19,6 +19,11 @@
       noApi: "チャットを利用できません。",
       sendFail: "送信に失敗しました。時間をおいて再度お試しください。",
       checkInput: "メッセージを入力してください。",
+      leadPrompt:
+        "ご興味をお持ちいただきありがとうございます。個別のご案内をご希望の方はメールアドレスを入力して送信してください。",
+      leadThanks: "ありがとうございます。担当よりご連絡します。",
+      leadSend: "送信",
+      leadPlaceholder: "例: name@example.com",
     },
     en: {
       user: "You",
@@ -29,6 +34,11 @@
       noApi: "Chat is not available.",
       sendFail: "Something went wrong. Please try again shortly.",
       checkInput: "Please enter a message.",
+      leadPrompt:
+        "Thank you for your interest. If you would like a personal follow-up, leave your email below.",
+      leadThanks: "Thank you. Our team will reach out shortly.",
+      leadSend: "Send",
+      leadPlaceholder: "you@example.com",
     },
     ko: {
       user: "나",
@@ -39,6 +49,10 @@
       noApi: "채팅을 이용할 수 없습니다.",
       sendFail: "전송에 실패했습니다. 잠시 후 다시 시도해 주세요.",
       checkInput: "메시지를 입력해 주세요.",
+      leadPrompt: "관심 가져 주셔서 감사합니다. 개별 안내를 원하시면 이메일을 남겨 주세요.",
+      leadThanks: "감사합니다. 담당자가 연락드리겠습니다.",
+      leadSend: "보내기",
+      leadPlaceholder: "name@example.com",
     },
     zh: {
       user: "您",
@@ -49,6 +63,10 @@
       noApi: "暂时无法使用对话功能。",
       sendFail: "发送失败，请稍后重试。",
       checkInput: "请输入内容。",
+      leadPrompt: "感谢您的关注。如需单独说明，请留下邮箱。",
+      leadThanks: "谢谢。我们会尽快与您联系。",
+      leadSend: "发送",
+      leadPlaceholder: "you@example.com",
     },
   };
 
@@ -62,7 +80,7 @@
 
   if (!panel || !logEl || !input || !sendBtn) return;
 
-  const state = { messages: [] };
+  const state = { messages: [], userTurns: 0, leadShown: false };
 
   function appendLine(role, text) {
     const row = document.createElement("div");
@@ -77,6 +95,39 @@
     row.appendChild(bubble);
     logEl.appendChild(row);
     logEl.scrollTop = logEl.scrollHeight;
+    return row;
+  }
+
+  function appendCtaRow(cta) {
+    if (!cta || !cta.label || !cta.url) return;
+    const wrap = document.createElement("div");
+    wrap.className = "chat-cta-row";
+    const a = document.createElement("a");
+    a.href = cta.url;
+    a.textContent = cta.label;
+    a.rel = "noopener noreferrer";
+    const ty = cta.type || "info";
+    if (ty === "booking") a.className = "btn-cta-booking";
+    else if (ty === "purchase") a.className = "btn-cta-purchase";
+    else a.className = "btn-cta-info";
+    wrap.appendChild(a);
+    logEl.appendChild(wrap);
+    logEl.scrollTop = logEl.scrollHeight;
+  }
+
+  function maybeShowLead() {
+    if (state.leadShown || state.userTurns < 3) return;
+    const form = document.getElementById("chat-lead-form");
+    if (!form || form.dataset.visible === "1") return;
+    state.leadShown = true;
+    form.hidden = false;
+    form.dataset.visible = "1";
+    if (!form.querySelector(".chat-lead-prompt")) {
+      const p = document.createElement("p");
+      p.className = "chat-lead-prompt";
+      p.textContent = T.leadPrompt;
+      form.insertBefore(p, form.firstChild);
+    }
   }
 
   function setStatus(text, isError) {
@@ -99,6 +150,7 @@
     input.value = "";
     appendLine("user", text);
     state.messages.push({ role: "user", content: text });
+    state.userTurns += 1;
     sendBtn.disabled = true;
     setStatus(T.wait, false);
 
@@ -112,10 +164,12 @@
       if (!res.ok) {
         throw new Error(data.error || "HTTP " + res.status);
       }
-      const reply = (data.reply || "").trim() || T.empty;
-      state.messages.push({ role: "assistant", content: reply });
-      appendLine("assistant", reply);
+      const message = (data.message != null ? String(data.message) : String(data.reply || "")).trim() || T.empty;
+      state.messages.push({ role: "assistant", content: message });
+      appendLine("assistant", message);
+      if (data.cta) appendCtaRow(data.cta);
       setStatus(T.continue, false);
+      maybeShowLead();
     } catch (e) {
       state.messages.pop();
       if (logEl.lastChild) logEl.removeChild(logEl.lastChild);
@@ -124,6 +178,28 @@
       sendBtn.disabled = false;
       input.focus();
     }
+  }
+
+  const leadForm = document.getElementById("chat-lead-form");
+  if (leadForm) {
+    leadForm.addEventListener("submit", async function (ev) {
+      ev.preventDefault();
+      const em = document.getElementById("chat-lead-email");
+      const v = (em && em.value) || "";
+      if (!v.trim()) return;
+      const body = new URLSearchParams();
+      body.append("form-name", "chat-lead");
+      body.append("email", v.trim());
+      body.append("source", "ai-concierge");
+      body.append("page", location.href);
+      body.append("bot-field", "");
+      try {
+        await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
+        leadForm.innerHTML = '<p class="chat-lead-thanks">' + T.leadThanks + "</p>";
+      } catch {
+        setStatus(T.sendFail, true);
+      }
+    });
   }
 
   sendBtn.addEventListener("click", send);

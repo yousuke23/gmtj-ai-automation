@@ -509,26 +509,6 @@ footer p {
   padding: 1rem 1rem 1.1rem;
 }
 
-.chat-proxy-hint {
-  font-size: 0.82rem;
-  margin: 0 0 0.75rem;
-  padding: 0.5rem 0.65rem;
-  border-radius: 8px;
-  border: 1px solid var(--line);
-  background: var(--bg);
-  color: var(--muted);
-}
-
-.chat-proxy-hint--ok {
-  color: #8fd4a6;
-  border-color: rgba(143, 212, 166, 0.35);
-}
-
-.chat-proxy-hint--warn {
-  color: #f0c090;
-  border-color: rgba(240, 192, 144, 0.35);
-}
-
 .chat-log {
   min-height: 12rem;
   max-height: 22rem;
@@ -631,6 +611,80 @@ footer p {
   color: var(--text);
 }
 
+.chat-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.35rem 0 0.5rem;
+}
+
+.btn-cta-booking {
+  background: #1d9e75;
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.btn-cta-info {
+  background: #475569;
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.btn-cta-purchase {
+  background: #ba7517;
+  color: #fff !important;
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+.chat-lead-box {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(240, 192, 144, 0.35);
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.chat-lead-box label {
+  display: block;
+  font-size: 0.86rem;
+  margin-top: 0.5rem;
+}
+
+.chat-lead-box input[type="email"] {
+  width: 100%;
+  max-width: 22rem;
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.55rem;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: #0f172a;
+  color: var(--text);
+}
+
+.chat-lead-prompt {
+  margin: 0 0 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.chat-lead-thanks {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
 .footer-legal {
   font-size: 0.88rem;
   margin-bottom: 0.75rem !important;
@@ -703,4 +757,57 @@ footer p {
 
 .legal-banner strong {
   color: var(--text);
+}
+
+.portal-directory {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 520px) {
+  .portal-directory {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .portal-directory {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.portal-directory li {
+  margin: 0;
+}
+
+.portal-directory a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.portal-directory a:hover {
+  border-color: rgba(232, 184, 106, 0.45);
+  background: rgba(232, 184, 106, 0.06);
+}
+
+.portal-directory__id {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
 }

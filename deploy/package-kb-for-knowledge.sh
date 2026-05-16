@@ -8,12 +8,21 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="${1:-${ROOT}/deploy/gmtj-kb-for-knowledge.zip}"
+# Open WebUI などで「先頭が kb/ の ZIP」を拒否する場合があるため、kb 直下をルートとした ZIP も併せて出す。
+OUT_OPENWEBUI="${ROOT}/deploy/gmtj-kb-for-openwebui.zip"
 
 cd "$ROOT"
-rm -f "$OUT"
+rm -f "$OUT" "$OUT_OPENWEBUI"
 zip -rq "$OUT" kb \
   -x "kb/**/.DS_Store"
 
+cd "$ROOT/kb"
+zip -rq "$OUT_OPENWEBUI" . \
+  -x ".DS_Store" \
+  -x "*/.DS_Store" \
+  -x "*/*/.DS_Store"
+
 echo "Created: $OUT"
-echo "Use this zip as a kb bundle for your RAG / knowledge pipeline (optional: deploy/openwebui-knowledge.md for Open WebUI)."
+echo "Created: $OUT_OPENWEBUI  (paths without top-level kb/ — try this if Open WebUI shows \"Failed to add file\")"
+echo "Use these zips for RAG / knowledge pipelines (optional: deploy/openwebui-knowledge.md for Open WebUI)."
 echo "Note: UI protection is separate — see deploy/docker-compose.auth-stack.yml if needed."

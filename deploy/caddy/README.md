@@ -24,3 +24,7 @@ docker compose -p gmtj-caddy -f docker-compose.caddy-tls.yml up -d
 - **本番ドメイン＋Let's Encrypt** に切り替える場合は、`Caddyfile.example` のブロックを実ドメイン名に変更し、ポート 80/443 の開放と DNS を社内手順で整備する。  
 - Linux では `extra_hosts: host.docker.internal:host-gateway` が必要（compose に記載済み）。  
 - Basic 認証は **バックエンドの nginx** 側（`auth-stack`）でかけつつ、Caddy で TLS をかける、という二段構成が可能。
+
+## 全世界向け（Let's Encrypt）
+
+ローカル検証用の `Caddyfile.example` とは別に、**実ドメイン＋ACME** で nginx 背後へ中継する例は **[../WORLDWIDE-STAGING.md](../WORLDWIDE-STAGING.md)** と **`Caddyfile.worldwide`**、`docker-compose.worldwide-staging.yml` を参照。

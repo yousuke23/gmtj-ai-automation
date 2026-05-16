@@ -2,6 +2,63 @@
   const apiBase = ""; // same origin
   const el = (id) => document.getElementById(id);
 
+  const CANONICAL = "https://gmtj-japan-music-tourism.netlify.app";
+  const SAMPLE_TARNAR = {
+    title: "初深海熱水噴出孔採音の16分音符だけの舌位置トラッキング",
+    url: CANONICAL + "/tarnar/blog/ja/voice-guide-1501.html",
+    summary:
+      "AI TARNAR Voice School の実践メモ（batch18）。深海噴出孔×舌位置トラッキング。ブログ公開→SNSパッケージ→bridge/LINE の本番テスト用サンプルです。",
+  };
+
+  const SAMPLE_IZU = {
+    title: "伊豆の音楽と旅をつなぐ考え方",
+    url: CANONICAL + "/izu-fund/blog/ja/izu-01.html",
+    summary:
+      "Izu Music Fund の記事サンプル。地域の音楽資源と観光導線を一つのストーリーにまとめる視点。izu_music_fund ブランドでパイプライン・LINE通知をテストする際に使用します。",
+  };
+
+  function hidePipelineDebug() {
+    const dbg = el("pipeline-debug");
+    if (dbg) {
+      dbg.hidden = true;
+      dbg.style.display = "none";
+      dbg.textContent = "";
+    }
+  }
+
+  function fillIzuSample() {
+    el("brand").value = "izu_music_fund";
+    el("title").value = SAMPLE_IZU.title;
+    el("url").value = SAMPLE_IZU.url;
+    el("summary").value = SAMPLE_IZU.summary;
+    el("image").value = "";
+    el("status").textContent =
+      "Izu Music Fund サンプルを投入しました。OPSシークレットを入力し、プレビューまたは公開パイプラインを実行してください。";
+    hidePipelineDebug();
+  }
+
+  function fillTarnarSample() {
+    el("brand").value = "tarnar";
+    el("title").value = SAMPLE_TARNAR.title;
+    el("url").value = SAMPLE_TARNAR.url;
+    el("summary").value = SAMPLE_TARNAR.summary;
+    el("image").value = "";
+    el("status").textContent =
+      "TARNAR（voice-guide-1501）サンプルを投入しました。OPSシークレットを入力し、プレビューまたは公開パイプラインを実行してください。";
+    hidePipelineDebug();
+  }
+
+  function clearForm() {
+    el("title").value = "";
+    el("url").value = "";
+    el("summary").value = "";
+    el("image").value = "";
+    el("status").textContent = "";
+    hidePipelineDebug();
+    const out = el("preview");
+    if (out) out.innerHTML = "";
+  }
+
   function getSecret() {
     return (el("ops-secret").value || "").trim();
   }
@@ -111,8 +168,33 @@
     }
     el("status").textContent = "パイプライン完了（bridge / LINE は環境変数に依存）";
     if (data.socialPack) renderPack(data.socialPack);
+    let dbg = el("pipeline-debug");
+    if (!dbg) {
+      dbg = document.createElement("pre");
+      dbg.id = "pipeline-debug";
+      dbg.className = "auto-pre";
+      dbg.setAttribute("aria-label", "パイプライン結果メタ");
+      el("status").insertAdjacentElement("afterend", dbg);
+    }
+    dbg.hidden = false;
+    dbg.style.display = "block";
+    dbg.textContent = JSON.stringify(
+      {
+        snsPlatformOrder: data.snsPlatformOrder,
+        bridge: data.bridge,
+        lineNotify: data.lineNotify,
+      },
+      null,
+      2
+    );
   }
 
   el("btn-preview").addEventListener("click", preview);
   el("btn-publish").addEventListener("click", publishPipeline);
+  const fillSample = el("btn-fill-tarnar-sample");
+  if (fillSample) fillSample.addEventListener("click", fillTarnarSample);
+  const fillIzuBtn = el("btn-fill-izu-sample");
+  if (fillIzuBtn) fillIzuBtn.addEventListener("click", fillIzuSample);
+  const clearBtn = el("btn-clear-form");
+  if (clearBtn) clearBtn.addEventListener("click", clearForm);
 })();

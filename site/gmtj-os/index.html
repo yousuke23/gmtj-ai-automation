@@ -8,14 +8,18 @@
   <link rel="stylesheet" href="dashboard.css" />
 </head>
 <body>
+  <aside role="alert" style="margin:0;background:#fef3c7;border-bottom:1px solid #f59e0b;color:#78350f;padding:0.65rem 1.25rem;text-align:center;font-size:0.9rem;line-height:1.5">
+    <strong>スタッフ専用・一般公開禁止</strong>：本ダッシュボードは社内運用です。検索・SNSへの掲載やURLの共有をしないでください。お客様向けは <a href="../index.html">Japan Music Tourism トップ</a> をご案内ください。
+  </aside>
   <header class="dash-header" role="banner">
     <a class="logo" href="#top">GMTJ OS</a>
     <nav class="dash-nav" aria-label="ナビ">
       <a href="#top">今日</a>
       <a href="#focus">重点</a>
       <a href="#biz21">21事業</a>
+      <a href="../automation/">SNS・LINE</a>
     </nav>
-    <a class="link-external" href="../index.html">サイト</a>
+    <a class="link-external" href="../index.html">お客様向けサイト</a>
   </header>
 
   <section id="top" class="hero-today hero-today--feature" aria-labelledby="today-title">
@@ -41,8 +45,17 @@
       <h2>売上ランキング</h2>
       <div id="sales-ranking" class="sales-ranking" aria-live="polite"></div>
     </section>
+    <section id="partners" class="panel panel--compact" aria-label="パートナー・関連サイト">
+      <h2>パートナー・関連サイト</h2>
+      <div style="font-size:0.9rem;line-height:1.65;color:var(--text)">
+        <a href="https://atono.co.jp/" rel="noopener noreferrer" target="_blank">atono co., ltd.</a>
+        · <a href="https://atono.jp/" rel="noopener noreferrer" target="_blank">atono.jp</a>
+        · <a href="https://123-music.com/" rel="noopener noreferrer" target="_blank">123-music.com</a>
+        · <a href="https://atamikaraoke.com/" rel="noopener noreferrer" target="_blank">atamikaraoke.com</a>
+        · <a href="https://karaoke.ac/" rel="noopener noreferrer" target="_blank">karaoke.ac</a>
+        · <a href="../index.html#partner-network">サイト内パートナー一覧</a>
+      </div>
+    </section>
   </main>
-
-  <script src="dashboard.js" defer></script>
 </body>
 </html>

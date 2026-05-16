@@ -92,12 +92,15 @@ export const handler = async (event) => {
     lineNotify = { sent: ok };
   }
 
+  const snsPlatformOrder = ["tiktok", "instagram", "youtube", "x", "facebook"];
+
   return {
     statusCode: 200,
     headers: { "Content-Type": "application/json; charset=utf-8", ...cors },
     body: JSON.stringify({
       ok: true,
       socialPack,
+      snsPlatformOrder,
       bridge: bridgeResult,
       lineNotify,
     }),

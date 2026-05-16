@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
   <title>Japan Music Tourism — 음악과 여행의 경험을 지역과 함께.</title>
-  <meta name="description" content="뮤직 투어리즘·지역 연계·디지털 게스트 경험. 안내 템플릿, 컨시어지 설계, 마케팅 지원. AI 채팅(로컬 시험) 포함 정적 초안 사이트." />
+  <meta name="description" content="뮤직 투어리즘·지역 연계·게스트 안내. 사업 포털과 AI 컨시어지로 일본의 음악과 여행에 관한 질문에 답합니다." />
   <link rel="alternate" hreflang="ja" href="index.html" />
   <link rel="alternate" hreflang="en" href="index-en.html" />
   <link rel="alternate" hreflang="ko" href="index-ko.html" />
@@ -22,8 +23,6 @@
       <a href="#chat">AI 컨시어지</a>
       <a href="tarnar/">AI TARNAR Voice School</a>
       <a href="izu-fund/">Izu Music Fund</a>
-      <a href="automation/">SNS·LINE 운영</a>
-      <a href="gmtj-os/">GMTJ OS(타나 OS)</a>
       <a href="#flow">도입 흐름</a>
       <a href="#contact">문의</a>
     </nav>
@@ -46,7 +45,7 @@
         </p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#contact">문의</a>
-          <a class="btn btn-ghost" href="#chat">AI에게 질문(시험)</a>
+          <a class="btn btn-ghost" href="#chat">AI 컨시어지</a>
           <a class="btn btn-ghost" href="#services">서비스 보기</a>
         </div>
       </div>
@@ -146,11 +145,11 @@
     <section id="faq">
       <div class="wrap">
         <h2>자주 묻는 질문</h2>
-        <p class="section-sub">공개 전 법무·운영과 문구를 반드시 맞추세요.</p>
+        <p class="section-sub">요금·일정·참가 조건은 각 프로그램과 공식 창구에서 확인해 주세요.</p>
         <div class="faq">
           <details>
             <summary>AI에게 예약·결제를 맡겨도 되나요?</summary>
-            <p>아니요. 본 사이트 시험 채팅과 운영 설계에서는 <strong>예약·결제·취소는 사람 창구</strong>(메일 등)로 안내하는 전제입니다. 자동화하려면 별도 시스템 연동과 법무 확인이 필요합니다.</p>
+            <p>아니요. 본 사이트의 AI 채팅과 운영 설계에서는 <strong>예약·결제·취소는 사람 창구</strong>(메일 등)로 안내하는 전제입니다. 자동화하려면 별도 시스템 연동과 법무 확인이 필요합니다.</p>
           </details>
           <details>
             <summary>개인정보나 여권 정보를 내도 되나요?</summary>
@@ -162,7 +161,7 @@
           </details>
           <details>
             <summary>타사 로고나 곡을 사이트에 올려도 되나요?</summary>
-            <p>권리·크레딧 표기는 건별 확인이 필요합니다. 게재 정책과 템플릿을 먼저 정하고 홍보·법무와 공유합니다.</p>
+            <p>권리·크레딧 표기는 건별 확인이 필요합니다. 게재 정책과 템플릿을 먼저 정하고 관계 부서와 공유합니다.</p>
           </details>
           <details>
             <summary>도입까지 기간은?</summary>
@@ -174,21 +173,36 @@
 
     <section class="alt" id="chat">
       <div class="wrap">
-        <h2>AI 채팅(시험)</h2>
+        <h2>AI 컨시어지</h2>
         <p class="section-sub">
           Japan Music Tourism에 대한 <strong>일반적인 질문</strong>에 답합니다(생성 AI이므로 오류가 있을 수 있습니다). 구체적인 예약은 <a href="mailto:123@atono.jp">123@atono.jp</a>로 문의하세요.
         </p>
-        <p class="chat-public-notice" role="status">
-          <strong>현재는 localhost 전용입니다.</strong> 전송은 PC에서 <code class="mono">chat-proxy.py</code>를 실행하고 <code class="mono">config.js</code>의 <code class="mono">chatProxyUrl</code>이 <code class="mono">127.0.0.1</code>을 가리킬 때만 가능합니다. <strong>인터넷 공개 본 채팅은 준비 중</strong>입니다(이 배포 URL에서는 로컬 프록시에 연결되지 않습니다).
-        </p>
         <div class="chat-shell" id="chat-panel">
-          <p class="chat-proxy-hint" id="chat-proxy-hint" aria-live="polite"></p>
           <div class="chat-log" id="chat-log" aria-live="polite"></div>
           <p class="chat-status" id="chat-status"></p>
           <div class="chat-inputrow">
             <textarea id="chat-input" rows="2" placeholder="예: 뮤직 투어에서 복장이나 매너에 유의할 점은?" maxlength="2000"></textarea>
             <button type="button" class="btn btn-primary" id="chat-send">보내기</button>
           </div>
+          <form
+            id="chat-lead-form"
+            name="chat-lead"
+            class="chat-lead-box"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            hidden
+          >
+            <input type="hidden" name="form-name" value="chat-lead" />
+            <p class="bot-field" style="position: absolute; left: -9999px">
+              <label>Bot: <input name="bot-field" /></label>
+            </p>
+            <label>
+              이메일
+              <input id="chat-lead-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+            </label>
+            <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem">보내기</button>
+          </form>
         </div>
       </div>
     </section>
@@ -204,7 +218,7 @@
           </li>
           <li>
             <strong>설계·초안</strong>
-            <span>안내 템플릿, 지식 구조, 발신 캘린더 초안을 만듭니다.</span>
+            <span>안내 템플릿, 지식 구조, 발신 캘린더의 설계와 초기 콘텐츠를 만듭니다.</span>
           </li>
           <li>
             <strong>파일럿</strong>
@@ -241,24 +255,12 @@
         <span aria-hidden="true"> | </span>
         <a href="privacy-en.html" hreflang="en">Privacy Policy</a>
       </span>
-      <small style="color: var(--muted); display: block; margin-top: 0.4rem">公開前に必ず社内法務で最終確認してください（ドラフト）。</small>
     </p>
     <p>대체 레이아웃(Tailwind CDN): <a href="landing-tailwind.html">日本語</a> · <a href="landing-tailwind-en.html">English</a></p>
-    <p>본 페이지는 <strong>정적 초안</strong>입니다. 전자상거래 표시 등 추가 법무 페이지는 필요에 따라 정비하세요.</p>
-    <p>
-      <strong>AI 채팅(Anthropic·유료):</strong>
-      <span class="mono">ANTHROPIC_API_KEY=... python3 site/chat-proxy.py</span>
-      <br />
-      <strong>AI 채팅(Ollama·로컬·API 무료):</strong> 먼저 <span class="mono">ollama serve</span> 와 <span class="mono">ollama pull llama3.2</span> 후
-      <span class="mono">USE_OLLAMA=1 python3 site/chat-proxy.py</span>
-      <br />
-      사이트 표시는 다른 터미널에서 저장소 루트에서 <span class="mono">python3 -m http.server 8888</span> →
-      <span class="mono">http://127.0.0.1:8888/site/</span>(포트는 비어 있는 번호로). <span class="mono">config.js</span>의 <span class="mono">chatProxyUrl</span>을 프록시 포트에 맞춥니다.
-      프록시는 <strong>127.0.0.1만</strong>. 인터넷에 노출하지 마세요.
-    </p>
   </footer>
 
   <script src="config.js"></script>
+  <script src="js/gmtj-chrome.js" defer></script>
   <script src="app.js" defer></script>
 </body>
 </html>

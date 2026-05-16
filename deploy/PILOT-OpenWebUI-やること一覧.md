@@ -9,7 +9,7 @@
 | 項目 | 状態 |
 |------|------|
 | `make ci` | テンプレ整合＋ゴールデン件数チェック（運用で都度実行） |
-| `make kb-zip` | **`deploy/gmtj-kb-for-knowledge.zip`** を生成（`kb/` 一式） |
+| `make kb-zip` | **`deploy/gmtj-kb-for-knowledge.zip`**（汎用）と **`deploy/gmtj-kb-for-openwebui.zip`**（ZIP ルートが `kb` 直下。UI で失敗しやすいときはこちら）を生成 |
 
 ZIP を作り直すときはルートで:
 
@@ -29,7 +29,7 @@ UI の文言は Open WebUI のバージョンで違います。迷ったら **`d
 1. 管理者で `http://127.0.0.1:8080` にログイン  
 2. **Workspace（または管理）→ Knowledge** 相当のメニューを開く  
 3. **コレクション新規**（例: `GMTJ-kb`）  
-4. **`deploy/gmtj-kb-for-knowledge.zip`** を **アップロード**（または ZIP 内の `.md` を展開して複数ファイル）  
+4. まず **`deploy/gmtj-kb-for-openwebui.zip`** を **アップロード**する。**「Failed to add file.」** のときはこの ZIP（または解凍した `.md` を複数選択）を優先。汎用 ZIP は **`deploy/gmtj-kb-for-knowledge.zip`**  
 5. **埋め込み（Embedding）** が求められる場合は、画面の案内に従い API またはローカルモデルを設定  
 6. **保存／インデックス完了**まで待つ  
 

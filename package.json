@@ -1,0 +1,17 @@
+{
+  "name": "gmtj-ai-automation",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Glitch / Node preview: serves the static site under site/",
+  "scripts": {
+    "start": "serve site --listen tcp://0.0.0.0:${PORT:-3000}",
+    "site:preview": "serve site --listen tcp://127.0.0.1:4173"
+  },
+  "dependencies": {
+    "@resend/node": "^4.0.1",
+    "serve": "^14.2.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

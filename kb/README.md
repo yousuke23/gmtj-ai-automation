@@ -30,3 +30,4 @@
 - 評価フォルダ入口: `../eval/README.md`
 - 採点ルーブリック: `../eval/scoring-rubric.md`（ゴールデンセットの版に追従）
 - テンプレファイルの欠落チェック: `make ci`（`verify-templates` + `eval` のゴールデン件数）または個別に `bash scripts/verify-kb-templates.sh` / `bash scripts/verify-golden-questions.sh`
+- **GitHub:** `main` / `master` への push と PR で **`.github/workflows/ci.yml`** が `make ci` を実行します（スプリント本線のゲート）。

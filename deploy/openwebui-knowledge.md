@@ -28,7 +28,18 @@ Open WebUI はバージョンにより「サーバー上のパスをそのまま
 3. `kb` 配下の `.md` / `.yaml` 等を、**ファイル選択または ZIP** でアップロードする。
 4. 埋め込みモデル（Embedding）が未設定の場合は、公式手順に従い API またはローカルモデルを設定する（`OFFLINE_MODE` 時は注意）。
 
-**一括ZIP**: リポジトリルートで `bash deploy/package-kb-for-knowledge.sh` を実行すると、既定で `deploy/gmtj-kb-for-knowledge.zip` が生成される（パスを変えたい場合は第1引数で出力先を指定）。生成物を Knowledge にアップロードする。
+**一括ZIP**: リポジトリルートで `make kb-zip`（または `bash deploy/package-kb-for-knowledge.sh`）を実行すると次の2つが生成される。
+
+| ファイル | 内容 |
+|----------|------|
+| `deploy/gmtj-kb-for-knowledge.zip` | アーカイブ先頭が `kb/`（汎用パイプライン向け） |
+| `deploy/gmtj-kb-for-openwebui.zip` | **`kb` の直下を ZIP ルート**（`regions/foo.md` など。Open WebUI で失敗しやすい場合はこちらを試す） |
+
+第1引数で出力先を変えられるのは **汎用 ZIP のみ**（Open WebUI 用は常に `deploy/gmtj-kb-for-openwebui.zip`）。
+
+**ZIP が必ずエラーになる版:** Knowledge の **「+」メニュー → アップロードディレクトリ（Upload Directory）」** を使い、Finder でリポジトリの **`kb` フォルダそのもの**（例: `GMTJ-AI-Automation/kb`）を指定する。ZIP にせず **ディレクトリ単位**だと通ることが多い。別の場所に置きたい場合は `gmtj-kb-for-openwebui.zip` を解凍したフォルダを指定してもよい。
+
+**「Failed to add file.」のとき:** まず上記の **ディレクトリアップロード**、または **アップロードファイル**で `.md` を複数選択。ZIP は諦めてよい。原因切り分けは `cd deploy && docker compose logs open-webui --tail 80` でサーバー側エラーを確認する。**埋め込み（Embedding）未設定**の場合も取り込みに失敗することがある（管理画面の RAG／埋め込み設定を確認）。
 
 ### B. コンテナ内 `/kb-ro` を参照して手動コピー（上級者・検証用）
 
@@ -37,6 +48,26 @@ Open WebUI はバージョンにより「サーバー上のパスをそのまま
 3. Open WebUI がドキュメント取り込みに使うディレクトリ（通常はデータボリューム配下。詳細は [環境変数 DATA_DIR](https://docs.openwebui.com/reference/env-configuration)）へ、**運用ポリシーに沿って**必要ファイルだけをコピーするか、公式機能で「フォルダ取り込み」できる場合はその手順に従う。
 
 読み取り専用マウント上のファイルを **直接** ベクタDBの入力パスとして指せるかは実装依存のため、**勤務手順書では A を正**とするのが安全。
+
+### C. リポジトリ全体が Knowledge に入ってしまったとき（API で `kb` 以外を一括削除）
+
+ブラウザで1件ずつ消す代わりに、**ローカルで API を叩いて**「ファイルの `path` に `/kb/` が含まれないもの」だけをコレクションから外すスクリプトがある（`deploy/docker-compose.yml` の **Open WebUI v0.5.10** と同じ API 前提）。
+
+1. Open WebUI に **管理者相当**でログインできるユーザーから **API キー**を発行する（画面: **設定 → アカウント** 付近。版により文言が異なる）。
+2. リポジトリルートで次を実行する。
+
+```bash
+export OPENWEBUI_API_KEY="（発行したキー）"
+export OPENWEBUI_URL="http://127.0.0.1:8080"   # 省略可
+
+python3 deploy/scripts/prune_openwebui_knowledge_kb_only.py --list
+python3 deploy/scripts/prune_openwebui_knowledge_kb_only.py --match-name "コンシェルジュ" --dry-run
+python3 deploy/scripts/prune_openwebui_knowledge_kb_only.py --match-name "コンシェルジュ" --apply
+```
+
+`--match-name` で複数コレクションに当たる場合はエラーにするので、そのときは **`--knowledge-id`**（`--list` の1列目）で明示する。
+
+**注意（重要）:** この Open WebUI 版の **`file/remove` はファイル本体も削除する**実装になっている。スクリプトは **`path` に `/kb/` を含むものだけ保持**し、**`path` が空のファイルは誤削除防止のため触らない**（一覧に SKIP として出る）。取り込み時のメタデータによっては手動整理が必要。
 
 ## 3. `kb` を更新したあと
 

@@ -1,27 +1,5 @@
 #!/usr/bin/env python3
-"""
-ローカル開発用: サービスサイトのチャットを Anthropic API または Ollama に中継する。
-
-【Anthropic】
-  ANTHROPIC_API_KEY=sk-ant-... python3 site/chat-proxy.py
-
-【Ollama（課金なし・ローカル）】
-  USE_OLLAMA=1 python3 site/chat-proxy.py
-  # 事前に: ollama serve ＋ ollama pull llama3.2 など
-
-- 既定で http://127.0.0.1:8765 のみにバインド（インターネットに晒さないこと）。
-- CORS は開発向けに緩い。**本番公開前に必ず認証・TLS・レート制限を別途設けること。**
-
-環境変数:
-  USE_OLLAMA         1 / true / yes のとき Ollama を使用（Anthropic キー不要）
-  OLLAMA_BASE_URL    省略時 http://127.0.0.1:11434
-  OLLAMA_MODEL       省略時 llama3.2
-
-  ANTHROPIC_API_KEY  USE_OLLAMA が無効なとき必須
-  ANTHROPIC_MODEL    省略時 claude-3-5-haiku-20241022
-  CHAT_PROXY_HOST    省略時 127.0.0.1
-  CHAT_PROXY_PORT    省略時 8765
-"""
+"""開発用チャット中継。環境変数 USE_OLLAMA / ANTHROPIC_API_KEY 等はリポジトリの deploy ドキュメントを参照。"""
 
 from __future__ import annotations
 
@@ -95,7 +73,7 @@ def _ollama_reply(messages: list[dict]) -> tuple[str | None, str | None]:
         err = e.read().decode("utf-8", errors="replace")
         return None, f"Ollama HTTP {e.code}: {err[:800]}"
     except urllib.error.URLError as e:
-        return None, f"Ollama に接続できません（`ollama serve` とモデル pull を確認）: {e}"
+        return None, f"Ollama に接続できません: {e}"
     except Exception as e:
         return None, f"Ollama 接続エラー: {e}"
 
@@ -137,11 +115,7 @@ def _anthropic_reply(key: str, messages: list[dict]) -> tuple[str | None, str | 
         err = e.read().decode("utf-8", errors="replace")
         hint = ""
         if "credit balance is too low" in err.lower():
-            hint = (
-                " 【対処】課金なしで試す: プロキシを Ctrl+C で止め、"
-                "`unset ANTHROPIC_API_KEY` のあと "
-                "`USE_OLLAMA=1 python3 site/chat-proxy.py`（事前に `ollama serve` と `ollama pull llama3.2`）"
-            )
+            hint = " 【対処】Ollama モードに切り替えるか、API の残高を確認してください。"
         return None, f"Anthropic API エラー: {e.code} {err[:600]}{hint}"
     except Exception as e:
         return None, f"接続エラー: {e}"
@@ -190,7 +164,7 @@ class Handler(BaseHTTPRequestHandler):
         if not use_ollama and not key:
             body = json.dumps(
                 {
-                    "error": "Anthropic を使う場合は ANTHROPIC_API_KEY を設定するか、Ollama を使う場合は USE_OLLAMA=1 を付けて起動してください。",
+                    "error": "API キーが未設定です。環境変数を設定するか、Ollama モードで起動してください。",
                 },
                 ensure_ascii=False,
             ).encode("utf-8")
@@ -263,11 +237,9 @@ def main() -> None:
     use_ollama = _truthy(os.environ.get("USE_OLLAMA"))
     mode = "Ollama" if use_ollama else "Anthropic"
     if use_ollama:
-        print(
-            f"バックエンド: Ollama  model={os.environ.get('OLLAMA_MODEL', 'llama3.2')}  base={os.environ.get('OLLAMA_BASE_URL', 'http://127.0.0.1:11434')}"
-        )
+        print("バックエンド: Ollama")
     else:
-        print("バックエンド: Anthropic（残高エラーが出る場合は `unset ANTHROPIC_API_KEY` して `USE_OLLAMA=1` で再起動）")
+        print("バックエンド: Anthropic")
     httpd = HTTPServer((host, port), Handler)
     print(f"site chat proxy ({mode}): http://{host}:{port}/api/site-chat (Ctrl+C で停止)")
     httpd.serve_forever()

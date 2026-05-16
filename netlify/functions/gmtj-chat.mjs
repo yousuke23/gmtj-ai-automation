@@ -1,17 +1,35 @@
 /**
- * Netlify Function: Anthropic Messages API for public site chat.
- * Set ANTHROPIC_API_KEY in Netlify Site settings → Environment variables.
- * Optional: ANTHROPIC_MODEL (default claude-3-5-haiku-20241022)
+ * Netlify Function: Anthropic Messages API — lead-focused concierge (JSON envelope).
+ * ANTHROPIC_API_KEY required. Optional ANTHROPIC_MODEL.
  */
 
 const ANTHROPIC_URL = "https://api.anthropic.com/v1/messages";
 const ANTHROPIC_VERSION = "2023-06-01";
 
-const SYSTEM = `You are the concierge assistant for Japan Music Tourism (GMTJ), a music-and-travel experience brand.
-Answer helpfully about music tourism, regional travel in Japan, etiquette, planning tips, and related topics.
-Do not ask users for sensitive personal data. Do not give definitive legal, medical, or investment advice; suggest consulting professionals when needed.
-For specific bookings, payments, or cancellations, direct users to email 123@atono.jp unless they already have another official channel.
-Keep answers concise unless the user asks for detail.`;
+const SYSTEM = `あなたは Global Music Tourism Japan（GMTJ）のAIコンシェルジュです。
+たーなー先生（田中直人）が代表を務める音楽×温泉×神社ツーリズムの専門家として、訪問者の質問に答えてください。
+
+回答のルール:
+1. 簡潔に答えた後、必ず「次のステップ」を提案する。
+2. 宿泊に関する質問 → #03 123 MUSIC & RESORTS へ誘導。
+3. 声楽・レッスン・発声に関する質問 → #08 AI TARNAR Voice School へ誘導。
+4. イベント・フェスに関する質問 → #05 Global Music Festival へ誘導。
+5. 投資・ファンドに関する質問 → #21 Izu Music Fund へ誘導。
+6. 上記に当てはまらない場合は Japan Music Tourism トップの案内を type=info で返す。
+
+出力は次のJSONオブジェクト1つのみ（説明文・Markdown・コードフェンス禁止）:
+{"message":"回答テキスト（ユーザーの言語に合わせる）","cta":{"label":"ボタンラベル","url":"完全なパスまたはhttps URL","type":"booking|info|purchase"}}
+
+cta は必ず付与する。url はサイト上の実在パスを優先:
+- #03: /03-123-music-resorts/
+- #08: /tarnar/
+- #05: /05-global-music-festival/
+- #21: /izu-fund/
+- 一般: / （トップ）
+
+type の目安: 体験・予約導線=booking, 読み物・一覧=info, 課金・購入=purchase（レッスン月額等）。
+
+機微な個人情報の収集を促さない。予約・決済の確定は人間窓口 123@atono.jp へ。`;
 
 const cors = {
   "Content-Type": "application/json; charset=utf-8",
@@ -26,6 +44,19 @@ function json(statusCode, bodyObj) {
     headers: cors,
     body: JSON.stringify(bodyObj),
   };
+}
+
+function extractJsonObject(text) {
+  const t = (text || "").trim();
+  const start = t.indexOf("{");
+  const end = t.lastIndexOf("}");
+  if (start === -1 || end <= start) return null;
+  const slice = t.slice(start, end + 1);
+  try {
+    return JSON.parse(slice);
+  } catch {
+    return null;
+  }
 }
 
 export const handler = async (event) => {
@@ -71,7 +102,7 @@ export const handler = async (event) => {
 
   const body = JSON.stringify({
     model,
-    max_tokens: 1024,
+    max_tokens: 1200,
     system: SYSTEM,
     messages,
   });
@@ -110,6 +141,25 @@ export const handler = async (event) => {
       parts.push(b.text);
     }
   }
-  const reply = parts.join("\n").trim() || " ";
-  return json(200, { reply });
+  const rawText = parts.join("\n").trim() || "{}";
+  const parsed = extractJsonObject(rawText);
+  if (parsed && typeof parsed.message === "string") {
+    const cta =
+      parsed.cta && typeof parsed.cta === "object"
+        ? {
+            label: String(parsed.cta.label || "").slice(0, 120),
+            url: String(parsed.cta.url || "").slice(0, 2000),
+            type: ["booking", "info", "purchase"].includes(parsed.cta.type) ? parsed.cta.type : "info",
+          }
+        : null;
+    return json(200, {
+      message: parsed.message.trim(),
+      cta: cta && cta.label && cta.url ? cta : null,
+    });
+  }
+
+  return json(200, {
+    message: rawText.replace(/^\{[\s\S]*\}$/, "").trim() || rawText,
+    cta: null,
+  });
 };

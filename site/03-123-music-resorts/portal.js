@@ -30,21 +30,20 @@
   }
 
   function applyConfig(cfg) {
-    var lineBtn = document.getElementById("line-cta");
     var mail = (cfg && cfg.contactEmail) || "123@atono.jp";
-    if (lineBtn) {
-      var url = (cfg && cfg.lineAddFriendUrl) || "";
+    var url = (cfg && cfg.lineAddFriendUrl) || "";
+    var subject =
+      (cfg && cfg.mailtoSubject) || "LINE登録のお問い合わせ";
+    document.querySelectorAll(".js-line-cta").forEach(function (lineBtn) {
       if (url) {
         lineBtn.href = url;
         lineBtn.rel = "noopener noreferrer";
         lineBtn.target = "_blank";
       } else {
-        var subject =
-          (cfg && cfg.mailtoSubject) || "LINE登録のお問い合わせ";
         lineBtn.href =
           "mailto:" + mail + "?subject=" + encodeURIComponent(subject);
       }
-    }
+    });
     var foot = document.getElementById("footer-related");
     if (foot && cfg && cfg.relatedSites && cfg.relatedSites.length) {
       foot.innerHTML = cfg.relatedSites

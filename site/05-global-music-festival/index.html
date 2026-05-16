@@ -43,6 +43,17 @@
   </section>
 
   <main class="wrap">
+    <section class="block block-highlight" id="fest-hero">
+      <p class="hero-kicker" id="fest-kicker" style="margin-top:0">ATAMI IZUSAN International Music Festival 2026</p>
+      <h2 id="fest-title" style="margin:0.35rem 0 0.5rem;font-size:clamp(1.35rem,3vw,1.85rem)">伊豆山神社参道837段 · 5会場</h2>
+      <p class="section-lead" id="fest-lead">開催: 2026年9月19日（土）〜23日（水） · 入場無料（一部有料プログラムあり）</p>
+      <div id="fest-countdown" class="fest-countdown" aria-live="polite"></div>
+      <div class="lang-switch tarnar-lang-switch" role="group" aria-label="言語">
+        <button type="button" class="lang-switch__btn lang-switch__btn--active" data-fest-lang="ja">日本語</button>
+        <button type="button" class="lang-switch__btn" data-fest-lang="en">English</button>
+        <button type="button" class="lang-switch__btn" data-fest-lang="ko">한국어</button>
+      </div>
+    </section>
     <section class="block block-highlight" id="mission">
       <h2>価値提供と目的</h2>
       <p class="section-lead">動員のピークも、初参加のゲストも置いていかない歓迎の空気をつくることがコンセプトです。チケットから退場後まで、SNS・現場アナウンス・公式LINEを同じ語彙でつなぎ、トラブル時の一言メッセージまでテンプレ化します。</p>
@@ -95,6 +106,41 @@
           <h3>Izu Music Fund</h3>
           <p>伊豆の音楽と地域をつなぐファンド。レポート・パートナー・共創プログラムの入口です。</p>
           <a class="btn btn-ghost" href="../izu-fund/">Izu Music Fund を開く</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="block" id="fest-forms">
+      <h2>出演希望 · メーリングリスト · スポンサー</h2>
+      <div class="fest-grid">
+        <article class="card">
+          <h3>夢カナyell アーティスト出演希望</h3>
+          <form name="festival-artist" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="festival-artist" />
+            <p class="bot-field" style="position:absolute;left:-9999px"><label>B <input name="bot-field" /></label></p>
+            <label>アーティスト名<input name="artist" required /></label>
+            <label>ジャンル<input name="genre" required /></label>
+            <label>出身地<input name="origin" /></label>
+            <label>SNS URL<input name="sns" type="url" /></label>
+            <label>自己PR（200字以内）<textarea name="bio" maxlength="200" rows="3" required></textarea></label>
+            <button type="submit" class="btn btn-cta-primary">応募する</button>
+          </form>
+          <p class="pricing-note fest-done" hidden>応募を受け付けました。審査結果は2026年7月末までにメールでご連絡します。</p>
+        </article>
+        <article class="card">
+          <h3>観客向けメーリングリスト</h3>
+          <form name="festival-mail" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="festival-mail" />
+            <p class="bot-field" style="position:absolute;left:-9999px"><label>B <input name="bot-field" /></label></p>
+            <label>メール<input type="email" name="email" required /></label>
+            <button type="submit" class="btn btn-cta-primary">登録</button>
+          </form>
+          <p class="pricing-note fest-done" hidden>最新情報をお届けします！ / We'll keep you updated!</p>
+        </article>
+        <article class="card">
+          <h3>スポンサー募集</h3>
+          <p>プラチナ / ゴールド / シルバー — 料金はお問い合わせください。</p>
+          <a class="btn btn-cta-secondary" href="mailto:123@atono.jp?subject=%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%E5%8B%9F%E9%9B%86%20IZUSAN%20MUSIC%20FEST%202026">お問い合わせ</a>
         </article>
       </div>
     </section>
@@ -164,5 +210,7 @@
   </footer>
 
   <script src="portal.js" defer></script>
+  <script src="../js/festival-2026.js" defer></script>
+  <script src="../js/gmtj-chrome.js" defer></script>
 </body>
 </html>

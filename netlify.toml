@@ -1,18 +1,35 @@
 # Netlify: static site + serverless chat + SNS/LINE automation
 [build]
   publish = "site"
-  # ポータルHTMLはリポジトリに含めるか、このコマンドで毎回生成する
-  command = "python3 scripts/generate_business_portals.py && python3 scripts/build_tarnar_izu_blog_pages.py"
+  # TARNAR ブログ生成（1600×4言語）＋事業ポータル（各500本同期の manifest 同梱）
+  command = "python3 scripts/build_tarnar_izu_blog_pages.py && python3 scripts/generate_business_portals.py && python3 scripts/inject_robots_meta.py && python3 scripts/inject_tarnar_payment_urls.py && python3 scripts/inject_gmtj_chrome.py"
   functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "20"
+
+# スタッフ専用パス（公開サイトからはリンクしない）。HTML の noindex に加え HTTP ヘッダでも明示。
+[[headers]]
+  for = "/gmtj-os/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/automation/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/social-templates/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
 
 # 環境変数例（Netlify UI でも設定）:
 # OPS_PUBLISH_SECRET, AUTOMATION_BRIDGE_URL, SITE_CANONICAL_URL
 # LINE_TARNAR_CHANNEL_SECRET, LINE_TARNAR_CHANNEL_TOKEN, LINE_TARNAR_NOTIFY_USER_ID
 # LINE_IMF_CHANNEL_SECRET, LINE_IMF_CHANNEL_TOKEN, LINE_IMF_NOTIFY_USER_ID
 # ANTHROPIC_API_KEY（チャット用）
+# SITE_STRIPE_TARNAR_MONTHLY, SITE_PAYJP_TARNAR_MONTHLY（#08 月額の公開決済URL。未設定時は inject が mailto に差し替え）
 
 # ---------------------------------------------------------------------------
 # 末尾スラッシュなし → あり（301）
@@ -35,6 +52,11 @@
 [[redirects]]
   from = "/automation"
   to = "/automation/"
+  status = 301
+
+[[redirects]]
+  from = "/social-templates"
+  to = "/social-templates/"
   status = 301
 
 [[redirects]]
@@ -155,6 +177,16 @@
   from = "/automation/"
   to = "/automation/index.html"
   status = 200
+
+[[redirects]]
+  from = "/social-templates/"
+  to = "/social-templates/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/gmtj-os/kpi-dashboard"
+  to = "/gmtj-os/kpi-dashboard.html"
+  status = 301
 
 [[redirects]]
   from = "/01-global-music-tour/"

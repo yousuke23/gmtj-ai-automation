@@ -1,0 +1,170 @@
+# TARNAR Voice School — 40角度バッチ（声の基礎・日常練習）
+# python3 generate.py --yaml batch/voice-school-full.yaml で実行
+
+theme_id: tarnar-2026q2-a
+pillar: 声の基礎と日常練習
+pillar_short: voice-base
+locale_primary: ja
+
+# 各エントリは文字列（ja のみ）または ja/en/ko/zh の辞書どちらでも可
+angles:
+  - ja: ウォームアップをサボらない最小ルーティン
+    en: The Minimum Warm-Up Routine You Won't Skip
+    ko: 빠뜨리지 않는 최소 워밍업 루틴
+    zh: 不会偷懒的最小热身常规
+  - ja: 首肩が硬い日の声の出し方
+    en: How to Sing When Your Neck and Shoulders Are Tight
+    ko: 목과 어깨가 뻣뻣한 날 발성하는 법
+    zh: 颈肩僵硬时的发声方法
+  - ja: 長時間話した後のクールダウン
+    en: Cooling Down Your Voice After Long Talking Sessions
+    ko: 오래 말한 후 보이스 쿨다운 방법
+    zh: 长时间说话后的声音冷却方法
+  - ja: 録音して聴き返すときのチェックリスト
+    en: A Checklist for Listening Back to Your Recordings
+    ko: 녹음 후 청취 체크리스트
+    zh: 回听录音时的检查清单
+  - ja: 自宅でのマイクの距離感
+    en: Getting the Right Mic Distance at Home
+    ko: 홈 레코딩 마이크 거리 감각
+    zh: 在家录音的麦克风距离把控
+  - ja: 朝イチで声を温める3分の型
+    en: A 3-Minute Morning Voice Warm-Up
+    ko: 아침에 목소리를 푸는 3분 루틴
+    zh: 早晨3分钟嗓音热身
+  - ja: 睡眠不足が声に出る理由と対策
+    en: How Sleep Deprivation Affects Your Voice (and What to Do)
+    ko: 수면 부족이 목소리에 미치는 영향과 대처법
+    zh: 睡眠不足对声音的影响及对策
+  - ja: 飲み物で変わる声のコンディション
+    en: How Your Drink Choices Affect Your Voice
+    ko: 음료 선택이 목소리 컨디션에 미치는 영향
+    zh: 饮品选择对声音状态的影响
+  - ja: 腹式呼吸を日常に組み込む方法
+    en: How to Build Diaphragmatic Breathing Into Daily Life
+    ko: 복식 호흡을 일상에 통합하는 방법
+    zh: 如何将腹式呼吸融入日常生活
+  - ja: 声のリズムと滑舌を同時に鍛える練習
+    en: One Exercise to Improve Both Voice Rhythm and Articulation
+    ko: 리듬과 발음을 동시에 단련하는 연습
+    zh: 同时锻炼语音节奏与咬字的练习
+  - ja: 高音が出にくいときの応急処置
+    en: Quick Fixes When Your High Notes Won't Come Out
+    ko: 고음이 잘 안 나올 때의 응급 처치
+    zh: 高音上不去时的应急处理
+  - ja: 低音を豊かにする練習の型
+    en: Exercises to Enrich Your Low Register
+    ko: 저음을 풍부하게 만드는 연습 루틴
+    zh: 丰富低音区的练习方法
+  - ja: 話し声と歌声を切り替える意識の持ち方
+    en: Switching Mindfully Between Spoken and Singing Voice
+    ko: 말하는 목소리와 노래하는 목소리를 전환하는 의식
+    zh: 在说话声与歌声之间有意识切换的方法
+  - ja: 声量を場所に合わせてコントロールする方法
+    en: Matching Your Volume to the Space You're In
+    ko: 공간에 맞게 음량을 조절하는 방법
+    zh: 根据场所控制音量的技巧
+  - ja: 緊張で声が震えるときの対処法
+    en: What to Do When Nerves Make Your Voice Shake
+    ko: 긴장으로 목소리가 떨릴 때 대처법
+    zh: 紧张导致声音发抖时的应对方法
+  - ja: 喉の乾燥を防ぐ日常ケア
+    en: Daily Care to Prevent Throat Dryness
+    ko: 목 건조함을 예방하는 일상 관리
+    zh: 预防喉咙干燥的日常护理
+  - ja: 鼻声を改善するためのアプローチ
+    en: Approaches to Improving a Nasal Voice
+    ko: 비음 개선을 위한 접근법
+    zh: 改善鼻音的方法
+  - ja: 声のビブラートを自然につける練習
+    en: How to Develop a Natural Vibrato
+    ko: 자연스러운 비브라토를 익히는 연습
+    zh: 自然培养声音颤音的练习方法
+  - ja: 表現力を上げるための感情の乗せ方
+    en: How to Add Emotion to Boost Your Expressiveness
+    ko: 표현력을 높이기 위한 감정 담기
+    zh: 提升表现力的情感注入方法
+  - ja: 音程を安定させる耳のトレーニング
+    en: Ear Training to Stabilize Your Pitch
+    ko: 음정을 안정시키는 귀 훈련
+    zh: 稳定音准的听觉训练方法
+  - ja: 声の通りを良くするための姿勢の整え方
+    en: How Posture Affects Voice Projection
+    ko: 목소리 전달력을 높이는 자세 교정
+    zh: 通过姿势改善声音穿透力
+  - ja: 部屋の響きを活かした練習方法
+    en: Using Room Acoustics to Your Advantage When Practicing
+    ko: 방의 울림을 활용한 연습 방법
+    zh: 利用房间音响效果进行练习
+  - ja: 連続ライブ・講演を乗り越える声の管理術
+    en: Voice Management for Back-to-Back Performances or Talks
+    ko: 연속 공연·강연을 위한 목소리 관리술
+    zh: 连续演出与讲座的声音管理技巧
+  - ja: プロが使うウォームダウンの手順
+    en: The Cool-Down Routine Voice Professionals Use
+    ko: 프로가 사용하는 쿨다운 절차
+    zh: 专业人士使用的声音冷却流程
+  - ja: 声帯を長持ちさせるための習慣リスト
+    en: Habits That Help Your Voice Last Longer
+    ko: 성대를 오래 유지하는 습관 목록
+    zh: 延长声带寿命的习惯清单
+  - ja: 音楽ツーリズムで声を活かす体験の作り方
+    en: Designing Voice Experiences for Music Tourism
+    ko: 뮤직 투어리즘에서 목소리를 활용하는 체험 설계
+    zh: 在音乐旅游中发挥声音优势的体验设计
+  - ja: 温泉×声トレーニングの組み合わせ方
+    en: Combining Onsen and Voice Training
+    ko: 온천×보이스 트레이닝 조합법
+    zh: 温泉与声音训练的结合方法
+  - ja: 旅先で声を維持するコツ
+    en: How to Keep Your Voice in Shape While Traveling
+    ko: 여행 중 목소리를 유지하는 요령
+    zh: 旅途中保持声音状态的技巧
+  - ja: ライブ前夜の声のセルフケア
+    en: Self-Care for Your Voice the Night Before a Live Show
+    ko: 라이브 전날 밤의 보이스 셀프 케어
+    zh: 演出前夜的声音自我护理
+  - ja: 初心者が最初の1週間でやること
+    en: What Beginners Should Do in Their First Week
+    ko: 초보자가 첫 1주일에 해야 할 것
+    zh: 初学者第一周应该做的事
+  - ja: 中級者が停滞を抜け出すための見直し点
+    en: Breakthrough Checkpoints for Intermediate Learners
+    ko: 중급자가 정체기를 벗어나기 위한 점검 포인트
+    zh: 中级学习者突破瓶颈的检查要点
+  - ja: 声の個性を活かす方向性の見つけ方
+    en: How to Find the Direction That Suits Your Vocal Identity
+    ko: 목소리 개성을 살리는 방향성 찾기
+    zh: 如何找到适合自己声音个性的发展方向
+  - ja: タナーメソッドの3つの柱を理解する
+    en: Understanding the Three Pillars of the TARNAR Method
+    ko: TARNAR 메서드의 3가지 기둥 이해하기
+    zh: 理解TARNAR工法的三大支柱
+  - ja: オンラインレッスンを最大限に活かす準備
+    en: How to Get the Most Out of Online Lessons
+    ko: 온라인 레슨을 최대한 활용하는 준비
+    zh: 最大化利用在线课程的准备工作
+  - ja: グループレッスンと個人レッスンの使い分け
+    en: When to Choose Group vs. Private Lessons
+    ko: 그룹 레슨과 개인 레슨의 적절한 활용
+    zh: 团体课与私教课的选择策略
+  - ja: 自分の声を録音・分析する習慣のつくり方
+    en: Building a Habit of Recording and Analyzing Your Own Voice
+    ko: 자신의 목소리를 녹음·분석하는 습관 만들기
+    zh: 建立录音与分析自己声音的习惯
+  - ja: 声のトレーニングを継続できる仕組みの作り方
+    en: Systems That Help You Stick to Voice Training
+    ko: 보이스 트레이닝을 지속할 수 있는 시스템 만들기
+    zh: 能够坚持声音训练的系统构建方法
+  - ja: 音楽ツーリズムとビジネスをつなぐ声の役割
+    en: The Role of Voice in Connecting Music Tourism and Business
+    ko: 뮤직 투어리즘과 비즈니스를 잇는 목소리의 역할
+    zh: 声音在连接音乐旅游与商业中的作用
+  - ja: TARNAR式で変わった受講生の実例（パターン紹介）
+    en: How TARNAR-Style Training Changes Learners (Pattern Overview)
+    ko: TARNAR 방식으로 달라진 수강생의 실례 (패턴 소개)
+    zh: TARNAR方式改变学员的实例（模式介绍）
+  - ja: "次のステージへ：声のプロを目指す人へのロードマップ"
+    en: "Next Level: A Roadmap for Those Aiming to Become Voice Professionals"
+    ko: "다음 단계로: 보이스 전문가를 목표로 하는 사람을 위한 로드맵"
+    zh: "迈向下一阶段：成为声音专业人士的路线图"

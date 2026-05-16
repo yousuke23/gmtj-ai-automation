@@ -1,0 +1,12 @@
+# 1テーマ（柱）の例 — コピーして angles を30〜50行に増やす
+
+theme_id: voice-foundation-001
+pillar: 声の基礎と日常練習
+pillar_short: voice-base
+locale_primary: ja
+angles:
+  - ウォームアップをサボらない最小ルーティン
+  - 首肩が硬い日の声の出し方
+  - 長時間話した後のクールダウン
+  - 録音して聴き返すときのチェックリスト
+  - 自宅でのマイクの距離感

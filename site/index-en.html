@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
   <title>Japan Music Tourism — Music and travel, with local communities.</title>
-  <meta name="description" content="Music tourism, regional partnerships, digital guest experience. Guidance templates, concierge design, marketing support. Draft site with optional AI chat (local trial)." />
+  <meta name="description" content="Music tourism, regional partnerships, and guest-facing guidance. Business portals and an AI concierge answer common questions about travel and music in Japan." />
   <link rel="alternate" hreflang="ja" href="index.html" />
   <link rel="alternate" hreflang="en" href="index-en.html" />
   <link rel="alternate" hreflang="ko" href="index-ko.html" />
@@ -22,8 +23,6 @@
       <a href="#chat">AI concierge</a>
       <a href="tarnar/">AI TARNAR Voice School</a>
       <a href="izu-fund/">Izu Music Fund</a>
-      <a href="automation/">SNS &amp; LINE ops</a>
-      <a href="gmtj-os/">GMTJ OS (Tana OS)</a>
       <a href="#flow">How we work</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -46,7 +45,7 @@
         </p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#contact">Contact</a>
-          <a class="btn btn-ghost" href="#chat">Ask AI (trial)</a>
+          <a class="btn btn-ghost" href="#chat">AI concierge</a>
           <a class="btn btn-ghost" href="#services">See services</a>
         </div>
       </div>
@@ -146,11 +145,11 @@
     <section id="faq">
       <div class="wrap">
         <h2>FAQ</h2>
-        <p class="section-sub">Align all copy with legal and operations before publishing.</p>
+        <p class="section-sub">Please confirm pricing, schedules, and participation rules with each program and official contact channel.</p>
         <div class="faq">
           <details>
             <summary>Can AI handle bookings or payments?</summary>
-            <p>No. In this trial chat and our operating model, <strong>bookings, payments, and cancellations route to human staff</strong> (e.g. email). Full automation needs separate systems and legal review.</p>
+            <p>No. On this site, the <strong>AI concierge and our operating model route bookings, payments, and cancellations to human staff</strong> (e.g. email). Full automation needs separate systems and legal review.</p>
           </details>
           <details>
             <summary>Should I send personal or passport data?</summary>
@@ -162,7 +161,7 @@
           </details>
           <details>
             <summary>Can we publish other companies’ logos or music?</summary>
-            <p>Rights and credits must be confirmed per case. Set a publishing policy and templates, then share with PR and legal.</p>
+            <p>Rights and credits must be confirmed per case. Set a publishing policy and templates, then share them with the relevant stakeholders.</p>
           </details>
           <details>
             <summary>How long does rollout take?</summary>
@@ -174,21 +173,36 @@
 
     <section class="alt" id="chat">
       <div class="wrap">
-        <h2>AI chat (trial)</h2>
+        <h2>AI concierge</h2>
         <p class="section-sub">
           We answer <strong>general questions</strong> about Japan Music Tourism (generated text may be wrong). For concrete bookings, email <a href="mailto:123@atono.jp">123@atono.jp</a>.
         </p>
-        <p class="chat-public-notice" role="status">
-          <strong>Localhost only for now.</strong> Sending works only when <code class="mono">chat-proxy.py</code> is running on your computer and <code class="mono">config.js</code> points <code class="mono">chatProxyUrl</code> to <code class="mono">127.0.0.1</code>. <strong>A production chat on the public internet is not available yet</strong> (this deployed URL cannot reach your local proxy).
-        </p>
         <div class="chat-shell" id="chat-panel">
-          <p class="chat-proxy-hint" id="chat-proxy-hint" aria-live="polite"></p>
           <div class="chat-log" id="chat-log" aria-live="polite"></div>
           <p class="chat-status" id="chat-status"></p>
           <div class="chat-inputrow">
             <textarea id="chat-input" rows="2" placeholder="e.g. What should I wear or keep in mind on a music tour?" maxlength="2000"></textarea>
             <button type="button" class="btn btn-primary" id="chat-send">Send</button>
           </div>
+          <form
+            id="chat-lead-form"
+            name="chat-lead"
+            class="chat-lead-box"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            hidden
+          >
+            <input type="hidden" name="form-name" value="chat-lead" />
+            <p class="bot-field" style="position: absolute; left: -9999px">
+              <label>Bot: <input name="bot-field" /></label>
+            </p>
+            <label>
+              Email
+              <input id="chat-lead-email" type="email" name="email" autocomplete="email" placeholder="you@example.com" required />
+            </label>
+            <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem">Send</button>
+          </form>
         </div>
       </div>
     </section>
@@ -204,7 +218,7 @@
           </li>
           <li>
             <strong>Design &amp; drafts</strong>
-            <span>Guidance templates, knowledge structure, and a publishing calendar draft.</span>
+            <span>Guidance templates, knowledge structure, and a first version of the publishing calendar.</span>
           </li>
           <li>
             <strong>Pilot</strong>
@@ -241,24 +255,12 @@
         <span aria-hidden="true"> | </span>
         <a href="privacy-en.html" hreflang="en">Privacy Policy</a>
       </span>
-      <small style="color: var(--muted); display: block; margin-top: 0.4rem">公開前に必ず社内法務で最終確認してください（ドラフト）。</small>
     </p>
     <p>Alternate layout (Tailwind CDN): <a href="landing-tailwind.html">日本語</a> · <a href="landing-tailwind-en.html">English</a></p>
-    <p>This page is a <strong>static draft</strong>. Add commerce disclosures and other legal pages as needed.</p>
-    <p>
-      <strong>AI chat (Anthropic, paid):</strong>
-      <span class="mono">ANTHROPIC_API_KEY=... python3 site/chat-proxy.py</span>
-      <br />
-      <strong>AI chat (Ollama, local, no API fee):</strong> after <span class="mono">ollama serve</span> and <span class="mono">ollama pull llama3.2</span>, run
-      <span class="mono">USE_OLLAMA=1 python3 site/chat-proxy.py</span>
-      <br />
-      In another terminal from the repo root: <span class="mono">python3 -m http.server 8888</span> →
-      <span class="mono">http://127.0.0.1:8888/site/</span> (use any free port). Match <span class="mono">config.js</span> <span class="mono">chatProxyUrl</span> to the proxy port.
-      Keep the proxy on <strong>127.0.0.1 only</strong>—do not expose it to the internet.
-    </p>
   </footer>
 
   <script src="config.js"></script>
+  <script src="js/gmtj-chrome.js" defer></script>
   <script src="app.js" defer></script>
 </body>
 </html>

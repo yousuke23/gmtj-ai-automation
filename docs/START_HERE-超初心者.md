@@ -252,7 +252,7 @@ cd /Users/tarnar/Desktop/GMTJ-AI-Automation
 make kb-zip
 ```
 
-（`make kb-zip` は `deploy/package-kb-for-knowledge.sh` と同じです。）
+（`make kb-zip` は `deploy/package-kb-for-knowledge.sh` と同じです。**Open WebUI に載せる ZIP は `deploy/gmtj-kb-for-openwebui.zip` を優先**し、エラーになる場合は `deploy/openwebui-knowledge.md` を参照してください。）
 
 ---
 

@@ -7,27 +7,19 @@
 | [glossary.md](./glossary.md) | 全員 | 用語の短い説明 |
 | [kb-review-checklist.md](./kb-review-checklist.md) | ナレッジ編集者 | `kb/` 更新時の人間レビュー |
 | [operations-runbook.md](./operations-runbook.md) | 社内運用 | Open WebUI 周りの短い Runbook |
-| [business-map.md](./business-map.md) | 全員 | 21事業1行サマリ・**14/01/18 のリポ入口** |
-| [../eval/README.md](../eval/README.md) | 品質・14担当 | ゴールデン質問・ルーブリック・インシデントログ入口 |
+| [business-map.md](./business-map.md) | 全員 | 21事業1行サマリ |
+| [DAY1-全21事業-立ち上げプラン.md](./DAY1-全21事業-立ち上げプラン.md) | PM・オーナー | **Day-1** の現実的スコープ（L0/L1/L2）と21行チェック |
+| [gmtj-os-phase1-automation.md](./gmtj-os-phase1-automation.md) | PM・たーなーOS | **Phase 1** 自動化の静的実装・42レーン・限界と拡張方針 |
+| [サービスLP + AIチャット試用](../site/index.html) | マーケ・広報 | 外向けLP・FAQ・`site/chat-proxy.py`＋Anthropicキーでローカルチャット（`make site-dev`） |
 
-リポジトリ全体のルールとフォルダ規約はルートの **`CLAUDE.md`**。**完了の定義（スプリント）**も `CLAUDE.md` に記載。
-
-## 作業の優先順（合意済み・14 → 01 → 18）
-
-Open WebUI / Docker は任意。**ナレッジとファイル編集だけでこの順で進められる。**
-
-| 順 | 事業（短名） | 主なフォルダ・検証 |
-|----|----------------|---------------------|
-| 1 | **14** Regional Music Alliance（AIコンシェルジュ） | [`kb/`](../kb/README.md)、[`eval/golden-questions.md`](../eval/golden-questions.md)、ルートで `make ci` |
-| 2 | **01** Global Music Tour（英語インバウンド第一ツアー） | [`tour/`](../tour/README.md)、[`kb/tours/`](../kb/tours/README.md) |
-| 3 | **18** Global Digital Marketing | [`marketing/content-pillars.md`](../marketing/content-pillars.md)、[`kb/brand/`](../kb/brand/README.md)、[`marketing/90day-ideas.md`](../marketing/90day-ideas.md) |
+リポジトリ全体のルールとフォルダ規約はルートの **`CLAUDE.md`**。
 
 ## 関連（`docs/` 外）
 
 | パス | 内容 |
 |------|------|
-| [../deploy/QUICKSTART-サービス開始.md](../deploy/QUICKSTART-サービス開始.md) | **Docker を使う場合のみ**最短起動（使わないならスキップ可） |
-| [../deploy/SERVICE-LAUNCH.md](../deploy/SERVICE-LAUNCH.md) | **Docker を使う場合のみ**起動後チェックリスト |
+| [../deploy/QUICKSTART-サービス開始.md](../deploy/QUICKSTART-サービス開始.md) | **Docker で手元起動**する人向け最短手順（**Docker不要ならスキップ可**） |
+| [../deploy/SERVICE-LAUNCH.md](../deploy/SERVICE-LAUNCH.md) | 起動後の **管理者・Knowledge・スモーク・招待前ゲート**（フェーズチェックリスト） |
 | [../marketing/content-pillars.md](../marketing/content-pillars.md) | マーケ3本柱（ドラフト） |
 | [../tour/checklist-packing-izu-san.md](../tour/checklist-packing-izu-san.md) | ツアー参加前チェック |
 | [../kb/regions/atami-izu.md](../kb/regions/atami-izu.md) | 熱海・伊豆山リージョン入口 |

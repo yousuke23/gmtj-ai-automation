@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 3,
+  "todayBar": {
+    "success": 0,
+    "warning": 0,
+    "running": 0
+  },
+  "todayHeadline": "本番に接続された自動実行の記録はまだありません（成功・要確認・実行中ともに0件）。",
+  "todayActions": [
+    "#14 Regional Music Alliance: コンシェルジュの意図は9件、品質用のゴールデン質問は31件がこのリポジトリに登録済みです。",
+    "#08 AI TARNAR Voice School: Phase1の自動化フローは5件まで定義済みで、いずれも実行フェーズには入っていません。",
+    "#21 Izu Music Fund: Phase1の自動化フローは3件まで定義済みで、いずれも実行フェーズには入っていません。",
+    "その他の事業について、売上や稼働の数値はこのダッシュボードにはまだ登録されていません。"
+  ],
+  "salesRanking": [],
+  "businesses": [
+    {
+      "id": "01",
+      "name": "Global Music Tour",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "02",
+      "name": "不動産・地方創生",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "03",
+      "name": "123 MUSIC & RESORTS",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "04",
+      "name": "Music Cafe & Bar",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "05",
+      "name": "Global Music Festival",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "06",
+      "name": "Music Production First",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "07",
+      "name": "Music × Community Japan",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "08",
+      "name": "AI TARNAR Voice School",
+      "todayStatus": "ok",
+      "kpiLine": "Phase1の自動化フロー5件（いずれも定義のみ・実行0件）。"
+    },
+    {
+      "id": "09",
+      "name": "Voice & Music Studio",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "10",
+      "name": "B2B Voice & Communication",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "11",
+      "name": "Tana Method Certification",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "12",
+      "name": "Crowdfunding AI Producer",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "13",
+      "name": "Global Music Partnership",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "14",
+      "name": "Regional Music Alliance",
+      "todayStatus": "ok",
+      "kpiLine": "コンシェルジュ意図9件・ゴールデン質問31件（リポジトリ登録）。"
+    },
+    {
+      "id": "15",
+      "name": "Subsidy Intelligence",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "16",
+      "name": "M&A Music Business",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "17",
+      "name": "AI GMTJ OS",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "18",
+      "name": "Global Digital Marketing",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "19",
+      "name": "Japan Inbound Music Tourism",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "20",
+      "name": "Global Music Education Hub",
+      "todayStatus": "ok",
+      "kpiLine": "数値は未登録です。"
+    },
+    {
+      "id": "21",
+      "name": "Izu Music Fund",
+      "todayStatus": "ok",
+      "kpiLine": "Phase1の自動化フロー3件（いずれも定義のみ・実行0件）。"
+    }
+  ],
+  "tarnar08": {
+    "title": "#08 AI TARNAR Voice School",
+    "steps": [
+      { "name": "新規受講者オンボーディング（日次）", "state": "定義のみ" },
+      { "name": "自動教材生成（多言語）", "state": "定義のみ" },
+      { "name": "採点・フィードバック", "state": "定義のみ" },
+      { "name": "月額課金リマインド", "state": "定義のみ" },
+      { "name": "クロスセル #03 / #21", "state": "定義のみ" }
+    ]
+  },
+  "izu21": {
+    "title": "#21 Izu Music Fund",
+    "steps": [
+      { "name": "投資家マッチング（法務承認後に接続）", "state": "定義のみ" },
+      { "name": "月次レポート自動生成", "state": "定義のみ" },
+      { "name": "特典コード自動配布", "state": "定義のみ" }
+    ]
+  }
+}

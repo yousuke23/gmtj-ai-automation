@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate static blog HTML for TARNAR (80×4 langs) and Izu Fund (24×4)."""
+"""Generate static blog HTML for TARNAR (1600×4 langs) and Izu Fund (24×4)."""
 from __future__ import annotations
 
 import html
@@ -12,6 +12,108 @@ IZU = ROOT / "site" / "izu-fund"
 _SCRIPTS = Path(__file__).resolve().parent
 if str(_SCRIPTS) not in __import__("sys").path:
     __import__("sys").path.insert(0, str(_SCRIPTS))
+from tarnar_blog_seeds_batch4 import (
+    BATCH4_EN_TITLES,
+    BATCH4_JA_SEEDS,
+    BATCH4_KO_TITLES,
+    BATCH4_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch5 import (
+    BATCH5_EN_TITLES,
+    BATCH5_JA_SEEDS,
+    BATCH5_KO_TITLES,
+    BATCH5_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch6 import (
+    BATCH6_EN_TITLES,
+    BATCH6_JA_SEEDS,
+    BATCH6_KO_TITLES,
+    BATCH6_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch7 import (
+    BATCH7_EN_TITLES,
+    BATCH7_JA_SEEDS,
+    BATCH7_KO_TITLES,
+    BATCH7_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch8 import (
+    BATCH8_EN_TITLES,
+    BATCH8_JA_SEEDS,
+    BATCH8_KO_TITLES,
+    BATCH8_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch9 import (
+    BATCH9_EN_TITLES,
+    BATCH9_JA_SEEDS,
+    BATCH9_KO_TITLES,
+    BATCH9_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch10 import (
+    BATCH10_EN_TITLES,
+    BATCH10_JA_SEEDS,
+    BATCH10_KO_TITLES,
+    BATCH10_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch11 import (
+    BATCH11_EN_TITLES,
+    BATCH11_JA_SEEDS,
+    BATCH11_KO_TITLES,
+    BATCH11_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch12 import (
+    BATCH12_EN_TITLES,
+    BATCH12_JA_SEEDS,
+    BATCH12_KO_TITLES,
+    BATCH12_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch13 import (
+    BATCH13_EN_TITLES,
+    BATCH13_JA_SEEDS,
+    BATCH13_KO_TITLES,
+    BATCH13_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch14 import (
+    BATCH14_EN_TITLES,
+    BATCH14_JA_SEEDS,
+    BATCH14_KO_TITLES,
+    BATCH14_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch15 import (
+    BATCH15_EN_TITLES,
+    BATCH15_JA_SEEDS,
+    BATCH15_KO_TITLES,
+    BATCH15_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch16 import (
+    BATCH16_EN_TITLES,
+    BATCH16_JA_SEEDS,
+    BATCH16_KO_TITLES,
+    BATCH16_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch17 import (
+    BATCH17_EN_TITLES,
+    BATCH17_JA_SEEDS,
+    BATCH17_KO_TITLES,
+    BATCH17_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch18 import (
+    BATCH18_EN_TITLES,
+    BATCH18_JA_SEEDS,
+    BATCH18_KO_TITLES,
+    BATCH18_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch3 import (
+    BATCH3_EN_TITLES,
+    BATCH3_JA_SEEDS,
+    BATCH3_KO_TITLES,
+    BATCH3_ZH_TITLES,
+)
+from tarnar_blog_seeds_batch2 import (
+    BATCH2_EN_TITLES,
+    BATCH2_JA_SEEDS,
+    BATCH2_KO_TITLES,
+    BATCH2_ZH_TITLES,
+)
 from tarnar_blog_seeds_extra import (
     EXTRA_EN_TITLES,
     EXTRA_JA_SEEDS,
@@ -51,7 +153,27 @@ JA_SEEDS = [
     ("voice-guide-29", "配信ライブの音圧と話し声の切替", "話すときはマイクを少し離し、歌うときに戻す。コンプ設定は事前に決めておきます。"),
     ("voice-guide-30", "年間の声のメンテナンスカレンダー", "繁忙期の前に軽い休声週間を入れる、年に一度の聴力チェックを入れるなど、予定に組み込むと実行率が上がります。"),
 ]
-JA_SEEDS = JA_SEEDS + EXTRA_JA_SEEDS
+JA_SEEDS = (
+    JA_SEEDS
+    + EXTRA_JA_SEEDS
+    + BATCH2_JA_SEEDS
+    + BATCH3_JA_SEEDS
+    + BATCH4_JA_SEEDS
+    + BATCH5_JA_SEEDS
+    + BATCH6_JA_SEEDS
+    + BATCH7_JA_SEEDS
+    + BATCH8_JA_SEEDS
+    + BATCH9_JA_SEEDS
+    + BATCH10_JA_SEEDS
+    + BATCH11_JA_SEEDS
+    + BATCH12_JA_SEEDS
+    + BATCH13_JA_SEEDS
+    + BATCH14_JA_SEEDS
+    + BATCH15_JA_SEEDS
+    + BATCH16_JA_SEEDS
+    + BATCH17_JA_SEEDS
+    + BATCH18_JA_SEEDS
+)
 
 EN_TITLES = [
     "A 3-minute morning routine for your voice",
@@ -85,7 +207,27 @@ EN_TITLES = [
     "Switching tone between talk and song on stream",
     "A yearly maintenance calendar for vocal health",
 ]
-EN_TITLES = EN_TITLES + EXTRA_EN_TITLES
+EN_TITLES = (
+    EN_TITLES
+    + EXTRA_EN_TITLES
+    + BATCH2_EN_TITLES
+    + BATCH3_EN_TITLES
+    + BATCH4_EN_TITLES
+    + BATCH5_EN_TITLES
+    + BATCH6_EN_TITLES
+    + BATCH7_EN_TITLES
+    + BATCH8_EN_TITLES
+    + BATCH9_EN_TITLES
+    + BATCH10_EN_TITLES
+    + BATCH11_EN_TITLES
+    + BATCH12_EN_TITLES
+    + BATCH13_EN_TITLES
+    + BATCH14_EN_TITLES
+    + BATCH15_EN_TITLES
+    + BATCH16_EN_TITLES
+    + BATCH17_EN_TITLES
+    + BATCH18_EN_TITLES
+)
 
 KO_TITLES = [
     "아침 3분 보이스 루틴",
@@ -119,7 +261,27 @@ KO_TITLES = [
     "방송 토크와 노래",
     "연간 보이스 캘린더",
 ]
-KO_TITLES = KO_TITLES + EXTRA_KO_TITLES
+KO_TITLES = (
+    KO_TITLES
+    + EXTRA_KO_TITLES
+    + BATCH2_KO_TITLES
+    + BATCH3_KO_TITLES
+    + BATCH4_KO_TITLES
+    + BATCH5_KO_TITLES
+    + BATCH6_KO_TITLES
+    + BATCH7_KO_TITLES
+    + BATCH8_KO_TITLES
+    + BATCH9_KO_TITLES
+    + BATCH10_KO_TITLES
+    + BATCH11_KO_TITLES
+    + BATCH12_KO_TITLES
+    + BATCH13_KO_TITLES
+    + BATCH14_KO_TITLES
+    + BATCH15_KO_TITLES
+    + BATCH16_KO_TITLES
+    + BATCH17_KO_TITLES
+    + BATCH18_KO_TITLES
+)
 
 ZH_TITLES = [
     "晨间3分钟开嗓流程",
@@ -153,7 +315,27 @@ ZH_TITLES = [
     "直播里说话与演唱的切换",
     "年度嗓音维护日历",
 ]
-ZH_TITLES = ZH_TITLES + EXTRA_ZH_TITLES
+ZH_TITLES = (
+    ZH_TITLES
+    + EXTRA_ZH_TITLES
+    + BATCH2_ZH_TITLES
+    + BATCH3_ZH_TITLES
+    + BATCH4_ZH_TITLES
+    + BATCH5_ZH_TITLES
+    + BATCH6_ZH_TITLES
+    + BATCH7_ZH_TITLES
+    + BATCH8_ZH_TITLES
+    + BATCH9_ZH_TITLES
+    + BATCH10_ZH_TITLES
+    + BATCH11_ZH_TITLES
+    + BATCH12_ZH_TITLES
+    + BATCH13_ZH_TITLES
+    + BATCH14_ZH_TITLES
+    + BATCH15_ZH_TITLES
+    + BATCH16_ZH_TITLES
+    + BATCH17_ZH_TITLES
+    + BATCH18_ZH_TITLES
+)
 
 
 def paras_to_html(p: str) -> str:
@@ -202,6 +384,7 @@ def html_article(
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
   <title>{title_e} | {brand_e}</title>
   <meta name="description" content="{desc_e}" />
   <meta property="og:title" content="{title_e}" />
@@ -257,21 +440,34 @@ def build_tarnar() -> list[dict]:
             en_body = ja_body.replace("。", ". ")
             ko_body = ja_body
             zh_body = ja_body
-        else:
+        elif i < 80:
             en_body = (
                 f"This guide is part of AI TARNAR Voice School (Japan Music Tourism). Topic: {en_t}. "
                 "Start quietly, build the phrase across several days, and record short takes for self-review. "
-                "Stop if you feel pain or strain and seek professional advice."
+                "Fold the habit into travel and show weeks with small checkpoints."
             )
             ko_body = (
                 f"{ko_t} — AI TARNAR Voice School 실습 가이드입니다. "
                 "작은 소리로 형태를 확인하고 며칠에 걸쳐 부하를 올리며 짧게 녹음해 점검하세요. "
-                "통증이 있으면 중단하고 전문가 상담을 우선합니다."
+                "여행·공연 주간에도 짧은 체크포인트로 습관화합니다."
             )
             zh_body = (
                 f"{zh_t}——AI TARNAR Voice School 练习导读。"
                 "先用较小音量建立动作，再分几天逐步增加强度，并录音自查。"
-                "若出现疼痛或明显不适，请停止并咨询专业人士。"
+                "旅行与演出周也用短检查点巩固习惯。"
+            )
+        else:
+            en_body = (
+                f"{en_t}. Part of AI TARNAR Voice School (Japan Music Tourism). "
+                "Work in short passes, compare takes, and fold the habit into travel and show weeks."
+            )
+            ko_body = (
+                f"{ko_t} — AI TARNAR Voice School 실습 가이드입니다. "
+                "짧은 세션으로 형태를 만들고 테이크를 비교해 여행·공연 주간에 습관화하세요."
+            )
+            zh_body = (
+                f"{zh_t}——AI TARNAR Voice School 练习导读。"
+                "用短段落建立动作，对比录音，把习惯融入旅行与演出节奏。"
             )
         ja_html = paras_to_html(ja_body)
         en_html = paras_to_html(en_body)

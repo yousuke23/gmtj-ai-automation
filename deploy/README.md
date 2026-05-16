@@ -12,7 +12,7 @@
 
 Docker を使わない場合はこのセクションはスキップしてよいです（`kb/` や `docs/` の作業は Docker 不要）。
 
-**本番に近い公開**は **[SECURITY.md](./SECURITY.md)**（VPN・認証・人間承認）を必ず通すこと。
+**本番に近い公開**は **[SECURITY.md](./SECURITY.md)**（VPN・認証・人間承認）を必ず通すこと。**全世界向けのステージング手順**は **[WORLDWIDE-STAGING.md](./WORLDWIDE-STAGING.md)**。
 
 ---
 
@@ -43,6 +43,14 @@ Open WebUI の前に **nginx** を置く例は **`docker-compose.auth-stack.yml`
 ## TLS 終端（Caddy・任意）
 
 ホストの **`127.0.0.1:8080`** に既にバックエンドがある状態で、その手前に **HTTPS** をかける例は **`docker-compose.caddy-tls.yml`** と **`caddy/README.md`**。
+
+## 全世界向け（VPS + Let's Encrypt + Basic）
+
+**DNS が当たった VPS** で **80/443 を公開**し、Caddy（TLS）→ nginx（Basic）→ Open WebUI の順にする例:
+
+- **[WORLDWIDE-STAGING.md](./WORLDWIDE-STAGING.md)** … 手順（まずステージング用サブドメイン推奨）  
+- **`docker-compose.worldwide-staging.yml`**  
+- **`caddy/Caddyfile.worldwide`**（`GMTJ_PUBLIC_DOMAIN` / `ACME_EMAIL`）
 
 ## 運用メモ
 

@@ -32,6 +32,7 @@ export function textMessage(text) {
 export function pickReplyMessages(brand, textRaw) {
   const t = (textRaw || "").trim().toLowerCase();
 
+  const blogKeywords = ["ブログ", "blog", "記事", "article", "블로그", "博客"];
   const couponKeywords = ["クーポン", "coupon", "쿠폰", "优惠券", "割引"];
   const bookKeywords = ["予約", "booking", "예약", "预约", "相談", "コンサル"];
   const friendKeywords = ["友だち", "友達", "line", "라인", "加好友"];
@@ -46,7 +47,30 @@ export function pickReplyMessages(brand, textRaw) {
     "声の学校",
     "voice school",
   ];
+  const menuKeywords = ["メニュー", "menu", "ヘルプ", "help", "메뉴", "菜单"];
   const base = siteBaseUrl();
+
+  if (blogKeywords.some((k) => t.includes(k))) {
+    const tarnarBlog = `${base}/tarnar/#blog`;
+    const izuBlog = `${base}/izu-fund/#blog`;
+    return [
+      textMessage(
+        brand === "izu_music_fund"
+          ? `【ブログ】Izu Music Fund の記事一覧\n${izuBlog}\n声の学びは AI TARNAR Voice School もどうぞ\n${tarnarBlog}`
+          : `【ブログ】AI TARNAR Voice School の記事一覧\n${tarnarBlog}\n地域ファンドはこちら\n${izuBlog}`
+      ),
+    ];
+  }
+
+  if (menuKeywords.some((k) => t.includes(k))) {
+    return [
+      textMessage(
+        brand === "izu_music_fund"
+          ? `【メニュー】キーワードで案内します：ブログ / ファンド / クーポン / 予約 / 友だち\nポータル: ${base}/izu-fund/`
+          : `【メニュー】キーワードで案内します：ブログ / クーポン / 予約 / 友だち\nポータル: ${base}/tarnar/\n伊豆: ${base}/izu-fund/`
+      ),
+    ];
+  }
 
   if (brand === "tarnar" && izuCross.some((k) => t.includes(k))) {
     return [
@@ -78,17 +102,26 @@ export function pickReplyMessages(brand, textRaw) {
     return [
       textMessage(
         brand === "izu_music_fund"
-          ? "【Izu Music Fund】面談・資料請求は公式メールまたは担当ルートからご連絡ください。本LINEは一次案内のみです。"
-          : "【AI TARNAR Voice School】レッスン・体験の予約は、メールまたはフォームから承ります。123@atono.jp へ「レッスン希望」とお送りください。"
+          ? `【Izu Music Fund】面談・資料請求は 123@atono.jp へ「IMF面談希望」と件名を付けてご連絡ください。\nポータル: ${base}/izu-fund/`
+          : `【AI TARNAR Voice School】レッスン・体験のご予約は 123@atono.jp へ「レッスン希望」とお送りください。\nブログ: ${base}/tarnar/#blog\n伊豆ファンド: ${base}/izu-fund/`
       ),
     ];
   }
 
   if (friendKeywords.some((k) => t.includes(k))) {
+    if (brand === "izu_music_fund") {
+      return [
+        textMessage("友だち追加ありがとうございます。地域と音楽の最新情報をお届けします。"),
+        textMessage(
+          `【予約・相談】123@atono.jp へ「IMF面談希望」と件名でご連絡ください。\nポータル: ${base}/izu-fund/`
+        ),
+        textMessage(`【クロス】声の学び・ブログは AI TARNAR Voice School\n${base}/tarnar/#blog`),
+      ];
+    }
     return [
-      textMessage(
-        "友だち追加ありがとうございます。最新記事・クーポン・イベントをお届けします。メニューの「ブログ」「クーポン」もご利用ください。"
-      ),
+      textMessage("友だち追加ありがとうございます。レッスン案内やキャンペーンをお届けします。"),
+      textMessage(`【予約】123@atono.jp へ「レッスン希望」とお送りください。\nブログ一覧: ${base}/tarnar/#blog`),
+      textMessage(`【クロス】地域ファンドは Izu Music Fund\n${base}/izu-fund/`),
     ];
   }
 
@@ -104,15 +137,15 @@ export function pickReplyMessages(brand, textRaw) {
     return [
       textMessage(
         brand === "izu_music_fund"
-          ? "Izu Music Fund 公式LINEです。地域と音楽の共創プログラムについてご案内します。「ファンド」「クーポン」「予約」などキーワードで返信します。"
-          : "AI TARNAR Voice School 公式LINEです。レッスン案内やキャンペーンをお届けします。「クーポン」「予約」「友だち」などキーワードでもご利用ください。"
+          ? "Izu Music Fund 公式LINEです。地域と音楽の共創プログラムについてご案内します。「ブログ」「ファンド」「クーポン」「予約」などキーワードで返信します。"
+          : "AI TARNAR Voice School 公式LINEです。レッスン案内やキャンペーンをお届けします。「ブログ」「クーポン」「予約」「友だち」などキーワードでもご利用ください。"
       ),
     ];
   }
 
   return [
     textMessage(
-      "ご利用ありがとうございます。次のキーワードで自動案内します：クーポン / 予約 / 友だち" +
+      "ご利用ありがとうございます。次のキーワードで自動案内します：ブログ / クーポン / 予約 / 友だち" +
         (brand === "izu_music_fund" ? " / ファンド" : "")
     ),
   ];
@@ -196,13 +229,33 @@ export async function handleLineWebhook(event, { secret, token, brand }) {
       const msgs = pickReplyMessages(brand, ev.message.text);
       await replyToLine(ev.replyToken, token, msgs);
     } else if (ev.type === "follow" && ev.replyToken) {
-      await replyToLine(ev.replyToken, token, [
-        textMessage(
-          brand === "izu_music_fund"
-            ? "Izu Music Fund 公式LINEに登録いただきありがとうございます。月次レポート・投資家向け案内（条件あり）を順次お届けします。"
-            : "AI TARNAR Voice School 公式LINEの友だち追加ありがとうございます。レッスン案内や限定クーポンをお届けします。"
-        ),
-      ]);
+      const base = siteBaseUrl();
+      const mail = "123@atono.jp";
+      if (brand === "izu_music_fund") {
+        await replyToLine(ev.replyToken, token, [
+          textMessage(
+            "Izu Music Fund 公式LINEの友だち追加ありがとうございます。地域と音楽のプログラム案内をお届けします。"
+          ),
+          textMessage(
+            `【次の一歩】面談・資料はメールへ「IMF面談希望」でご連絡ください: ${mail}\nポータル: ${base}/izu-fund/`
+          ),
+          textMessage(
+            `【クロス】声の学び・ブログは AI TARNAR Voice School\n${base}/tarnar/#blog`
+          ),
+        ]);
+      } else {
+        await replyToLine(ev.replyToken, token, [
+          textMessage(
+            "AI TARNAR Voice School 公式LINEの友だち追加ありがとうございます。レッスン案内・キャンペーンをお届けします。"
+          ),
+          textMessage(
+            `【予約】レッスン・体験はメールへ「レッスン希望」でご連絡ください: ${mail}`
+          ),
+          textMessage(
+            `【ブログ】最新記事一覧\n${base}/tarnar/#blog\n【伊豆】Izu Music Fund\n${base}/izu-fund/`
+          ),
+        ]);
+      }
     }
   }
 

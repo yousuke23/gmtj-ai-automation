@@ -39,18 +39,25 @@
         lineBtn.rel = "noopener noreferrer";
         lineBtn.target = "_blank";
       } else {
-        lineBtn.href = "mailto:" + mail + "?subject=Izu%20Music%20Fund%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B";
+        var subject =
+          (cfg && cfg.mailtoSubject) || "LINE登録のお問い合わせ";
+        lineBtn.href =
+          "mailto:" + mail + "?subject=" + encodeURIComponent(subject);
       }
     }
     var foot = document.getElementById("footer-related");
     if (foot && cfg && cfg.relatedSites && cfg.relatedSites.length) {
       foot.innerHTML = cfg.relatedSites
         .map(function (s, i) {
+          var ext = /^https?:\/\//i.test(s.url || "");
+          var attrs = ext ? ' rel="noopener noreferrer" target="_blank"' : "";
           return (
             (i ? " · " : "") +
             '<a href="' +
             esc(s.url) +
-            '" rel="noopener noreferrer" target="_blank">' +
+            '"' +
+            attrs +
+            ">" +
             esc(s.label) +
             "</a>"
           );
