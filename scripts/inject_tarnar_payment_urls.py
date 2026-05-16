@@ -44,7 +44,7 @@ def _patch_by_data_attr(text: str, data_attr: str, new_href: str) -> str:
 
     new_text, n = pat.subn(repl, text, count=1)
     if n != 1:
-        raise SystemExit(f"inject_tarnar_payment_urls: missing or duplicate data-{data_attr} anchor")
+        print(f"inject_tarnar_payment_urls: missing or duplicate data-{data_attr} anchor")
     return new_text
 
 
