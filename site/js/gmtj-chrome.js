@@ -113,7 +113,7 @@
     sec.innerHTML =
       '<p class="cta-footer__lead">このサービスについて詳しく知りたい方は</p>' +
       '<div class="cta-footer__actions">' +
-      '<a class="btn btn-cta-primary btn-mail js-gmtj-mailto" href="mailto:123@atono.jp">メールで問い合わせる</a>' +
+      '<a class="btn btn-cta-primary btn-mail js-gmtj-mailto" href="#contact" data-open-contact-form>フォームで問い合わせる</a>' +
       '<a class="btn btn-cta-secondary" href="' +
       chatHref() +
       '">AIに質問する</a>' +
@@ -123,14 +123,7 @@
 
     var mail = sec.querySelector(".js-gmtj-mailto");
     if (mail) {
-      var subj = encodeURIComponent("[" + pageTitle() + "] についてのお問い合わせ");
-      var mailtoHref = "mailto:123@atono.jp?subject=" + subj;
-      mail.href = mailtoHref;
-      mail.addEventListener("click", function (e) {
-        e.preventDefault();
-        if (typeof window.GMTJ_openMail === "function") window.GMTJ_openMail(mailtoHref);
-        else window.location.href = mailtoHref;
-      });
+      mail.setAttribute("data-open-contact-form", "");
     }
 
     var copy = sec.querySelector(".share-copy");

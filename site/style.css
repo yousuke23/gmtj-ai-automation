@@ -685,6 +685,100 @@ footer p {
   color: var(--accent);
 }
 
+.gmtj-form-label {
+  display: block;
+  margin-top: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.gmtj-form-label input,
+.gmtj-form-label textarea {
+  display: block;
+  width: 100%;
+  max-width: 28rem;
+  margin-top: 0.3rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+
+.gmtj-contact-form {
+  text-align: left;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.gmtj-form-done {
+  margin: 0;
+  padding: 0.75rem 0;
+  color: var(--accent);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.gmtj-form-error {
+  margin: 0.5rem 0 0;
+  color: #f87171;
+  font-size: 0.86rem;
+}
+
+.gmtj-form-alt {
+  margin-top: 1rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.gmtj-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.gmtj-modal-box {
+  max-width: 24rem;
+  width: 100%;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.15rem 1.25rem 1rem;
+}
+
+.gmtj-modal-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+}
+
+.gmtj-modal-lead {
+  margin: 0 0 0.75rem;
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.gmtj-modal-close {
+  margin-top: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.gmtj-modal-form .btn-primary {
+  margin-top: 0.5rem;
+}
+
 .footer-legal {
   font-size: 0.88rem;
   margin-bottom: 0.75rem !important;

@@ -196,6 +196,22 @@
         setStatus(T.checkInput, true);
         return;
       }
+      let src = leadForm.querySelector('input[name="source"]');
+      if (!src) {
+        src = document.createElement("input");
+        src.type = "hidden";
+        src.name = "source";
+        leadForm.appendChild(src);
+      }
+      src.value = "ai-concierge";
+      let pg = leadForm.querySelector('input[name="page"]');
+      if (!pg) {
+        pg = document.createElement("input");
+        pg.type = "hidden";
+        pg.name = "page";
+        leadForm.appendChild(pg);
+      }
+      pg.value = location.href;
       const submitBtn = leadForm.querySelector('button[type="submit"]');
       if (submitBtn) submitBtn.disabled = true;
       setStatus(T.leadSending || T.wait, false);
@@ -212,7 +228,10 @@
           body,
         });
         if (!res.ok) throw new Error("HTTP " + res.status);
-        leadForm.innerHTML = '<p class="chat-lead-thanks">' + T.leadThanks + "</p>";
+        leadForm.innerHTML =
+          '<p class="chat-lead-thanks">' +
+          T.leadThanks +
+          " 確認メールが届かない場合は迷惑メールをご確認ください。</p>";
         setStatus("", false);
       } catch {
         if (submitBtn) submitBtn.disabled = false;
