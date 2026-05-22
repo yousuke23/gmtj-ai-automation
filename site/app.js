@@ -162,7 +162,8 @@
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        throw new Error(data.error || "HTTP " + res.status);
+        const errMsg = data.error || "HTTP " + res.status;
+        throw new Error(errMsg);
       }
       const message = (data.message != null ? String(data.message) : String(data.reply || "")).trim() || T.empty;
       state.messages.push({ role: "assistant", content: message });
@@ -173,7 +174,8 @@
     } catch (e) {
       state.messages.pop();
       if (logEl.lastChild) logEl.removeChild(logEl.lastChild);
-      setStatus(T.sendFail, true);
+      const detail = e && e.message ? String(e.message) : "";
+      setStatus(detail && detail !== "Failed to fetch" ? T.sendFail + " (" + detail + ")" : T.sendFail, true);
     } finally {
       sendBtn.disabled = false;
       input.focus();

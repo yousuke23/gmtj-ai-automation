@@ -97,8 +97,8 @@ export const handler = async (event) => {
   }
 
   const model =
-    (process.env.ANTHROPIC_MODEL || "claude-3-5-haiku-20241022").trim() ||
-    "claude-3-5-haiku-20241022";
+    (process.env.ANTHROPIC_MODEL || "claude-haiku-4-5-20251001").trim() ||
+    "claude-haiku-4-5-20251001";
 
   const body = JSON.stringify({
     model,
@@ -124,7 +124,12 @@ export const handler = async (event) => {
 
   const raw = await res.text();
   if (!res.ok) {
-    return json(502, { error: "Assistant temporarily unavailable." });
+    console.error("gmtj-chat anthropic", res.status, raw.slice(0, 800));
+    let hint = "Assistant temporarily unavailable.";
+    if (res.status === 401) hint = "Invalid API key.";
+    else if (res.status === 404 || res.status === 400) hint = "Model or request error. Set ANTHROPIC_MODEL.";
+    else if (res.status === 429) hint = "Rate limit or billing. Check Anthropic console.";
+    return json(502, { error: hint });
   }
 
   let data;

@@ -29,6 +29,7 @@
 # LINE_TARNAR_CHANNEL_SECRET, LINE_TARNAR_CHANNEL_TOKEN, LINE_TARNAR_NOTIFY_USER_ID
 # LINE_IMF_CHANNEL_SECRET, LINE_IMF_CHANNEL_TOKEN, LINE_IMF_NOTIFY_USER_ID
 # ANTHROPIC_API_KEY（チャット用）
+# ANTHROPIC_MODEL（任意・未設定時 claude-haiku-4-5-20251001。旧 claude-3-5-haiku-20241022 は廃止済み）
 # SITE_STRIPE_TARNAR_MONTHLY, SITE_PAYJP_TARNAR_MONTHLY（#08 月額の公開決済URL。未設定時は inject が mailto に差し替え）
 
 # ---------------------------------------------------------------------------
