@@ -124,7 +124,13 @@
     var mail = sec.querySelector(".js-gmtj-mailto");
     if (mail) {
       var subj = encodeURIComponent("[" + pageTitle() + "] についてのお問い合わせ");
-      mail.href = "mailto:123@atono.jp?subject=" + subj;
+      var mailtoHref = "mailto:123@atono.jp?subject=" + subj;
+      mail.href = mailtoHref;
+      mail.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (typeof window.GMTJ_openMail === "function") window.GMTJ_openMail(mailtoHref);
+        else window.location.href = mailtoHref;
+      });
     }
 
     var copy = sec.querySelector(".share-copy");

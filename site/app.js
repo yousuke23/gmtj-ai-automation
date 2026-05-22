@@ -22,6 +22,7 @@
       leadPrompt:
         "ご興味をお持ちいただきありがとうございます。個別のご案内をご希望の方はメールアドレスを入力して送信してください。",
       leadThanks: "ありがとうございます。担当よりご連絡します。",
+      leadSending: "送信中…",
       leadSend: "送信",
       leadPlaceholder: "例: name@example.com",
     },
@@ -37,6 +38,7 @@
       leadPrompt:
         "Thank you for your interest. If you would like a personal follow-up, leave your email below.",
       leadThanks: "Thank you. Our team will reach out shortly.",
+      leadSending: "Sending…",
       leadSend: "Send",
       leadPlaceholder: "you@example.com",
     },
@@ -51,6 +53,7 @@
       checkInput: "메시지를 입력해 주세요.",
       leadPrompt: "관심 가져 주셔서 감사합니다. 개별 안내를 원하시면 이메일을 남겨 주세요.",
       leadThanks: "감사합니다. 담당자가 연락드리겠습니다.",
+      leadSending: "전송 중…",
       leadSend: "보내기",
       leadPlaceholder: "name@example.com",
     },
@@ -65,6 +68,7 @@
       checkInput: "请输入内容。",
       leadPrompt: "感谢您的关注。如需单独说明，请留下邮箱。",
       leadThanks: "谢谢。我们会尽快与您联系。",
+      leadSending: "发送中…",
       leadSend: "发送",
       leadPlaceholder: "you@example.com",
     },
@@ -188,7 +192,13 @@
       ev.preventDefault();
       const em = document.getElementById("chat-lead-email");
       const v = (em && em.value) || "";
-      if (!v.trim()) return;
+      if (!v.trim()) {
+        setStatus(T.checkInput, true);
+        return;
+      }
+      const submitBtn = leadForm.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      setStatus(T.leadSending || T.wait, false);
       const body = new URLSearchParams();
       body.append("form-name", "chat-lead");
       body.append("email", v.trim());
@@ -196,9 +206,16 @@
       body.append("page", location.href);
       body.append("bot-field", "");
       try {
-        await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body });
+        const res = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body,
+        });
+        if (!res.ok) throw new Error("HTTP " + res.status);
         leadForm.innerHTML = '<p class="chat-lead-thanks">' + T.leadThanks + "</p>";
+        setStatus("", false);
       } catch {
+        if (submitBtn) submitBtn.disabled = false;
         setStatus(T.sendFail, true);
       }
     });

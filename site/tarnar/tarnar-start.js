@@ -108,11 +108,15 @@
           window.open(href, "_blank", "noopener,noreferrer");
           return;
         }
-        window.location.href =
+        var mailto =
           "mailto:123@atono.jp?subject=" +
           encodeURIComponent("AI TARNAR Voice School 月額プラン") +
           "&body=" +
-          encodeURIComponent("ご希望プラン: " + (btn.getAttribute("data-plan") || "") + "\nお名前・連絡先をご記載ください。");
+          encodeURIComponent(
+            "ご希望プラン: " + (btn.getAttribute("data-plan") || "") + "\nお名前・連絡先をご記載ください。",
+          );
+        if (typeof window.GMTJ_openMail === "function") window.GMTJ_openMail(mailto);
+        else window.location.href = mailto;
       });
     });
   }
